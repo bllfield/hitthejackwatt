@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hit The JackWatt | Slash Your Energy Bill — and Hit the JackWatt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-pink: #ff00ff;
+      --neon-blue: #00ffff;
+      --neon-green: #39ff14;
+      --neon-yellow: #ffff00;
+      --dark-blue: #001f3f;
+      --deep-purple: #120038;
+      --section-spacing: 5rem;
+      --text-spacing: 1.5rem;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--deep-purple);
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .hero {
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #240046 0%, #120038 70%);
+      background-size: 200% 200%;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMzOTkiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiAvPjwvc3ZnPg==');
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Header and logo */
+    header {
+      text-align: center;
+      width: 100%;
+      margin-bottom: var(--section-spacing);
+    }
+    
+    .logo {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 2px;
+    }
+    
+    .logo span {
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+      animation: flicker 3s infinite alternate;
+    }
+    
+    .logo::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--neon-pink), transparent);
+    }
+    
+    .tagline {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    
+    .subheadline {
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      margin-bottom: 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    
+    /* Jackpot section */
+    .jackpot-container {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      margin: 4rem 0 var(--section-spacing);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+      text-align: center;
+    }
+    
+    .jackpot-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(transparent, var(--neon-blue), transparent 30%);
+      animation: rotate 10s linear infinite;
+      opacity: 0.1;
+    }
+    
+    .jackpot-label {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      color: var(--neon-yellow);
+      text-shadow: 0 0 5px var(--neon-yellow);
+      letter-spacing: 1px;
+    }
+    
+    #jackpot {
+      font-family: 'VT323', monospace;
+      font-size: 6rem;
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green);
+      margin: 1.5rem 0;
+      display: inline-block;
+      padding: 0.5rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      min-width: 300px;
+    }
+    
+    .jackpot-active {
+      animation: slot-win 0.5s ease infinite alternate;
+    }
+    
+    .jackpot-container p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    
+    .sample-tag {
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: var(--neon-yellow);
+      font-size: 0.9rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--neon-yellow);
+      letter-spacing: 1px;
+    }
+    
+    /* Value proposition */
+    .value-prop {
+      margin: var(--section-spacing) 0;
+      text-align: center;
+    }
+    
+    .catchphrase {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin: 0 0 var(--text-spacing);
+      position: relative;
+      display: inline-block;
+      color: var(--neon-pink);
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+      width: 100%;
+      text-align: center;
+      line-height: 1.2;
+    }
+    
+    .explanation {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      text-align: center;
+    }
+    
+    .explanation p + p {
+      margin-top: 1rem;
+    }
+    
+    .highlight {
+      color: var(--neon-blue);
+      font-weight: bold;
+      text-shadow: 0 0 5px var(--neon-blue);
+    }
+    
+    /* Steps section */
+    .steps-section {
+      margin: var(--section-spacing) 0;
+      padding: 3rem 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+    
+    .steps-heading {
+      font-size: 2.4rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    
+    .step {
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+      padding: 2rem;
+      background: rgba(18, 0, 56, 0.8);
+      border: 2px solid rgba(0, 255, 255, 0.1);
+      border-radius: 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .step:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-color: var(--neon-green);
+    }
+    
+    .step-number {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 50px;
+      height: 50px;
+      background: var(--neon-yellow);
+      color: var(--deep-purple);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+      box-shadow: 0 0 15px var(--neon-yellow);
+    }
+    
+    .step-title {
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      color: var(--neon-green);
+    }
+    
+    .step p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      margin: var(--section-spacing) 0;
+      text-align: center;
+    }
+    
+    .sign-up-form {
+      max-width: 550px;
+      margin: 2rem auto;
+      padding: 3rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .form-heading {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    
+    .email-input {
+      width: 100%;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1.1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    
+    .email-input:focus {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 10px var(--neon-blue);
+    }
+    
+    .submit-btn {
+      padding: 1.2rem 2.5rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--neon-green);
+      color: var(--deep-purple);
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .submit-btn:hover {
+      background: var(--neon-yellow);
+      box-shadow: 0 0 20px var(--neon-yellow);
+    }
+    
+    .submit-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: 0.5s;
+    }
+    
+    .submit-btn:hover::after {
+      left: 100%;
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    /* Special callouts */
+    .solar-callout {
+      color: var(--neon-green); 
+      font-weight: bold; 
+      margin: 3rem auto; 
+      text-align: center;
+      max-width: 800px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      border-left: 4px solid var(--neon-green);
+    }
+    
+    .states-list {
+      text-align: center; 
+      padding: 2.5rem; 
+      font-size: 1rem; 
+      color: #aaa;
+      background: rgba(0, 0, 0, 0.2);
+      margin-top: 3rem;
+      border-radius: 8px;
+    }
+    
+    /* Animations */
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+      }
+      20%, 24%, 55% {
+        text-shadow: none;
+      }
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    @keyframes slot-win {
+      0% {
+        text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+        transform: scale(1);
+      }
+      100% {
+        text-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green), 0 0 60px var(--neon-green);
+        transform: scale(1.05);
+      }
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      :root {
+        --section-spacing: 3.5rem;
+        --text-spacing: 1.2rem;
+      }
+      
+      .logo {
+        font-size: 3rem;
+      }
+      
+      .tagline {
+        font-size: 1.8rem;
+      }
+      
+      .subheadline {
+        font-size: 1.1rem;
+      }
+      
+      .catchphrase {
+        font-size: 2.2rem;
+      }
+      
+      #jackpot {
+        font-size: 4rem;
+      }
+      
+      .steps {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .step {
+        width: 100%;
+        max-width: 100%;
+      }
+      
+      .explanation, .sign-up-form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <header>
+        <h1 class="logo">Hit The <span>JackWatt</span></h1>
+        <p class="tagline">Slash Your Energy Bill — and Hit the JackWatt</p>
+        <p class="subheadline">We show you the best electricity plan for your home — based on your real usage — FOR FREE.</p>
+      </header>
+      
+      <div class="jackpot-container">
+        <div class="jackpot-label">CURRENT JACKPOT</div>
+        <div id="jackpot">$0</div>
+        <div class="sample-tag">Sample</div>
+        <p>A new winner every month</p>
+      </div>
+      
+      <div class="value-prop">
+        <h2 class="catchphrase">Knowledge is power. Literally.</h2>
+        <div class="explanation">
+          <p><span class="highlight">HitTheJackWatt.com</span> is the first energy platform that rewards you just for sharing your real energy usage. When you sign up, we'll use your smart meter data or bill to calculate the best electricity plan for your home — no guesswork, no spreadsheets. And yes, it's <span class="highlight">100% FREE</span>, forever.</p>
+        </div>
+      </div>
+      
+      <div class="value-prop">
+        <h2 class="catchphrase">Your bill just became a lottery ticket.</h2>
+        <div class="explanation">
+          <p>You earn entries into our monthly <strong>cash jackpot</strong> just by sharing your data. The more you share, the better we can help you save, and the more chances you have to win. Every month, we give away cash prizes to our users. No strings. No gimmicks.</p>
+          <p style="margin-top: 10px;">And the best part? Once your entries are submitted, you <strong>stay in the jackpot pool forever</strong>, even if you've already won!</p>
+        </div>
+      </div>
+      
+      <div class="value-prop">
+        <h2 class="catchphrase">Fun vibes. Serious savings.</h2>
+        <div class="explanation">
+          <p>The average household saves <span class="highlight">$340 per year</span> using our recommendations. While the jackpot is exciting, the <strong>guaranteed savings</strong> on your electric bill are the real prize. We analyze usage patterns and compare hundreds of plans using real market data — all so you don't have to.</p>
+          <p style="margin-top: 10px;">We use Smart Meter Texas data and real-time market plans from licensed brokers.</p>
+        </div>
+      </div>
+      
+      <div class="steps-section">
+        <h2 class="steps-heading">How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Connect Your Data</h3>
+            <p>Link your smart meter or upload your bill to get personalized energy insights.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Get Smart Recommendations</h3>
+            <p>We'll analyze your usage and find the best electricity plan for your specific needs.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Earn Jackpot Entries</h3>
+            <p>Every interaction earns you entries. Refer friends for even more chances to win.</p>
+          </div>
+        </div>
+      </div>
+      
+      <p style="color: #7fdbff; font-weight: bold; margin: 40px auto 30px; text-align: center; font-size: 1.5rem; letter-spacing: 0.5px; max-width: 800px; padding: 1rem; background: rgba(0, 0, 0, 0.2); border-radius: 12px; border-left: 4px solid #7fdbff; border-right: 4px solid #7fdbff;">
+        Beta users saved $312 per year — for just 2 minutes of their time.
+      </p>
+      
+      <div class="solar-callout">
+        ⚡ Already have solar — or thinking about it?<br>
+        Use our free simulator to see what your bill could look like after solar, and which plan will save you the most.
+      </div>
+      
+      <div class="value-prop">
+        <h2 class="catchphrase">Plug in. Power up. Get paid.</h2>
+        <div class="explanation">
+          <p>Join thousands of smart energy users who are saving money and winning big. Our platform is designed to make energy management simple, rewarding, and maybe even a little exciting. The jackpot is our way of making energy fun, but our core mission is helping you keep more money in your wallet every month.</p>
+          <p style="margin-top: 10px;">Sign up now and forget about it—we'll alert you when your current plan expires with your perfect match. No commitment, no pressure. We notify you with the best options, and you decide if they're right for you. Energy savings on autopilot.</p>
+          <p style="color: #7fdbff; font-weight: bold; margin-top: 20px;">
+            No pressure. No pitch. Just better options backed by your data.
+          </p>
+        </div>
+      </div>
+      
+      <div class="cta-section">
+        <div class="sign-up-form">
+          <h3 class="form-heading">Be the first to know when we launch</h3>
+          <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
+          <form action="https://formspree.io/f/mqaqyzeb" method="POST">
+            <input type="email" name="email" class="email-input" placeholder="Enter your email" required>
+            <button type="submit" class="submit-btn">Get Early Access</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer">
+        <p>Powered by IntelliPath Solutions | © 2023 HitTheJackWatt</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="states-list">
+    <strong>Coming soon to:</strong><br>
+    Texas, Illinois, Ohio, Pennsylvania, New Jersey, Maryland, Michigan, New York, Connecticut, New Hampshire, Delaware, Maine, Rhode Island, Washington D.C., and more.
+  </div>
+  
+  <script>
+    const jackpot = document.getElementById("jackpot");
+    let amount = 0;
+    const target = 25000;
+    const interval = setInterval(() => {
+      if (amount < target) {
+        amount += Math.floor((target - amount) / 20) + 1;
+        jackpot.textContent = `$${amount.toLocaleString()}`;
+      } else {
+        jackpot.textContent = "$25,000";
+        jackpot.classList.add("jackpot-active");
+        clearInterval(interval);
+      }
+    }, 50);
+  </script>
+</body>
+</html>
