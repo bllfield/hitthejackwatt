@@ -558,8 +558,9 @@
           <h3 class="form-heading">Be the first to know when we launch</h3>
           <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
           
-          <form action="https://formspree.io/f/mqaqyzeb" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-            <input type="email" name="email" placeholder="Enter your email" required
+          <form id="emailForm">
+            <input type="email" id="email" name="email" required
+                   placeholder="Enter your email"
                    style="width: 100%; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 16px;
                    background: rgba(255, 255, 255, 0.1); color: white; border: none;">
             <button type="submit"
@@ -570,18 +571,33 @@
             </button>
           </form>
           
-          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showThankYou(); }"></iframe>
-          
           <p id="thankYouMessage" style="display:none; color:#39ff14; font-weight:bold; margin-top:20px;">
             Thank you! We'll be in touch soon.
           </p>
           
           <script>
-            let submitted = false;
-            function showThankYou() {
-              document.querySelector("form").style.display = "none";
-              document.getElementById("thankYouMessage").style.display = "block";
-            }
+            document.getElementById("emailForm").addEventListener("submit", function(e) {
+              e.preventDefault();
+              const form = e.target;
+              const email = form.email.value;
+          
+              fetch("https://formspree.io/f/mqaqyzeb", {
+                method: "POST",
+                headers: { "Accept": "application/json" },
+                body: new FormData(form)
+              })
+              .then(response => {
+                if (response.ok) {
+                  form.style.display = "none";
+                  document.getElementById("thankYouMessage").style.display = "block";
+                } else {
+                  alert("There was an error. Please try again.");
+                }
+              })
+              .catch(error => {
+                alert("Something went wrong. Please try again.");
+              });
+            });
           </script>
           
           <p style="margin-top: 15px; font-size: 0.9rem;">
