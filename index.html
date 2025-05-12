@@ -555,8 +555,10 @@
         <div class="sign-up-form">
           <h3 class="form-heading">Be the first to know when we launch</h3>
           <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
-          <form action="https://formspree.io/f/mqaqyzeb" method="POST" style="display: flex; flex-direction: column; align-items: center;">
-            <input type="email" name="email" class="email-input" placeholder="Enter your email" required>
+          <form action="https://formspree.io/f/mqaqyzeb" method="POST">
+            <input type="email" name="_replyto" class="email-input" placeholder="Enter your email" required>
+            <input type="hidden" name="_subject" value="New HitTheJackWatt signup!">
+            <input type="hidden" name="_next" value="https://hitthejackwatt.vercel.app/thanks.html">
             <button type="submit" class="submit-btn">Get Early Access</button>
           </form>
         </div>
