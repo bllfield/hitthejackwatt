@@ -4,6 +4,7 @@
     { "src": "*.html", "use": "@vercel/static" }
   ],
   "routes": [
+    { "src": "/favicon.ico", "dest": "https://www.vercel.com/favicon.ico" },
     { "src": "/", "dest": "/index.html" },
     { "src": "/thanks", "dest": "/thanks.html" }
   ],
