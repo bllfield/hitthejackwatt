@@ -559,19 +559,27 @@
           <h3 class="form-heading">Be the first to know when we launch</h3>
           <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
           
-          <form action="https://formspree.io/f/mqaqyzeb" method="POST">
-            <input type="hidden" name="_next" value="https://hitthejackwatt.com/thanks">
-            <input type="email" name="email" required
-                   placeholder="Enter your email"
-                   style="width: 100%; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 16px;
-                   background: rgba(255, 255, 255, 0.1); color: white; border: none;">
-            <button type="submit"
-                    style="width: 100%; padding: 12px; background-color: #39ff14; color: #120038;
-                    font-weight: bold; border: none; border-radius: 8px; font-size: 16px;
-                    cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">
-              Get Early Access
-            </button>
-          </form>
+          <!-- Form visible by default -->
+          <div id="emailFormContainer">
+            <form id="emailForm" onsubmit="return submitForm(event)">
+              <input type="email" name="email" id="formEmail" required
+                     placeholder="Enter your email"
+                     style="width: 100%; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 16px;
+                     background: rgba(255, 255, 255, 0.1); color: white; border: none;">
+              <button type="submit" id="submitButton"
+                      style="width: 100%; padding: 12px; background-color: #39ff14; color: #120038;
+                      font-weight: bold; border: none; border-radius: 8px; font-size: 16px;
+                      cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">
+                Get Early Access
+              </button>
+            </form>
+          </div>
+          
+          <!-- Thank you message hidden by default -->
+          <div id="thankYouMessage" style="display: none; color: #39ff14; font-weight: bold; margin-top: 20px; padding: 15px; border: 1px solid #39ff14; border-radius: 8px;">
+            <h3>You're Electric!</h3>
+            <p>Thanks for signing up. We'll let you know as soon as we launch so you can start saving on your energy bills and getting a shot at the jackpot!</p>
+          </div>
           
           <p style="margin-top: 15px; font-size: 0.9rem;">
             Having trouble? <a href="mailto:admin@hitthejackwatt.com?subject=Early Access Signup" 
@@ -592,6 +600,7 @@
   </div>
   
   <script>
+    // Jackpot animation script
     const jackpot = document.getElementById("jackpot");
     let amount = 0;
     const target = 25000;
@@ -605,6 +614,52 @@
         clearInterval(interval);
       }
     }, 50);
+    
+    // Form submission script (uses XMLHttpRequest for maximum compatibility)
+    function submitForm(event) {
+      event.preventDefault();
+      
+      // Get the form and email value
+      var form = document.getElementById('emailForm');
+      var email = document.getElementById('formEmail').value;
+      
+      // Show "Sending..." text on button
+      var button = document.getElementById('submitButton');
+      button.innerHTML = "Sending...";
+      button.disabled = true;
+      
+      // Create a simple XMLHttpRequest (old school but widely compatible)
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://formspree.io/f/mqaqyzeb');
+      xhr.setRequestHeader('Accept', 'application/json');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          // Success! Hide form, show thank you
+          document.getElementById('emailFormContainer').style.display = 'none';
+          document.getElementById('thankYouMessage').style.display = 'block';
+        } else {
+          // Error handling
+          alert('Something went wrong. Please try again or email us directly.');
+          button.innerHTML = "Get Early Access";
+          button.disabled = false;
+        }
+      };
+      
+      xhr.onerror = function() {
+        // Network error handling
+        alert('Network error occurred. Please try again or email us directly.');
+        button.innerHTML = "Get Early Access";
+        button.disabled = false;
+      };
+      
+      // Send the data as plain text for maximum compatibility
+      xhr.send(JSON.stringify({email: email}));
+      
+      // Always return false to prevent default form submission
+      return false;
+    }
   </script>
 </body>
 </html>
