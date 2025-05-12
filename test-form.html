@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      background: green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Test Form</h1>
+  <p>This is a basic form using Formspree to test functionality.</p>
+  
+  <!-- Basic form with no JavaScript, pure HTML -->
+  <form action="https://formspree.io/f/mqaqyzeb" method="POST">
+    <label for="email">Your Email:</label>
+    <input type="email" name="email" id="email" required>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <p>If the above form doesn't work, try the one below with JavaScript:</p>
+  
+  <!-- JavaScript version -->
+  <form id="jsForm">
+    <label for="js-email">Your Email:</label>
+    <input type="email" name="email" id="js-email" required>
+    <button type="submit">Submit with JavaScript</button>
+  </form>
+  
+  <p class="success" id="thankYou">Thank you! Form submitted successfully.</p>
+  
+  <script>
+    // Super basic JavaScript form handler
+    document.getElementById('jsForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submit triggered!');
+      
+      var email = document.getElementById('js-email').value;
+      var formData = new FormData();
+      formData.append('email', email);
+      
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://formspree.io/f/mqaqyzeb');
+      xhr.setRequestHeader('Accept', 'application/json');
+      
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          document.getElementById('jsForm').style.display = 'none';
+          document.getElementById('thankYou').style.display = 'block';
+        } else {
+          alert('Error: ' + xhr.status);
+        }
+      };
+      
+      xhr.onerror = function() {
+        alert('Network error occurred');
+      };
+      
+      xhr.send(formData);
+    });
+  </script>
+</body>
+</html> 
