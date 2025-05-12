@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hit The JackWatt | Slash Your Energy Bill — and Hit the JackWatt</title>
   <!-- Favicons -->
-  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdQTFRFAAAA//8A/9MA/+EA//8A//8A//8A//8A//8A/+YA/98A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A////+FomYgAAAAd0Uk5TAB+fz+/v3zOPXCYAAAABYktHRB8FDRC9AAAAsElEQVQoz22S2xLDIAhEM4Ci9lI1yf//ak2NaaeZ9oXlsAiLSETeE8GlkCoIaxuBtTUCQq6aZ2uICG4Tm7B2hkBEKc2DTQTfZswVEFoHnwJUDG4ZuCywA+pqM2rMIzCCPe9+AtQ3D+j3vAE74PluvwK82WYoKJ1QxRwG+FXxBS1QaV/XoUhSp4rNfgS8inRoHqCVy0UuZhO42WrOqcLJ4p2u9Ek/EUdR/Yh+JHcMfxHv08oPYbMQwAwh/fIAAAAASUVORK5CYII=">
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdQTFRFAAAA//8A/9MA/+EA//8A//8A//8A//8A//8A/+YA/98A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A////+FomYgAAAAd0Uk5TAB+fz+/v3zOPXCYAAAABYktHRB8FDRC9AAAAsElEQVQoz22S2xLDIAhEM4Ci9lI1yf//ak2NaaeZ9oXlsAiLSETeE8GlkCoIaxuBtTUCQq6aZ2uICG4Tm7B2hkBEKc2DTQTfZswVEFoHnwJUDG4ZuCywA+pqM2rMIzCCPe9+AtQ3D+j3vAE74PluvwK82WYoKJ1QxRwG+FXxBS1QaV/XoUhSp4rNfgS8inRoHqCVy0UuZhO42WrOqcLJ4p2u9Ek/EUdR/Yh+JHcMfxHv08oPYbMQwAwh/fIAAAAASUVORK5CYII=">
   <link rel="icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --neon-pink: #ff00ff;
@@ -32,6 +33,7 @@
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: var(--deep-purple);
+      background-image: linear-gradient(135deg, rgba(18, 0, 56, 1) 0%, rgba(36, 0, 70, 1) 100%);
       color: white;
       line-height: 1.6;
       overflow-x: hidden;
@@ -39,7 +41,7 @@
     
     .hero {
       min-height: 100vh;
-      background: radial-gradient(circle at center, #240046 0%, #120038 70%);
+      background: radial-gradient(ellipse at center, rgba(36, 0, 70, 0.8) 0%, rgba(18, 0, 56, 1) 70%);
       background-size: 200% 200%;
       padding: 2rem;
       display: flex;
@@ -69,11 +71,85 @@
       z-index: 1;
     }
     
-    /* Header and logo */
+    /* Header, navigation and logo */
     header {
-      text-align: center;
+      position: relative;
       width: 100%;
+      padding: 1.5rem 0;
       margin-bottom: var(--section-spacing);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .nav-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(18, 0, 56, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-logo span {
+      color: var(--neon-green);
+      text-shadow: 0 0 5px var(--neon-green);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: var(--neon-green);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--neon-green);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .header-content {
+      margin-top: 5rem;
+      text-align: center;
     }
     
     .logo {
@@ -124,15 +200,22 @@
     
     /* Jackpot section */
     .jackpot-container {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.3);
       border-radius: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(57, 255, 20, 0.15);
       padding: 3rem 2rem;
       margin: 4rem 0 var(--section-spacing);
       position: relative;
       overflow: hidden;
       box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
       text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .jackpot-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(0, 255, 255, 0.3);
     }
     
     .jackpot-container::before {
@@ -153,6 +236,7 @@
       color: var(--neon-yellow);
       text-shadow: 0 0 5px var(--neon-yellow);
       letter-spacing: 1px;
+      font-weight: 600;
     }
     
     #jackpot {
@@ -166,6 +250,8 @@
       background: rgba(0, 0, 0, 0.6);
       border-radius: 10px;
       min-width: 300px;
+      position: relative;
+      z-index: 1;
     }
     
     .jackpot-active {
@@ -188,12 +274,37 @@
       margin-bottom: 1rem;
       border: 1px solid var(--neon-yellow);
       letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
     }
     
     /* Value proposition */
     .value-prop {
       margin: var(--section-spacing) 0;
       text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+      animation-delay: 0.3s;
+    }
+    
+    .value-prop:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    
+    .value-prop:nth-child(4) {
+      animation-delay: 0.5s;
+    }
+    
+    .value-prop:nth-child(5) {
+      animation-delay: 0.6s;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
     .catchphrase {
@@ -202,11 +313,16 @@
       margin: 0 0 var(--text-spacing);
       position: relative;
       display: inline-block;
-      color: var(--neon-pink);
-      text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+      color: white;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
       width: 100%;
       text-align: center;
       line-height: 1.2;
+    }
+    
+    .catchphrase span {
+      color: var(--neon-pink);
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
     }
     
     .explanation {
@@ -214,10 +330,13 @@
       line-height: 1.8;
       max-width: 800px;
       margin: 0 auto;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.3);
+      padding: 2.5rem;
+      background: rgba(0, 0, 0, 0.2);
       border-radius: 15px;
       text-align: center;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
     
     .explanation p + p {
@@ -233,15 +352,43 @@
     /* Steps section */
     .steps-section {
       margin: var(--section-spacing) 0;
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       background: rgba(0, 0, 0, 0.2);
       border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .steps-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(57, 255, 20, 0.15), transparent 60%);
+      pointer-events: none;
     }
     
     .steps-heading {
       font-size: 2.4rem;
       margin-bottom: 3rem;
       text-align: center;
+      position: relative;
+      color: white;
+    }
+    
+    .steps-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
     }
     
     .steps {
@@ -255,12 +402,14 @@
       flex: 1;
       min-width: 250px;
       max-width: 350px;
-      padding: 2rem;
+      padding: 3rem 2rem;
       background: rgba(18, 0, 56, 0.8);
       border: 2px solid rgba(0, 255, 255, 0.1);
       border-radius: 15px;
       position: relative;
       transition: all 0.3s ease;
+      text-align: center;
+      backdrop-filter: blur(5px);
     }
     
     .step:hover {
@@ -284,17 +433,100 @@
       font-weight: bold;
       font-size: 1.5rem;
       box-shadow: 0 0 15px var(--neon-yellow);
+      z-index: 2;
+    }
+    
+    .step-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue);
     }
     
     .step-title {
       margin-bottom: 1.2rem;
       font-size: 1.5rem;
       color: var(--neon-green);
+      font-weight: 700;
     }
     
     .step p {
       font-size: 1.1rem;
       line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    /* Stats banner */
+    .stats-banner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      max-width: 900px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+    }
+    
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--neon-blue);
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Special callouts */
+    .solar-callout {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      color: var(--neon-green); 
+      font-weight: 500; 
+      margin: 3rem auto; 
+      max-width: 900px;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(57, 255, 20, 0.2);
+      text-align: left;
+    }
+    
+    .solar-callout h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+      color: var(--neon-green);
+    }
+    
+    .solar-callout p {
+      font-size: 1.1rem;
+      color: white;
+      line-height: 1.6;
+    }
+    
+    .solar-icon {
+      font-size: 3.5rem;
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green);
     }
     
     /* CTA Section */
@@ -303,24 +535,52 @@
       text-align: center;
     }
     
+    .cta-heading {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      color: white;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .cta-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    }
+    
     .sign-up-form {
-      max-width: 550px;
-      margin: 2rem auto;
+      max-width: 600px;
+      margin: 3rem auto;
       padding: 3rem;
       background: rgba(0, 0, 0, 0.3);
       border-radius: 15px;
       border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
     }
     
     .form-heading {
       margin-bottom: 1.5rem;
       font-size: 1.8rem;
+      color: white;
+    }
+    
+    .form-group {
+      display: flex;
+      margin-top: 2rem;
+      position: relative;
     }
     
     .email-input {
-      width: 100%;
+      flex: 1;
       padding: 1.2rem;
-      margin-bottom: 1.5rem;
+      padding-right: 120px;
       border: none;
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.1);
@@ -328,83 +588,214 @@
       font-size: 1.1rem;
       outline: none;
       transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .email-input:focus {
       background: rgba(255, 255, 255, 0.2);
       box-shadow: 0 0 10px var(--neon-blue);
+      border-color: var(--neon-blue);
     }
     
     .submit-btn {
-      padding: 1.2rem 2.5rem;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      bottom: 5px;
+      padding: 0 1.5rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       background: var(--neon-green);
       color: var(--deep-purple);
-      font-weight: bold;
-      font-size: 1.1rem;
+      font-weight: 600;
+      font-size: 1rem;
       cursor: pointer;
       transition: all 0.3s ease;
-      text-transform: uppercase;
       letter-spacing: 1px;
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     
     .submit-btn:hover {
       background: var(--neon-yellow);
-      box-shadow: 0 0 20px var(--neon-yellow);
+      box-shadow: 0 0 15px var(--neon-yellow);
     }
     
-    .submit-btn::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-      transition: 0.5s;
+    .submit-btn i {
+      font-size: 0.9rem;
+      transition: transform 0.3s ease;
     }
     
-    .submit-btn:hover::after {
-      left: 100%;
+    .submit-btn:hover i {
+      transform: translateX(4px);
+    }
+    
+    .form-help {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .form-help a {
+      color: var(--neon-green);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .form-help a:hover {
+      color: var(--neon-yellow);
+      text-shadow: 0 0 5px var(--neon-yellow);
+    }
+    
+    .thank-you-message {
+      padding: 2rem;
+      border: 1px solid var(--neon-green);
+      border-radius: 10px;
+      background: rgba(57, 255, 20, 0.1);
+      animation: glow 2s infinite alternate;
+    }
+    
+    .thank-you-message h3 {
+      color: var(--neon-green);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 5px var(--neon-green);
+      }
+      100% {
+        box-shadow: 0 0 20px var(--neon-green);
+      }
+    }
+    
+    /* States list */
+    .states-list {
+      text-align: center; 
+      padding: 3rem 2rem; 
+      background: rgba(0, 0, 0, 0.2);
+      margin: 3rem auto;
+      border-radius: 15px;
+      max-width: 900px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .states-list h4 {
+      color: white;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .states-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .states-grid span {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      padding: 0.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .states-grid span:hover {
+      color: white;
+      background: rgba(0, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+    
+    .states-more {
+      color: rgba(255, 255, 255, 0.5);
+      font-style: italic;
+      margin-top: 1rem;
     }
     
     /* Footer */
     .footer {
       text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+      padding: 4rem 2rem 2rem;
+      margin-top: 4rem;
+      position: relative;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .footer-logo span {
+      color: var(--neon-green);
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
+      transition: all 0.3s ease;
     }
     
-    /* Special callouts */
-    .solar-callout {
-      color: var(--neon-green); 
+    .footer-links a:hover {
+      color: var(--neon-blue);
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-social a:hover {
+      background: var(--neon-green);
+      color: var(--deep-purple);
+      transform: translateY(-3px);
+    }
+    
+    .footer-copyright {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 2rem;
+    }
+    
+    .energy-tagline {
+      color: #7fdbff; 
       font-weight: bold; 
-      margin: 3rem auto; 
-      text-align: center;
-      max-width: 800px;
-      font-size: 1.3rem;
-      line-height: 1.8;
-      padding: 1.5rem;
+      margin-top: 20px; 
+      padding: 0.8rem 1.5rem;
       background: rgba(0, 0, 0, 0.2);
-      border-radius: 12px;
-      border-left: 4px solid var(--neon-green);
-    }
-    
-    .states-list {
-      text-align: center; 
-      padding: 2.5rem; 
-      font-size: 1rem; 
-      color: #aaa;
-      background: rgba(0, 0, 0, 0.2);
-      margin: 3rem auto 0;
       border-radius: 8px;
-      width: 90%;
-      max-width: 800px;
+      display: inline-block;
     }
     
     /* Animations */
@@ -434,10 +825,37 @@
     }
     
     /* Responsive design */
+    @media (max-width: 992px) {
+      .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .footer-links, .footer-social {
+        margin-top: 1rem;
+      }
+    }
+    
     @media (max-width: 768px) {
       :root {
         --section-spacing: 3.5rem;
         --text-spacing: 1.2rem;
+      }
+      
+      .nav-container {
+        padding: 1rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+      }
+      
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+      
+      .header-content {
+        margin-top: 6rem;
       }
       
       .logo {
@@ -458,6 +876,7 @@
       
       #jackpot {
         font-size: 4rem;
+        min-width: 240px;
       }
       
       .steps {
@@ -470,19 +889,103 @@
         max-width: 100%;
       }
       
+      .stats-banner {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      
+      .solar-callout {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+      
+      .solar-icon {
+        margin-bottom: 1rem;
+      }
+      
       .explanation, .sign-up-form {
         padding: 1.5rem;
+      }
+      
+      .form-group {
+        flex-direction: column;
+      }
+      
+      .email-input {
+        padding-right: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .submit-btn {
+        position: static;
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .logo {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.5rem;
+      }
+      
+      .jackpot-label {
+        font-size: 1.3rem;
+      }
+      
+      #jackpot {
+        font-size: 3.5rem;
+        min-width: 200px;
+        padding: 0.3rem 1rem;
+      }
+      
+      .catchphrase {
+        font-size: 1.8rem;
+      }
+      
+      .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      
+      .states-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="hero">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hit The <span>JackWatt</span></a>
+      <div class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#signup">Sign Up</a>
+      </div>
+    </div>
+    
     <div class="container">
       <header>
-        <h1 class="logo">Hit The <span>JackWatt</span></h1>
-        <p class="tagline">Slash Your Energy Bill — and Hit the JackWatt</p>
-        <p class="subheadline">We show you the best electricity plan for your home — based on your real usage — FOR FREE.</p>
+        <div class="header-content">
+          <h1 class="logo">Hit The <span>JackWatt</span></h1>
+          <p class="tagline">Slash Your Energy Bill — and Hit the JackWatt</p>
+          <p class="subheadline">We show you the best electricity plan for your home — based on your real usage — FOR FREE.</p>
+        </div>
       </header>
       
       <div class="jackpot-container">
@@ -493,14 +996,14 @@
       </div>
       
       <div class="value-prop">
-        <h2 class="catchphrase">Knowledge is power. Literally.</h2>
+        <h2 class="catchphrase">Knowledge is power. <span>Literally.</span></h2>
         <div class="explanation">
           <p><span class="highlight">HitTheJackWatt.com</span> is the first energy platform that rewards you just for sharing your real energy usage. When you sign up, we'll use your smart meter data or bill to calculate the best electricity plan for your home — no guesswork, no spreadsheets. And yes, it's <span class="highlight">100% FREE</span>, forever.</p>
         </div>
       </div>
       
       <div class="value-prop">
-        <h2 class="catchphrase">Your bill just became a lottery ticket.</h2>
+        <h2 class="catchphrase">Your bill just became a <span>lottery ticket.</span></h2>
         <div class="explanation">
           <p>You earn entries into our monthly <strong>cash jackpot</strong> just by sharing your data. The more you share, the better we can help you save, and the more chances you have to win. Every month, we give away cash prizes to our users. No strings. No gimmicks.</p>
           <p style="margin-top: 10px;">And the best part? Once your entries are submitted, you <strong>stay in the jackpot pool forever</strong>, even if you've already won!</p>
@@ -508,55 +1011,73 @@
       </div>
       
       <div class="value-prop">
-        <h2 class="catchphrase">Fun vibes. Serious savings.</h2>
+        <h2 class="catchphrase">Fun vibes. <span>Serious savings.</span></h2>
         <div class="explanation">
           <p>The average household saves <span class="highlight">$340 per year</span> using our recommendations. While the jackpot is exciting, the <strong>guaranteed savings</strong> on your electric bill are the real prize. We analyze usage patterns and compare hundreds of plans using real market data — all so you don't have to.</p>
           <p style="margin-top: 10px;">We use Smart Meter Texas data and real-time market plans from licensed brokers.</p>
         </div>
       </div>
       
-      <div class="steps-section">
+      <div class="steps-section" id="how-it-works">
         <h2 class="steps-heading">How It Works</h2>
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
+            <div class="step-icon"><i class="fas fa-plug"></i></div>
             <h3 class="step-title">Connect Your Data</h3>
             <p>Link your smart meter or upload your bill to get personalized energy insights.</p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
+            <div class="step-icon"><i class="fas fa-bolt"></i></div>
             <h3 class="step-title">Get Smart Recommendations</h3>
             <p>We'll analyze your usage and find the best electricity plan for your specific needs.</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
+            <div class="step-icon"><i class="fas fa-trophy"></i></div>
             <h3 class="step-title">Earn Jackpot Entries</h3>
             <p>Every interaction earns you entries. Refer friends for even more chances to win.</p>
           </div>
         </div>
       </div>
       
-      <p style="color: #7fdbff; font-weight: bold; margin: 40px auto 30px; text-align: center; font-size: 1.5rem; letter-spacing: 0.5px; max-width: 800px; padding: 1rem; background: rgba(0, 0, 0, 0.2); border-radius: 12px; border-left: 4px solid #7fdbff; border-right: 4px solid #7fdbff;">
-        Beta users saved $312 per year — for just 2 minutes of their time.
-      </p>
+      <div class="stats-banner">
+        <div class="stat-item">
+          <span class="stat-number">$312</span>
+          <span class="stat-label">Avg. Annual Savings</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Minutes to Set Up</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Free Service</span>
+        </div>
+      </div>
       
       <div class="solar-callout">
-        ⚡ Already have solar — or thinking about it?<br>
-        Use our free simulator to see what your bill could look like after solar, and which plan will save you the most.
+        <i class="fas fa-solar-panel solar-icon"></i>
+        <div>
+          <h3>Already have solar — or thinking about it?</h3>
+          <p>Use our free simulator to see what your bill could look like after solar, and which plan will save you the most.</p>
+        </div>
       </div>
       
       <div class="value-prop">
-        <h2 class="catchphrase">Plug in. Power up. Get paid.</h2>
+        <h2 class="catchphrase">Plug in. Power up. <span>Get paid.</span></h2>
         <div class="explanation">
           <p>Join thousands of smart energy users who are saving money and winning big. Our platform is designed to make energy management simple, rewarding, and maybe even a little exciting. The jackpot is our way of making energy fun, but our core mission is helping you keep more money in your wallet every month.</p>
           <p style="margin-top: 10px;">Sign up now and forget about it—we'll alert you when your current plan expires with your perfect match. No commitment, no pressure. We notify you with the best options, and you decide if they're right for you. Energy savings on autopilot.</p>
-          <p style="color: #7fdbff; font-weight: bold; margin-top: 20px;">
+          <p class="energy-tagline">
             No pressure. No pitch. Just better options backed by your data.
           </p>
         </div>
       </div>
       
-      <div class="cta-section">
+      <div class="cta-section" id="signup">
+        <h2 class="cta-heading">Ready to start saving?</h2>
         <div class="sign-up-form">
           <h3 class="form-heading">Be the first to know when we launch</h3>
           <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
@@ -564,41 +1085,72 @@
           <!-- Form visible by default -->
           <div id="emailFormContainer">
             <form id="emailForm" onsubmit="return submitForm(event)">
-              <input type="email" name="email" id="formEmail" required
-                     placeholder="Enter your email"
-                     style="width: 100%; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 16px;
-                     background: rgba(255, 255, 255, 0.1); color: white; border: none;">
-              <button type="submit" id="submitButton"
-                      style="width: 100%; padding: 12px; background-color: #39ff14; color: #120038;
-                      font-weight: bold; border: none; border-radius: 8px; font-size: 16px;
-                      cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">
-                Get Early Access
-              </button>
+              <div class="form-group">
+                <input type="email" name="email" id="formEmail" required
+                       placeholder="Enter your email"
+                       class="email-input">
+                <button type="submit" id="submitButton" class="submit-btn">
+                  <span>Get Early Access</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
             </form>
           </div>
           
           <!-- Thank you message hidden by default -->
-          <div id="thankYouMessage" style="display: none; color: #39ff14; font-weight: bold; margin-top: 20px; padding: 15px; border: 1px solid #39ff14; border-radius: 8px;">
+          <div id="thankYouMessage" style="display: none;" class="thank-you-message">
             <h3>You're Electric!</h3>
             <p>Thanks for signing up. We'll let you know as soon as we launch so you can start saving on your energy bills and getting a shot at the jackpot!</p>
           </div>
           
-          <p style="margin-top: 15px; font-size: 0.9rem;">
-            Having trouble? <a href="mailto:admin@hitthejackwatt.com?subject=Early Access Signup" 
-            style="color: #39ff14; text-decoration: underline;">Email us directly</a> to sign up.
+          <p class="form-help">
+            Having trouble? <a href="mailto:admin@hitthejackwatt.com?subject=Early Access Signup">Email us directly</a> to sign up.
           </p>
         </div>
       </div>
       
+      <div class="states-list">
+        <h4>Coming soon to:</h4>
+        <div class="states-grid">
+          <span>Texas</span>
+          <span>Illinois</span>
+          <span>Ohio</span>
+          <span>Pennsylvania</span>
+          <span>New Jersey</span>
+          <span>Maryland</span>
+          <span>Michigan</span>
+          <span>New York</span>
+          <span>Connecticut</span>
+          <span>New Hampshire</span>
+          <span>Delaware</span>
+          <span>Maine</span>
+          <span>Rhode Island</span>
+          <span>Washington D.C.</span>
+        </div>
+        <p class="states-more">and more coming soon</p>
+      </div>
+      
       <div class="footer">
-        <p>Powered by IntelliPath Solutions | © 2023 HitTheJackWatt</p>
+        <div class="footer-content">
+          <div class="footer-logo">
+            Hit The <span>JackWatt</span>
+          </div>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="mailto:admin@hitthejackwatt.com">Contact Us</a>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          Powered by IntelliPath Solutions | © 2023 HitTheJackWatt
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div class="states-list">
-    <strong>Coming soon to:</strong><br>
-    Texas, Illinois, Ohio, Pennsylvania, New Jersey, Maryland, Michigan, New York, Connecticut, New Hampshire, Delaware, Maine, Rhode Island, Washington D.C., and more.
   </div>
   
   <script>
