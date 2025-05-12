@@ -1,10 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "*.html", "use": "@vercel/static" }
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "favicon.ico", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/favicon.ico", "dest": "https://www.vercel.com/favicon.ico" },
+    { "src": "/favicon.ico", "dest": "/favicon.ico" },
     { "src": "/", "dest": "/index.html" },
     { "src": "/thanks", "dest": "/thanks.html" }
   ],
