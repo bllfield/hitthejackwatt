@@ -558,66 +558,30 @@
           <h3 class="form-heading">Be the first to know when we launch</h3>
           <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
           
-          <form id="emailForm" action="https://formspree.io/f/mqaqyzeb" method="POST">
+          <form action="https://formspree.io/f/mqaqyzeb" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
             <input type="email" name="email" placeholder="Enter your email" required
                    style="width: 100%; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 16px;
                    background: rgba(255, 255, 255, 0.1); color: white; border: none;">
-            <button type="submit" id="submitButton"
+            <button type="submit"
                     style="width: 100%; padding: 12px; background-color: #39ff14; color: #120038;
                     font-weight: bold; border: none; border-radius: 8px; font-size: 16px;
                     cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">
               Get Early Access
             </button>
           </form>
+          
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showThankYou(); }"></iframe>
+          
           <p id="thankYouMessage" style="display:none; color:#39ff14; font-weight:bold; margin-top:20px;">
             Thank you! We'll be in touch soon.
           </p>
           
           <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('emailForm');
-            
-            form.addEventListener('submit', function(event) {
-              event.preventDefault();
-              
-              // Show a temporary status
-              const button = document.getElementById('submitButton');
-              const originalText = button.innerHTML;
-              button.innerHTML = 'Sending...';
-              button.disabled = true;
-              
-              const formData = new FormData(form);
-              
-              fetch(form.getAttribute('action'), {
-                method: 'POST',
-                body: formData,
-                headers: {
-                  'Accept': 'application/json'
-                }
-              })
-              .then(response => {
-                if (response.ok) {
-                  // Show success message
-                  const message = document.getElementById('thankYouMessage');
-                  form.style.display = 'none';
-                  message.style.display = 'block';
-                  console.log('Form submitted successfully');
-                } else {
-                  // Show error
-                  console.error('Form submission failed');
-                  alert('Oops! There was a problem submitting your form. Please try again or email us directly.');
-                  button.innerHTML = originalText;
-                  button.disabled = false;
-                }
-              })
-              .catch(error => {
-                console.error('Error:', error);
-                alert('Oops! There was a problem submitting your form. Please try again or email us directly.');
-                button.innerHTML = originalText;
-                button.disabled = false;
-              });
-            });
-          });
+            let submitted = false;
+            function showThankYou() {
+              document.querySelector("form").style.display = "none";
+              document.getElementById("thankYouMessage").style.display = "block";
+            }
           </script>
           
           <p style="margin-top: 15px; font-size: 0.9rem;">
