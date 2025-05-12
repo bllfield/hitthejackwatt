@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hit The JackWatt | Slash Your Energy Bill — and Hit the JackWatt</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
@@ -555,21 +556,25 @@
         <div class="sign-up-form">
           <h3 class="form-heading">Be the first to know when we launch</h3>
           <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
-          <form action="https://formspree.io/f/mqaqyzeb" method="POST">
-            <div style="margin-bottom: 20px;">
-              <input type="email" name="email" placeholder="Enter your email" required 
-                style="width: 100%; padding: 12px; border-radius: 8px; font-size: 16px; 
-                background: rgba(255, 255, 255, 0.1); color: white; border: none;">
-            </div>
-            <div>
-              <button type="submit" 
-                style="width: 100%; padding: 12px; background-color: #39ff14; color: #120038; 
-                font-weight: bold; border: none; border-radius: 8px; font-size: 16px; 
-                cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">
-                Get Early Access
-              </button>
-            </div>
+          
+          <!-- Super Simple Form - No classes or complex structure -->
+          <form action="https://formspree.io/f/mqaqyzeb" method="GET" style="width: 100%;">
+            <input type="email" name="email" placeholder="Enter your email" required 
+              style="width: 100%; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 16px; 
+              background: rgba(255, 255, 255, 0.1); color: white; border: none; box-sizing: border-box;">
+            
+            <button type="submit" onclick="alert('Submitting your email...'); return true;"
+              style="width: 100%; padding: 12px; background-color: #39ff14; color: #120038; 
+              font-weight: bold; border: none; border-radius: 8px; font-size: 16px; 
+              cursor: pointer; text-transform: uppercase; letter-spacing: 1px; box-sizing: border-box;">
+              Get Early Access
+            </button>
           </form>
+          
+          <p style="margin-top: 15px; font-size: 0.9rem;">
+            Having trouble? <a href="mailto:admin@hitthejackwatt.com?subject=Early Access Signup" 
+            style="color: #39ff14; text-decoration: underline;">Email us directly</a> to sign up.
+          </p>
         </div>
       </div>
       
@@ -598,6 +603,20 @@
         clearInterval(interval);
       }
     }, 50);
+    
+    // Form debugging
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      if (form) {
+        console.log('Form found on page');
+        form.addEventListener('submit', function(e) {
+          console.log('Form submission attempted');
+          alert('Form submitted! Check console for details.');
+        });
+      } else {
+        console.error('Form not found on page');
+      }
+    });
   </script>
 </body>
 </html>
