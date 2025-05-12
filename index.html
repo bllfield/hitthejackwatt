@@ -583,35 +583,24 @@
                 emailForm.addEventListener("submit", function(e) {
                   e.preventDefault();
                   const form = e.target;
-                  const email = form.email.value;
-                  
-                  try {
-                    fetch("https://formspree.io/f/mqaqyzeb", {
-                      method: "POST",
-                      headers: { "Accept": "application/json" },
-                      body: new FormData(form)
-                    })
-                    .then(function(response) {
-                      if (response.ok) {
-                        form.style.display = "none";
-                        document.getElementById("thankYouMessage").style.display = "block";
-                      } else {
-                        alert("There was an error. Please try again.");
-                      }
-                      return false;
-                    })
-                    .catch(function(error) {
-                      console.error('Error:', error);
-                      alert("Something went wrong. Please try again.");
-                      return false;
-                    });
-                  } catch (error) {
-                    console.error('Fetch error:', error);
+
+                  fetch("https://formspree.io/f/mqaqyzeb", {
+                    method: "POST",
+                    headers: { "Accept": "application/json" },
+                    body: new FormData(form)
+                  })
+                  .then(function(response) {
+                    if (response.ok) {
+                      form.style.display = "none";
+                      document.getElementById("thankYouMessage").style.display = "block";
+                    } else {
+                      alert("There was an error submitting the form. Please try again.");
+                    }
+                  })
+                  .catch(function(error) {
+                    console.error("Submission error:", error);
                     alert("Something went wrong. Please try again.");
-                    return false;
-                  }
-                  
-                  return false;
+                  });
                 });
               }
             });
