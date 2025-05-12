@@ -557,19 +557,21 @@
           <h3 class="form-heading">Be the first to know when we launch</h3>
           <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
           
-          <!-- Super Simple Form - No classes or complex structure -->
-          <form action="https://formspree.io/f/mqaqyzeb" method="GET" style="width: 100%;">
-            <input type="email" name="email" placeholder="Enter your email" required 
+          <!-- Email capture with direct JavaScript handling -->
+          <div style="width: 100%;">
+            <input type="email" id="email-input" placeholder="Enter your email" required 
               style="width: 100%; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 16px; 
               background: rgba(255, 255, 255, 0.1); color: white; border: none; box-sizing: border-box;">
             
-            <button type="submit" onclick="alert('Submitting your email...'); return true;"
+            <button id="submit-btn" 
               style="width: 100%; padding: 12px; background-color: #39ff14; color: #120038; 
               font-weight: bold; border: none; border-radius: 8px; font-size: 16px; 
               cursor: pointer; text-transform: uppercase; letter-spacing: 1px; box-sizing: border-box;">
               Get Early Access
             </button>
-          </form>
+          </div>
+          
+          <p id="form-status" style="margin-top: 15px; font-size: 1rem; height: 20px;"></p>
           
           <p style="margin-top: 15px; font-size: 0.9rem;">
             Having trouble? <a href="mailto:admin@hitthejackwatt.com?subject=Early Access Signup" 
@@ -590,6 +592,36 @@
   </div>
   
   <script>
+    // Form handling with direct JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      const emailInput = document.getElementById('email-input');
+      const submitBtn = document.getElementById('submit-btn');
+      const formStatus = document.getElementById('form-status');
+      
+      if (submitBtn && emailInput) {
+        console.log('Form elements found');
+        
+        submitBtn.addEventListener('click', function() {
+          const email = emailInput.value;
+          formStatus.textContent = "Submitting...";
+          
+          if (!email || !email.includes('@')) {
+            formStatus.textContent = "Please enter a valid email address";
+            formStatus.style.color = "#ff0000";
+            return;
+          }
+          
+          // Open email client as a fallback method
+          window.location.href = `mailto:admin@hitthejackwatt.com?subject=Early Access Signup&body=Please add me to the early access list: ${email}`;
+          
+          formStatus.textContent = "Email client opened! If nothing happened, please use the direct email link below.";
+          formStatus.style.color = "#39ff14";
+        });
+      } else {
+        console.error('Form elements not found');
+      }
+    });
+    
     const jackpot = document.getElementById("jackpot");
     let amount = 0;
     const target = 25000;
@@ -603,20 +635,6 @@
         clearInterval(interval);
       }
     }, 50);
-    
-    // Form debugging
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.querySelector('form');
-      if (form) {
-        console.log('Form found on page');
-        form.addEventListener('submit', function(e) {
-          console.log('Form submission attempted');
-          alert('Form submitted! Check console for details.');
-        });
-      } else {
-        console.error('Form not found on page');
-      }
-    });
   </script>
 </body>
 </html>
