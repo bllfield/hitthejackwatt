@@ -5,10 +5,10 @@
     { "src": "favicon.ico", "use": "@vercel/static" },
     { "src": "assets/**", "use": "@vercel/static" }
   ],
-  "routes": [
-    { "src": "/favicon.ico", "dest": "/favicon.ico" },
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/thanks", "dest": "/thanks.html" }
+  "rewrites": [
+    { "source": "/favicon.ico", "destination": "/favicon.ico" },
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/thanks", "destination": "/thanks.html" }
   ],
   "headers": [
     {
