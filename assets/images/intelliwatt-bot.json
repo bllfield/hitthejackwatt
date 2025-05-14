@@ -285,9 +285,10 @@
       "Money-saving companion"
     ],
     "source": {
-      "imagePath": "assets/images/intelliwatt-bot.png",
-      "fileFormat": "PNG",
-      "lastUpdated": "2025-05-13"
+      "imagePath": "assets/images/intelliwatt-bot.gif",
+      "fileFormat": "GIF",
+      "lastUpdated": "2025-05-13",
+      "isAnimated": true
     }
   }
 } 
