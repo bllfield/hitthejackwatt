@@ -8,7 +8,8 @@
   "rewrites": [
     { "source": "/favicon.ico", "destination": "/favicon.ico" },
     { "source": "/", "destination": "/index.html" },
-    { "source": "/thanks", "destination": "/thanks.html" }
+    { "source": "/thanks", "destination": "/thanks.html" },
+    { "source": "/assets/(.*)", "destination": "/assets/$1" }
   ],
   "headers": [
     {

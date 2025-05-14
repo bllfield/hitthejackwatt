@@ -6,7 +6,7 @@
   <meta name="description" content="Hit The JackWatt - Save on your electricity bills and win cash prizes"/>
   <title>Hit The JackWatt | Slash Your Energy Bill — and Hit the JackWatt</title>
   <!-- Favicons -->
-  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdQTFRFAAAA//8A/9MA/+EA//8A//8A//8A//8A//8A/+YA/98A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A////+FomYgAAAAd0Uk5TAB+fz+/v3zOPXCYAAAABYktHRB8FDRC9AAAAsElEQVQoz22S2xLDIAhEM4Ci9lI1yf//ak2NaaeZ9oXlsAiLSETeE8GlkCoIaxuBtTUCQq6aZ2uICG4Tm7B2hkBEKc2DTQTfZswVEFoHnwJUDG4ZuCywA+pqM2rMIzCCPe9+AtQ3D+j3vAE74PluvwK82WYoKJ1QxRwG+FXxBS1QaV/XoUhSp4rNfgS8inRoHqCVy0UuZhO42WrOqcLJ4p2u9Ek/EUdR/Yh+JHcMfxHv08oPYbMQwAwh/fIAAAAASUVORK5CYII=">
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdQTFRFAAAA//8A/9MA/+EA//8A//8A//8A//8A//8A/+YA/98A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A////+FomYgAAAAd0Uk5TAB+fz+/v3zOPXCYAAAABYktHRB8FDRC9AAAAsElEQVQoz22S2xLDIAhEM4Ci9lI1yf//ak2NaaeZ9oXlsAiLSETeE8GlkCoIaxuBtTUCQq6aZ2uICG4Tm7B2hkBEKc2DTQTfZswVEFoHnwJUDG4ZuCywA+pqM2rMIzCCPe9+AtQ3D+j3vAE74PluvwK82WYoKJ1QxRwG+FXxBS1QaV/XoUhSp4rNfgS8inRoHqCVy0UuZhO42WrOqcLJ4p2u9Ek/EUdR/Yh+JHcMfxHv08oPYbMQwAwh/fIAAAAASUVORK5CYII=">
   <link rel="icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -967,6 +967,158 @@
         gap: 1rem;
       }
     }
+    
+    /* Mascot section */
+    .mascot-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      margin: var(--section-spacing) 0;
+      padding: 3rem;
+      background: rgba(18, 0, 56, 0.6);
+      border-radius: 20px;
+      border: 1px solid rgba(0, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+    
+    .mascot-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 70%, rgba(57, 255, 20, 0.03), transparent 60%),
+                  radial-gradient(circle at 70% 30%, rgba(0, 255, 255, 0.03), transparent 60%);
+      pointer-events: none;
+      border-radius: 20px;
+    }
+    
+    /* SVG Bot Styles */
+    .intelliwatt-bot {
+      flex-shrink: 0;
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .intelliwatt-bot img {
+      max-width: 100%;
+      max-height: 250px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
+      animation: float 6s ease-in-out infinite;
+      transition: all 0.3s ease;
+    }
+    
+    .intelliwatt-bot img:hover {
+      transform: scale(1.05);
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-6px); }
+    }
+    
+    .mascot-content {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .mascot-heading {
+      font-size: 2rem;
+      color: var(--neon-blue);
+      text-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .mascot-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--neon-blue);
+      box-shadow: 0 0 8px var(--neon-blue);
+    }
+    
+    .mascot-text {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.95);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.5rem;
+    }
+    
+    .mascot-feature {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    
+    .feature-icon {
+      color: var(--neon-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      width: 30px;
+      height: 30px;
+      background: rgba(57, 255, 20, 0.1);
+      border-radius: 50%;
+    }
+    
+    .feature-text {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    @media (max-width: 768px) {
+      .mascot-section {
+        flex-direction: column;
+        padding: 2.5rem 2rem;
+        gap: 2rem;
+      }
+      
+      .intelliwatt-bot {
+        width: 180px;
+        height: 180px;
+      }
+      
+      .mascot-heading {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+      
+      .mascot-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .mascot-text {
+        text-align: center;
+      }
+      
+      .mascot-content {
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -997,25 +1149,58 @@
       </div>
       
       <div class="value-prop">
-        <h2 class="catchphrase">Knowledge is power. <span>Literally.</span></h2>
+        <h2 class="catchphrase">Double the Benefits: <span>Save & Win</span></h2>
         <div class="explanation">
-          <p><span class="highlight">HitTheJackWatt.com</span> is the first energy platform that rewards you just for sharing your real energy usage. When you sign up, we'll use your smart meter data or bill to calculate the best electricity plan for your home — no guesswork, no spreadsheets. And yes, it's <span class="highlight">100% FREE</span>, forever.</p>
+          <p><span class="highlight">HitTheJackWatt.com</span> offers two incredible ways to benefit: Our advanced rate shopper finds you the best electricity plan based on your actual usage data, potentially saving you hundreds per year. Plus, by sharing your energy data, you're automatically entered into our monthly jackpot drawing for a chance to win cash prizes!</p>
+          <p style="margin-top: 10px;">It's a win-win: guaranteed savings on your bills and a shot at hitting the jackpot—all completely <span class="highlight">FREE</span>.</p>
         </div>
       </div>
       
       <div class="value-prop">
         <h2 class="catchphrase">Your bill just became a <span>lottery ticket.</span></h2>
         <div class="explanation">
-          <p>You earn entries into our monthly <strong>cash jackpot</strong> just by sharing your data. The more you share, the better we can help you save, and the more chances you have to win. Every month, we give away cash prizes to our users. No strings. No gimmicks.</p>
+          <p>When you share your energy usage data, you automatically earn entries into our monthly <strong>cash jackpot</strong>. The more you share, the better we can help you save, and the more chances you have to win. Every month, we give away cash prizes to our users. No strings. No gimmicks.</p>
           <p style="margin-top: 10px;">And the best part? Once your entries are submitted, you <strong>stay in the jackpot pool forever</strong>, even if you've already won!</p>
+        </div>
+      </div>
+      
+      <div class="mascot-section">
+        <div class="intelliwatt-bot">
+          <img src="assets/images/intelliwatt-bot.png" alt="IntelliWatt Bot">
+        </div>
+        <div class="mascot-content">
+          <h3 class="mascot-heading">Meet IntelliWatt Bot</h3>
+          <p class="mascot-text">Your intelligent energy assistant that analyzes consumption patterns to find your perfect energy plan. IntelliWatt Bot uses advanced algorithms to compare hundreds of options and match you with the one that maximizes your savings.</p>
+          
+          <div class="mascot-feature">
+            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <div class="feature-text">Personalized energy insights based on your actual usage data</div>
+          </div>
+          
+          <div class="mascot-feature">
+            <div class="feature-icon"><i class="fas fa-search-dollar"></i></div>
+            <div class="feature-text">Finds hidden savings opportunities other comparison tools miss</div>
+          </div>
+          
+          <div class="mascot-feature">
+            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+            <div class="feature-text">Automatically alerts you when better plans become available</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="value-prop">
+        <h2 class="catchphrase">Knowledge is power. <span>Literally.</span></h2>
+        <div class="explanation">
+          <p>Our rate shopper is the first energy platform that rewards you just for sharing your real energy usage. When you sign up, we'll use your smart meter data or bill to calculate the best electricity plan for your home — no guesswork, no spreadsheets. And yes, it's <span class="highlight">100% FREE</span>, forever.</p>
         </div>
       </div>
       
       <div class="value-prop">
         <h2 class="catchphrase">Fun vibes. <span>Serious savings.</span></h2>
         <div class="explanation">
-          <p>The average household saves <span class="highlight">$340 per year</span> using our recommendations. While the jackpot is exciting, the <strong>guaranteed savings</strong> on your electric bill are the real prize. We analyze usage patterns and compare hundreds of plans using real market data — all so you don't have to.</p>
-          <p style="margin-top: 10px;">We use Smart Meter Texas data and real-time market plans from licensed brokers.</p>
+          <p>While the jackpot adds excitement, our rate shopper delivers <span class="highlight">guaranteed savings</span>. The average household saves <span class="highlight">$340 per year</span> using our recommendations. We analyze your actual usage patterns and match them against hundreds of available electricity plans using real-time market data — all so you don't have to.</p>
+          <p style="margin-top: 10px;">We use Smart Meter Texas data and real-time plan information from licensed brokers to ensure you always get the most accurate recommendations.</p>
         </div>
       </div>
       

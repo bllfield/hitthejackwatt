@@ -1,0 +1,293 @@
+{
+  "mascot": {
+    "name": "IntelliWatt Bot",
+    "version": "2.0",
+    "type": "energy saving assistant robot",
+    "description": "A friendly blue humanoid robot mascot with purple accents, green eyes, a yellow lightning bolt emblem, and a dollar sign belt",
+    "visualElements": {
+      "bodyColor": {
+        "primary": "#1d5c8b",
+        "secondary": "#0e2c45",
+        "highlight": "#2577b5",
+        "outline": "#041e35"
+      },
+      "accentColor": {
+        "primary": "#e215e2",
+        "secondary": "#cc00cc",
+        "energyYellow": "#ffc107",
+        "moneyGreen": "#4cff4c"
+      },
+      "dimensions": {
+        "width": 600,
+        "height": 800,
+        "unit": "pixels"
+      },
+      "head": {
+        "shape": "rounded circle",
+        "width": 240,
+        "height": 220,
+        "cornerRadius": 110,
+        "fill": "bodyColor.primary",
+        "stroke": "bodyColor.outline",
+        "strokeWidth": 5,
+        "eyes": {
+          "shape": "circle",
+          "outerFill": "#4cff4c",
+          "innerFill": "bodyColor.outline",
+          "width": 60,
+          "height": 60,
+          "spacing": 80,
+          "highlights": {
+            "shape": "circle",
+            "fill": "#ffffff",
+            "width": 15,
+            "height": 15,
+            "position": "top-left"
+          }
+        },
+        "mouth": {
+          "shape": "rounded curve",
+          "fill": "#fe6565",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 2,
+          "width": 70,
+          "height": 25,
+          "expression": "smile"
+        },
+        "ears": {
+          "shape": "oval",
+          "width": 40,
+          "height": 70,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 5,
+          "spacing": 240,
+          "accentRing": {
+            "shape": "oval",
+            "width": 30,
+            "height": 60,
+            "fill": "none",
+            "stroke": "accentColor.primary",
+            "strokeWidth": 5
+          }
+        }
+      },
+      "body": {
+        "shape": "humanoid",
+        "torso": {
+          "shape": "rounded rectangle",
+          "width": 200,
+          "height": 220,
+          "cornerRadius": 40,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 5
+        },
+        "emblem": {
+          "shape": "lightning bolt",
+          "width": 80,
+          "height": 100,
+          "fill": "accentColor.energyYellow",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 4,
+          "position": "center-chest"
+        },
+        "belt": {
+          "shape": "band",
+          "width": 200, 
+          "height": 40,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 3,
+          "dollarSign": {
+            "shape": "circle",
+            "radius": 25,
+            "outlineColor": "accentColor.moneyGreen",
+            "backgroundColor": "bodyColor.primary",
+            "textColor": "accentColor.moneyGreen",
+            "symbol": "$",
+            "strokeWidth": 4
+          }
+        },
+        "shoulders": {
+          "shape": "rounded",
+          "width": 70, 
+          "height": 40,
+          "cornerRadius": 20,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 4
+        },
+        "neck": {
+          "shape": "rectangle",
+          "width": 55,
+          "height": 20,
+          "fill": "bodyColor.secondary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 3
+        }
+      },
+      "arms": {
+        "upperArms": {
+          "shape": "rounded rectangle",
+          "width": 50,
+          "height": 120,
+          "cornerRadius": 25,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 5,
+          "accentBand": {
+            "position": "bottom",
+            "width": 55,
+            "height": 15,
+            "fill": "accentColor.primary",
+            "stroke": "bodyColor.outline",
+            "strokeWidth": 2
+          }
+        },
+        "lowerArms": {
+          "shape": "rounded rectangle",
+          "width": 45,
+          "height": 100,
+          "cornerRadius": 20,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 5
+        },
+        "hands": {
+          "shape": "rounded",
+          "leftHand": {
+            "type": "waving",
+            "fingers": 4,
+            "fill": "bodyColor.primary",
+            "stroke": "bodyColor.outline",
+            "strokeWidth": 5,
+            "wristAccent": {
+              "shape": "band",
+              "width": 45,
+              "height": 12,
+              "fill": "accentColor.primary",
+              "stroke": "bodyColor.outline",
+              "strokeWidth": 2
+            }
+          },
+          "rightHand": {
+            "type": "relaxed",
+            "fill": "bodyColor.primary",
+            "stroke": "bodyColor.outline",
+            "strokeWidth": 5,
+            "wristAccent": {
+              "shape": "band",
+              "width": 45,
+              "height": 12,
+              "fill": "accentColor.primary",
+              "stroke": "bodyColor.outline",
+              "strokeWidth": 2
+            }
+          }
+        },
+        "elbowJoints": {
+          "shape": "circle",
+          "radius": 22,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 4,
+          "accentRing": {
+            "shape": "circle",
+            "radius": 18,
+            "fill": "none",
+            "stroke": "accentColor.primary",
+            "strokeWidth": 4
+          }
+        }
+      },
+      "legs": {
+        "upperLegs": {
+          "shape": "rounded rectangle",
+          "width": 60,
+          "height": 120,
+          "cornerRadius": 25,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 5
+        },
+        "lowerLegs": {
+          "shape": "rounded rectangle",
+          "width": 55,
+          "height": 110,
+          "cornerRadius": 20,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 5,
+          "accentBand": {
+            "position": "bottom",
+            "width": 60,
+            "height": 15,
+            "fill": "accentColor.primary",
+            "stroke": "bodyColor.outline",
+            "strokeWidth": 2
+          }
+        },
+        "feet": {
+          "shape": "rounded rectangle",
+          "width": 75,
+          "height": 35,
+          "cornerRadius": 15,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 5,
+          "soles": {
+            "shape": "rounded rectangle",
+            "width": 75,
+            "height": 10,
+            "cornerRadius": 10,
+            "fill": "accentColor.moneyGreen",
+            "stroke": "bodyColor.outline",
+            "strokeWidth": 1
+          }
+        },
+        "kneeJoints": {
+          "shape": "circle",
+          "radius": 22,
+          "fill": "bodyColor.primary",
+          "stroke": "bodyColor.outline",
+          "strokeWidth": 4,
+          "accentRing": {
+            "shape": "circle",
+            "radius": 18,
+            "fill": "none",
+            "stroke": "accentColor.primary",
+            "strokeWidth": 4
+          }
+        }
+      }
+    },
+    "pose": {
+      "leftArm": "raised waving",
+      "rightArm": "relaxed down",
+      "stance": "standing straight",
+      "expression": "friendly smile"
+    },
+    "personality": {
+      "friendly": true,
+      "helpful": true,
+      "energetic": true,
+      "intelligent": true,
+      "energySavvy": true,
+      "financiallyAstute": true
+    },
+    "purpose": "Helps users save money on electricity bills and select winners for cash prizes",
+    "traits": [
+      "Energy savings expert",
+      "Financial assistant",
+      "Rate comparison specialist",
+      "Jackpot announcer",
+      "Money-saving companion"
+    ],
+    "source": {
+      "imagePath": "assets/images/intelliwatt-bot.png",
+      "fileFormat": "PNG",
+      "lastUpdated": "2025-05-13"
+    }
+  }
+} 

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Main blue gradient for robot body -->
+    <linearGradient id="robotBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a8cc2"/>
+      <stop offset="100%" stop-color="#1d5c8b"/>
+    </linearGradient>
+    
+    <!-- Highlight gradient for robot body -->
+    <linearGradient id="robotHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5fa3d7"/>
+      <stop offset="100%" stop-color="#3778b0"/>
+    </linearGradient>
+    
+    <!-- Bulb gradient -->
+    <linearGradient id="bulbGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe87c"/>
+      <stop offset="100%" stop-color="#ffcc33"/>
+    </linearGradient>
+    
+    <!-- Eye gradient -->
+    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    
+    <!-- White highlight -->
+    <radialGradient id="whiteHighlight" cx="30%" cy="30%" r="50%" fx="20%" fy="20%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Main Robot Group -->
+  <g id="intelliwattBot">
+    <!-- Head / Face Area -->
+    <g id="head">
+      <!-- Head Shell -->
+      <rect x="90" y="60" width="120" height="90" rx="20" ry="20" fill="url(#robotBlue)" stroke="#16354f" stroke-width="3"/>
+      
+      <!-- Face Plate -->
+      <rect x="105" y="75" width="90" height="60" rx="12" ry="12" fill="#ffffff" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Left Eye -->
+      <ellipse cx="130" cy="100" rx="12" ry="14" fill="url(#eyeGradient)" stroke="#16354f" stroke-width="1"/>
+      
+      <!-- Right Eye -->
+      <ellipse cx="170" cy="100" rx="12" ry="14" fill="url(#eyeGradient)" stroke="#16354f" stroke-width="1"/>
+      
+      <!-- Eye Highlights -->
+      <ellipse cx="127" cy="96" rx="4" ry="4" fill="url(#whiteHighlight)"/>
+      <ellipse cx="167" cy="96" rx="4" ry="4" fill="url(#whiteHighlight)"/>
+      
+      <!-- Mouth -->
+      <path d="M130 125 Q150 135 170 125" fill="none" stroke="#16354f" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- Antenna Base -->
+      <rect x="145" y="55" width="10" height="10" rx="2" ry="2" fill="#16354f" stroke="#16354f" stroke-width="1"/>
+      
+      <!-- Antenna Rod -->
+      <rect x="148" y="35" width="4" height="20" fill="#16354f"/>
+      
+      <!-- Antenna Bulb -->
+      <circle cx="150" cy="25" r="12" fill="url(#bulbGradient)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Bulb Gleam -->
+      <path d="M145 20 L148 15 M152 20 L155 15 M150 18 L150 13" stroke="#16354f" stroke-width="1.5"/>
+      
+      <!-- Ear/Headphone Left -->
+      <circle cx="90" cy="105" r="15" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Ear/Headphone Right -->
+      <circle cx="210" cy="105" r="15" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+    </g>
+    
+    <!-- Body -->
+    <g id="body">
+      <!-- Main Body -->
+      <rect x="100" y="150" width="100" height="80" rx="15" ry="15" fill="url(#robotBlue)" stroke="#16354f" stroke-width="3"/>
+      
+      <!-- Body Highlight -->
+      <path d="M100 165 L110 165 L110 230 L100 230" fill="url(#robotHighlight)" stroke="none"/>
+      
+      <!-- Chest Emblem - Circle -->
+      <circle cx="150" cy="190" r="25" fill="#ffffff" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Lightning Bolt -->
+      <path d="M140 175 L155 185 L145 195 L160 205" stroke="#16354f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      
+      <!-- Neck -->
+      <rect x="135" y="140" width="30" height="15" rx="5" ry="5" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+    </g>
+    
+    <!-- Arms -->
+    <g id="arms">
+      <!-- Left Shoulder -->
+      <circle cx="100" cy="160" r="12" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Left Arm -->
+      <rect x="75" y="160" width="25" height="60" rx="10" ry="10" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Left Hand -->
+      <circle cx="85" cy="230" r="15" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Right Shoulder -->
+      <circle cx="200" cy="160" r="12" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Right Arm - Waving Position -->
+      <rect x="200" y="130" width="25" height="60" rx="10" ry="10" transform="rotate(-45, 200, 160)" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Right Hand -->
+      <circle cx="235" cy="95" r="15" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+    </g>
+    
+    <!-- Legs and Feet -->
+    <g id="legs">
+      <!-- Left Leg -->
+      <rect x="115" y="230" width="25" height="40" rx="8" ry="8" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Left Foot -->
+      <ellipse cx="128" cy="275" rx="20" ry="8" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Right Leg -->
+      <rect x="160" y="230" width="25" height="40" rx="8" ry="8" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+      
+      <!-- Right Foot -->
+      <ellipse cx="172" cy="275" rx="20" ry="8" fill="url(#robotBlue)" stroke="#16354f" stroke-width="2.5"/>
+    </g>
+  </g>
+</svg> 
