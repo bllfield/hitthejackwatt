@@ -201,84 +201,114 @@
     
     /* Jackpot section */
     .jackpot-container {
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 20px;
-      border: 2px solid rgba(57, 255, 20, 0.25);
-      padding: 3rem 2rem 2.5rem;
-      margin: 4rem 0 var(--section-spacing);
       position: relative;
-      overflow: hidden;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.5);
+      background: transparent;
       text-align: center;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 0;
+      margin: 3rem 0;
+      border-radius: 20px;
+      border: 2px solid rgba(255, 0, 255, 0.3);
+      box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+      overflow: hidden;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 350px;
     }
     
-    .jackpot-container:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 40px rgba(0, 255, 255, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.5);
-    }
-    
-    .jackpot-container::before {
-      content: '';
+    .jackpot-svg-container {
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(transparent, var(--neon-blue), transparent 30%);
-      animation: rotate 10s linear infinite;
-      opacity: 0.15;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    
+    .openart-svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(3.0);
+      transform-origin: center center;
+    }
+    
+    .jackpot-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      background: transparent;
+      border-radius: 0;
+      margin: 0;
+      width: 100%;
+      border-bottom: none;
+    }
+    
+    .jackpot-label-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 0.3rem;
     }
     
     .jackpot-label {
       font-size: 1.8rem;
-      margin-bottom: 1.5rem;
       color: var(--neon-yellow);
-      text-shadow: 0 0 8px var(--neon-yellow);
+      text-shadow: 0 0 8px var(--neon-yellow), 0 0 16px var(--neon-yellow), 0 0 24px var(--neon-yellow);
       letter-spacing: 2px;
       font-weight: 700;
       text-transform: uppercase;
+      margin-bottom: 0;
+    }
+    
+    .sample-tag {
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: var(--neon-yellow);
+      font-size: 0.9rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--neon-yellow);
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+    
+    .jackpot-container p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin: 0 0 0.5rem 0;
+      color: white;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
     
     #jackpot {
       font-family: 'VT323', monospace;
       font-size: 5.5rem;
       color: var(--neon-green);
-      text-shadow: 0 0 10px var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
       margin: 0;
-      padding: 0.5rem 2rem;
-      background: rgba(0, 0, 0, 0.8);
+      padding: 0.3rem 2rem;
+      background: transparent;
       border-radius: 5px;
       min-width: 300px;
       position: relative;
       z-index: 2;
       display: inline-block;
+      line-height: 1;
     }
     
     .jackpot-active {
       animation: slot-win 0.5s ease infinite alternate;
-    }
-    
-    .sample-tag {
-      display: inline-block;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: var(--neon-yellow);
-      font-size: 0.9rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: 4px;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid var(--neon-yellow);
-      letter-spacing: 1px;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .jackpot-container p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 10px;
     }
     
     @keyframes slot-win {
@@ -293,6 +323,16 @@
     }
     
     @media (max-width: 768px) {
+      .jackpot-container {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+      
+      .jackpot-svg-container {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+      
       #jackpot {
         font-size: 4rem;
         min-width: 240px;
@@ -1360,10 +1400,17 @@
       </header>
       
       <div class="jackpot-container">
-        <div class="jackpot-label">CURRENT JACKPOT</div>
-        <div id="jackpot">$0</div>
-        <div class="sample-tag">Sample</div>
-        <p>A new winner every month</p>
+        <div class="jackpot-svg-container">
+          <object data="openart-image_3RWs6nGG_1747517410954_raw.svg" type="image/svg+xml" class="openart-svg"></object>
+        </div>
+        <div class="jackpot-content">
+          <div class="jackpot-label-container">
+            <div class="jackpot-label">CURRENT JACKPOT</div>
+            <div class="sample-tag">Sample</div>
+          </div>
+          <p>A new winner every month</p>
+          <div id="jackpot">$0</div>
+        </div>
       </div>
       
       <div class="value-prop">
@@ -1621,16 +1668,17 @@
     const jackpot = document.getElementById("jackpot");
     let amount = 0;
     const target = 25000;
+    const animationDuration = 10000; // 10 seconds in milliseconds
     const interval = setInterval(() => {
       if (amount < target) {
-        amount += Math.floor((target - amount) / 20) + 1;
+        amount += 5; // Increment by $5 each time
         jackpot.textContent = `$${amount.toLocaleString()}`;
       } else {
         jackpot.textContent = "$25,000";
         jackpot.classList.add("jackpot-active");
         clearInterval(interval);
       }
-    }, 50);
+    }, 2); // Adjust interval timing to complete in approximately 10 seconds (25000/5 = 5000 steps * 2ms = 10000ms)
     
     // Form submission script (uses XMLHttpRequest for maximum compatibility)
     function submitForm(event) {
