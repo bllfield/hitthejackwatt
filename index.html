@@ -1336,44 +1336,83 @@
         </div>
       </div>
       
+      <div class="steps-section" id="how-it-works">
+        <h2 class="steps-heading">How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-icon"><i class="fas fa-plug"></i></div>
+            <h3 class="step-title">Connect Your Data</h3>
+            <p>Link your smart meter or upload your bill to get personalized energy insights.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-icon"><i class="fas fa-bolt"></i></div>
+            <h3 class="step-title">Get Smart Recommendations</h3>
+            <p>We'll analyze your usage and find the best electricity plan for your specific needs.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-icon"><i class="fas fa-trophy"></i></div>
+            <h3 class="step-title">Earn Jackpot Entries</h3>
+            <p>Every interaction earns you entries. Refer friends for even more chances to win.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-section" id="signup">
+        <h2 class="cta-heading">Ready to start saving?</h2>
+        <div class="sign-up-form">
+          <h3 class="form-heading">Be the first to know when we launch</h3>
+          <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
+          
+          <!-- Form visible by default -->
+          <div id="emailFormContainer">
+            <form id="emailForm" onsubmit="return submitForm(event)">
+              <div class="form-group">
+                <input type="email" name="email" id="formEmail" required
+                       placeholder="Enter your email"
+                       class="email-input">
+                <button type="submit" id="submitButton" class="submit-btn">
+                  <span>Get Early Access</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Thank you message hidden by default -->
+          <div id="thankYouMessage" style="display: none;" class="thank-you-message">
+            <h3>You're Electric!</h3>
+            <p>Thanks for signing up. We'll let you know as soon as we launch so you can start saving on your energy bills and getting a shot at the jackpot!</p>
+          </div>
+          
+          <p class="form-help">
+            Having trouble? <a href="mailto:admin@hitthejackwatt.com?subject=Early Access Signup">Email us directly</a> to sign up.
+          </p>
+        </div>
+      </div>
+      
+      <div class="stats-banner">
+        <div class="stat-item">
+          <span class="stat-number">$312</span>
+          <span class="stat-label">Avg. Annual Savings</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Minutes to Set Up</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Free Service</span>
+        </div>
+      </div>
+      
       <div class="value-prop">
         <h2 class="catchphrase">Your bill just became a <span>lottery ticket.</span></h2>
         <div class="explanation">
           <p>When you share your energy usage data, you automatically earn entries into our monthly <strong>cash jackpot</strong>. The more you share, the better we can help you save, and the more chances you have to win. Every month, we give away cash prizes to our users. No strings. No gimmicks.</p>
           <p style="margin-top: 10px;">And the best part? Once your entries are submitted, you <strong>stay in the jackpot pool forever</strong>, even if you've already won!</p>
-        </div>
-      </div>
-      
-      <div class="mascot-section">
-        <div class="intelliwatt-bot">
-          <img src="assets/images/intelliwatt-bot.gif" alt="IntelliWatt Bot">
-        </div>
-        <div class="mascot-content">
-          <h3 class="mascot-heading">Meet IntelliWatt Bot</h3>
-          <p class="mascot-subheading">Your free, energy assistant. Just plug in your info, and it watches the rates so you don't have to.</p>
-          <p class="mascot-text">Your intelligent energy assistant that analyzes consumption patterns to find your perfect energy plan. IntelliWatt Bot uses advanced algorithms to compare hundreds of options and match you with the one that maximizes your savings.</p>
-          
-          <div class="mascot-feature">
-            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-            <div class="feature-text">Personalized energy insights based on your actual usage data</div>
-          </div>
-          
-          <div class="mascot-feature">
-            <div class="feature-icon"><i class="fas fa-search-dollar"></i></div>
-            <div class="feature-text">Finds hidden savings opportunities other comparison tools miss</div>
-          </div>
-          
-          <div class="mascot-feature">
-            <div class="feature-icon"><i class="fas fa-clock"></i></div>
-            <div class="feature-text">Automatically alerts you when better plans become available</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="value-prop">
-        <h2 class="catchphrase">Knowledge is power. <span>Literally.</span></h2>
-        <div class="explanation">
-          <p>Our rate shopper is the first energy platform that rewards you just for sharing your real energy usage. When you sign up, we'll use your smart meter data or bill to calculate the best electricity plan for your home — no guesswork, no spreadsheets. And yes, it's <span class="highlight">100% FREE</span>, forever.</p>
         </div>
       </div>
       
@@ -1419,50 +1458,44 @@
         </div>
       </div>
       
+      <div class="mascot-section">
+        <div class="intelliwatt-bot">
+          <img src="assets/images/intelliwatt-bot.gif" alt="IntelliWatt Bot">
+        </div>
+        <div class="mascot-content">
+          <h3 class="mascot-heading">Meet IntelliWatt Bot</h3>
+          <p class="mascot-subheading">Your free, energy assistant. Just plug in your info, and it watches the rates so you don't have to.</p>
+          <p class="mascot-text">Your intelligent energy assistant that analyzes consumption patterns to find your perfect energy plan. IntelliWatt Bot uses advanced algorithms to compare hundreds of options and match you with the one that maximizes your savings.</p>
+          
+          <div class="mascot-feature">
+            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <div class="feature-text">Personalized energy insights based on your actual usage data</div>
+          </div>
+          
+          <div class="mascot-feature">
+            <div class="feature-icon"><i class="fas fa-search-dollar"></i></div>
+            <div class="feature-text">Finds hidden savings opportunities other comparison tools miss</div>
+          </div>
+          
+          <div class="mascot-feature">
+            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+            <div class="feature-text">Automatically alerts you when better plans become available</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="value-prop">
+        <h2 class="catchphrase">Knowledge is power. <span>Literally.</span></h2>
+        <div class="explanation">
+          <p>Our rate shopper is the first energy platform that rewards you just for sharing your real energy usage. When you sign up, we'll use your smart meter data or bill to calculate the best electricity plan for your home — no guesswork, no spreadsheets. And yes, it's <span class="highlight">100% FREE</span>, forever.</p>
+        </div>
+      </div>
+      
       <div class="value-prop">
         <h2 class="catchphrase">Fun vibes. <span>Serious savings.</span></h2>
         <div class="explanation">
           <p>While the jackpot adds excitement, our rate shopper delivers <span class="highlight">guaranteed savings</span>. The average household saves <span class="highlight">$312 per year</span> using our recommendations. We analyze your actual usage patterns and match them against hundreds of available electricity plans using real-time market data — all so you don't have to.</p>
           <p style="margin-top: 10px;">We use Smart Meter Texas data and real-time plan information from licensed brokers to ensure you always get the most accurate recommendations.</p>
-        </div>
-      </div>
-      
-      <div class="steps-section" id="how-it-works">
-        <h2 class="steps-heading">How It Works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-icon"><i class="fas fa-plug"></i></div>
-            <h3 class="step-title">Connect Your Data</h3>
-            <p>Link your smart meter or upload your bill to get personalized energy insights.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-icon"><i class="fas fa-bolt"></i></div>
-            <h3 class="step-title">Get Smart Recommendations</h3>
-            <p>We'll analyze your usage and find the best electricity plan for your specific needs.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-icon"><i class="fas fa-trophy"></i></div>
-            <h3 class="step-title">Earn Jackpot Entries</h3>
-            <p>Every interaction earns you entries. Refer friends for even more chances to win.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="stats-banner">
-        <div class="stat-item">
-          <span class="stat-number">$312</span>
-          <span class="stat-label">Avg. Annual Savings</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">2</span>
-          <span class="stat-label">Minutes to Set Up</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Free Service</span>
         </div>
       </div>
       
@@ -1481,39 +1514,6 @@
           <p style="margin-top: 10px;">Sign up now and forget about it—we'll alert you when your current plan expires with your perfect match. No commitment, no pressure. We notify you with the best options, and you decide if they're right for you. Energy savings on autopilot.</p>
           <p class="energy-tagline">
             No pressure. No pitch. Just better options backed by your data.
-          </p>
-        </div>
-      </div>
-      
-      <div class="cta-section" id="signup">
-        <h2 class="cta-heading">Ready to start saving?</h2>
-        <div class="sign-up-form">
-          <h3 class="form-heading">Be the first to know when we launch</h3>
-          <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
-          
-          <!-- Form visible by default -->
-          <div id="emailFormContainer">
-            <form id="emailForm" onsubmit="return submitForm(event)">
-              <div class="form-group">
-                <input type="email" name="email" id="formEmail" required
-                       placeholder="Enter your email"
-                       class="email-input">
-                <button type="submit" id="submitButton" class="submit-btn">
-                  <span>Get Early Access</span>
-                  <i class="fas fa-arrow-right"></i>
-                </button>
-              </div>
-            </form>
-          </div>
-          
-          <!-- Thank you message hidden by default -->
-          <div id="thankYouMessage" style="display: none;" class="thank-you-message">
-            <h3>You're Electric!</h3>
-            <p>Thanks for signing up. We'll let you know as soon as we launch so you can start saving on your energy bills and getting a shot at the jackpot!</p>
-          </div>
-          
-          <p class="form-help">
-            Having trouble? <a href="mailto:admin@hitthejackwatt.com?subject=Early Access Signup">Email us directly</a> to sign up.
           </p>
         </div>
       </div>
