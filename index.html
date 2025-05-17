@@ -374,11 +374,21 @@
     }
     
     .steps-heading {
-      font-size: 2.4rem;
-      margin-bottom: 3rem;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
       text-align: center;
       position: relative;
       color: white;
+    }
+    
+    .steps-intro {
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--neon-blue);
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .steps-heading::after {
@@ -392,66 +402,60 @@
       background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
     }
     
-    .steps {
+    .steps-new {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
       gap: 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
     
-    .step {
-      flex: 1;
-      min-width: 250px;
-      max-width: 350px;
-      padding: 3rem 2rem;
-      background: rgba(18, 0, 56, 0.8);
-      border: 2px solid rgba(0, 255, 255, 0.1);
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      background: rgba(18, 0, 56, 0.7);
       border-radius: 15px;
-      position: relative;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
-      text-align: center;
-      backdrop-filter: blur(5px);
+      position: relative;
+      overflow: hidden;
     }
     
-    .step:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    .step-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
       border-color: var(--neon-green);
     }
     
-    .step-number {
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      width: 50px;
-      height: 50px;
+    .step-number-new {
       background: var(--neon-yellow);
       color: var(--deep-purple);
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      flex-shrink: 0;
       box-shadow: 0 0 15px var(--neon-yellow);
-      z-index: 2;
     }
     
-    .step-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-      color: var(--neon-blue);
-      text-shadow: 0 0 10px var(--neon-blue);
+    .step-content {
+      flex: 1;
     }
     
-    .step-title {
-      margin-bottom: 1.2rem;
+    .step-title-new {
       font-size: 1.5rem;
+      margin-bottom: 0.8rem;
       color: var(--neon-green);
       font-weight: 700;
     }
     
-    .step p {
+    .step-description {
       font-size: 1.1rem;
       line-height: 1.6;
       color: rgba(255, 255, 255, 0.9);
@@ -880,14 +884,22 @@
         min-width: 240px;
       }
       
-      .steps {
-        flex-direction: column;
-        align-items: center;
+      .steps-heading {
+        font-size: 2.2rem;
       }
       
-      .step {
-        width: 100%;
-        max-width: 100%;
+      .steps-intro {
+        font-size: 1.2rem;
+      }
+      
+      .step-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+      }
+      
+      .step-number-new {
+        margin-bottom: 1rem;
       }
       
       .stats-banner {
@@ -952,7 +964,7 @@
         font-size: 1.8rem;
       }
       
-      .step-number {
+      .step-number-new {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
@@ -1338,24 +1350,39 @@
       
       <div class="steps-section" id="how-it-works">
         <h2 class="steps-heading">How It Works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-icon"><i class="fas fa-plug"></i></div>
-            <h3 class="step-title">Connect Your Data</h3>
-            <p>Link your smart meter or upload your bill to get personalized energy insights.</p>
+        <p class="steps-intro">It's simple, free, and designed to help you save — and maybe even win serious cash.</p>
+        
+        <div class="steps-new">
+          <div class="step-item">
+            <div class="step-number-new">1</div>
+            <div class="step-content">
+              <h3 class="step-title-new">Sign up and enter to win</h3>
+              <p class="step-description">Create your free account and instantly get your first entry into the monthly HitTheJackWatt jackpot. No purchase necessary, ever.</p>
+            </div>
           </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-icon"><i class="fas fa-bolt"></i></div>
-            <h3 class="step-title">Get Smart Recommendations</h3>
-            <p>We'll analyze your usage and find the best electricity plan for your specific needs.</p>
+          
+          <div class="step-item">
+            <div class="step-number-new">2</div>
+            <div class="step-content">
+              <h3 class="step-title-new">Share your energy info</h3>
+              <p class="step-description">Authorize Smart Meter Texas connection or upload your bill, then tell us about your home and appliances. Each piece of info earns you more entries while helping us find your perfect plan.</p>
+            </div>
           </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-icon"><i class="fas fa-trophy"></i></div>
-            <h3 class="step-title">Earn Jackpot Entries</h3>
-            <p>Every interaction earns you entries. Refer friends for even more chances to win.</p>
+          
+          <div class="step-item">
+            <div class="step-number-new">3</div>
+            <div class="step-content">
+              <h3 class="step-title-new">Get energy-saving recommendations</h3>
+              <p class="step-description">We'll analyze your usage patterns and show you the best energy plans based on your real data — no guesswork, no pressure, just smart suggestions that could save you hundreds each year.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number-new">4</div>
+            <div class="step-content">
+              <h3 class="step-title-new">You could win the Jackpot!</h3>
+              <p class="step-description">Every month when the jackpot reaches $500+, one lucky winner is chosen. Your entries stay valid forever, so the earlier you join, the more chances you'll have to win big!</p>
+            </div>
           </div>
         </div>
       </div>
