@@ -1126,6 +1126,177 @@
         align-items: center;
       }
     }
+    
+    /* Testimonials section styles */
+    .testimonials-section {
+      margin: var(--section-spacing) 0;
+      padding: 4rem 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 255, 255, 0.1);
+    }
+    
+    .testimonials-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at bottom left, rgba(255, 0, 255, 0.05), transparent 60%),
+                  radial-gradient(circle at top right, rgba(0, 255, 255, 0.05), transparent 60%);
+      pointer-events: none;
+    }
+    
+    .testimonials-heading {
+      font-size: 2.4rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
+    
+    .testimonials-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--neon-pink), transparent);
+    }
+    
+    .testimonials-slider {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      padding: 1rem 0.5rem;
+      margin: 0 -0.5rem;
+      -ms-overflow-style: none;  /* Hide scrollbar IE and Edge */
+      scrollbar-width: none;  /* Hide scrollbar Firefox */
+    }
+    
+    .testimonials-slider::-webkit-scrollbar {
+      display: none; /* Hide scrollbar Chrome, Safari, Opera */
+    }
+    
+    .testimonial-card {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 400px;
+      min-width: 280px;
+      background: rgba(18, 0, 56, 0.7);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -30px;
+      left: 10px;
+      font-size: 8rem;
+      color: rgba(255, 0, 255, 0.1);
+      font-family: sans-serif;
+      line-height: 1;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--neon-pink);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .testimonial-quote p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .testimonial-author {
+      margin-top: 1rem;
+    }
+    
+    .author-name {
+      font-weight: 600;
+      color: var(--neon-blue);
+      margin-bottom: 0.2rem;
+    }
+    
+    .author-location {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .testimonials-link {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    
+    .more-testimonials-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .more-testimonials-btn i {
+      transition: transform 0.3s ease;
+    }
+    
+    .more-testimonials-btn:hover {
+      background: var(--neon-pink);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .more-testimonials-btn:hover i {
+      transform: translateX(5px);
+    }
+    
+    @media (max-width: 768px) {
+      .testimonial-card {
+        min-width: 100%;
+      }
+      
+      .testimonials-section {
+        padding: 3rem 1.5rem;
+      }
+      
+      .testimonials-heading {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .testimonials-heading {
+        font-size: 1.8rem;
+      }
+      
+      .testimonial-quote p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1203,6 +1374,48 @@
         <h2 class="catchphrase">Knowledge is power. <span>Literally.</span></h2>
         <div class="explanation">
           <p>Our rate shopper is the first energy platform that rewards you just for sharing your real energy usage. When you sign up, we'll use your smart meter data or bill to calculate the best electricity plan for your home — no guesswork, no spreadsheets. And yes, it's <span class="highlight">100% FREE</span>, forever.</p>
+        </div>
+      </div>
+      
+      <!-- Testimonials Section -->
+      <div class="testimonials-section">
+        <h2 class="testimonials-heading">What Our Users Say</h2>
+        <div class="testimonials-slider">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <p>"I filled out my home and appliance info and now I'm seeing actual insights on where I'm using energy. Can't wait to see how this evolves."</p>
+              <div class="testimonial-author">
+                <p class="author-name">– Brian C.</p>
+                <p class="author-location">Plano, TX</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <p>"I didn't realize I was overpaying by $75/month. The site helped me switch in minutes. No calls, no hassle — just cheaper power. And now I'm entered every month for free money!"</p>
+              <div class="testimonial-author">
+                <p class="author-name">– Jessica L.</p>
+                <p class="author-location">Fort Worth, TX</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <p>"Even if I don't win the jackpot, just saving $50/month on electricity is a win for me."</p>
+              <div class="testimonial-author">
+                <p class="author-name">– Naomi W.</p>
+                <p class="author-location">Houston, TX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials-link">
+          <a href="HitTheJackWatt_Testimonials.html" class="more-testimonials-btn">
+            <span>More Success Stories</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
       
