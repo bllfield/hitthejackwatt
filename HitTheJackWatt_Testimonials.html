@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Terms of Service - HitTheJackWatt</title>
+    <title>Beta Test Results & Testimonials - HitTheJackWatt</title>
+    <meta name="description" content="See early beta tester feedback from HitTheJackWatt and how switching saved them money and earned jackpot entries.">
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdQTFRFAAAA//8A/9MA/+EA//8A//8A//8A//8A//8A/+YA/98A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A////+FomYgAAAAd0Uk5TAB+fz+/v3zOPXCYAAAABYktHRB8FDRC9AAAAsElEQVQoz22S2xLDIAhEM4Ci9lI1yf//ak2NaaeZ9oXlsAiLSETeE8GlkCoIaxuBtTUCQq6aZ2uICG4Tm7B2hkBEKc2DTQTfZswVEFoHnwJUDG4ZuCywA+pqM2rMIzCCPe9+AtQ3D+j3vAE74PluvwK82WYoKJ1QxRwG+FXxBS1QaV/XoUhSp4rNfgS8inRoHqCVy0UuZhO42WrOqcLJ4p2u9Ek/EUdR/Yh+JHcMfxHv08oPYbMQwAwh/fIAAAAASUVORK5CYII=">
     <link rel="icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
@@ -113,8 +114,8 @@
             width: 100%;
         }
 
-        /* Terms content */
-        .terms-container {
+        /* Testimonials content */
+        .testimonials-container {
             background: rgba(0, 0, 0, 0.3);
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -128,7 +129,7 @@
             font-size: 2.8rem;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             color: var(--neon-blue);
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
             position: relative;
@@ -145,42 +146,107 @@
             background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
         }
         
-        .effective-date {
+        .intro-text {
+            font-size: 1.2rem;
             text-align: center;
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-style: italic;
-        }
-        
-        h2 {
-            font-size: 1.6rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--neon-green);
-            border-bottom: 1px solid rgba(57, 255, 20, 0.3);
-            padding-bottom: 0.5rem;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
             color: rgba(255, 255, 255, 0.9);
         }
         
-        a {
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonial {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 5px solid var(--neon-green);
+            padding: 1.5rem;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 8rem;
+            color: rgba(57, 255, 20, 0.1);
+            font-family: sans-serif;
+            line-height: 1;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            border-left-color: var(--neon-yellow);
+        }
+        
+        .testimonial p {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .name {
+            font-weight: bold;
             color: var(--neon-blue);
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .location {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .cta-message {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--neon-green);
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: var(--neon-green);
+            color: var(--deep-purple);
+            font-weight: 600;
+            border-radius: 30px;
             text-decoration: none;
             transition: all 0.3s ease;
+            border: none;
+            text-align: center;
+            font-size: 1.1rem;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
         }
         
-        a:hover {
-            text-shadow: 0 0 8px var(--neon-blue);
-        }
-        
-        strong {
-            color: var(--neon-yellow);
-            font-weight: 700;
+        .cta-button:hover {
+            background: var(--neon-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 20px var(--neon-yellow);
         }
         
         /* Footer */
@@ -256,6 +322,10 @@
         
         /* Responsive design */
         @media (max-width: 992px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .footer-content {
                 flex-direction: column;
                 gap: 1.5rem;
@@ -283,16 +353,17 @@
                 font-size: 2.2rem;
             }
             
-            .terms-container {
+            .testimonials-container {
                 padding: 2rem;
             }
             
-            h2 {
-                font-size: 1.4rem;
+            .testimonial p {
+                font-size: 1rem;
             }
             
-            p {
-                font-size: 1rem;
+            .cta-message {
+                font-size: 1.1rem;
+                padding: 1.2rem;
             }
         }
         
@@ -301,7 +372,7 @@
                 padding: 0 1rem;
             }
             
-            .terms-container {
+            .testimonials-container {
                 padding: 1.5rem;
                 margin: 2rem 0;
             }
@@ -330,39 +401,46 @@
     </div>
 
     <div class="container">
-        <div class="terms-container">
-            <h1 class="page-title">Terms of Service</h1>
-            <p class="effective-date">Effective Date: May 17, 2025</p>
+        <div class="testimonials-container">
+            <h1 class="page-title">Beta Test Results & Testimonials</h1>
+            <p class="intro-text">Before launching publicly, we invited a small group of users to try HitTheJackWatt. Here's what they had to say after switching plans and tracking their energy use.</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"I didn't realize I was overpaying by $75/month. The site helped me switch in minutes. No calls, no hassle — just cheaper power. And now I'm entered every month for free money!"</p>
+                    <p class="name">– Jessica L.</p>
+                    <p class="location">Fort Worth, TX</p>
+                </div>
 
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing or using HitTheJackWatt.com, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree with these terms, please do not use the website.</p>
+                <div class="testimonial">
+                    <p>"I referred my sister and 3 friends, and I've already earned 21 entries. If I win this jackpot, I'm taking my family on a weekend getaway."</p>
+                    <p class="name">– Marcus R.</p>
+                    <p class="location">Dallas, TX</p>
+                </div>
 
-            <h2>2. Use of the Site</h2>
-            <p>You may use this site for personal, non-commercial purposes only. You agree not to misuse the platform or engage in any fraudulent, harmful, or disruptive activities.</p>
+                <div class="testimonial">
+                    <p>"I switched to a plan that's 4¢ cheaper per kWh and I didn't have to pay anything. I like that this isn't some scammy sales site. It's legit."</p>
+                    <p class="name">– Sandra M.</p>
+                    <p class="location">Arlington, TX</p>
+                </div>
 
-            <h2>3. Entries and Eligibility</h2>
-            <p>By signing up and participating in the HitTheJackWatt drawing system, you acknowledge that entries are earned through various platform activities, as described in the Official Rules. No purchase is necessary to enter or win.</p>
+                <div class="testimonial">
+                    <p>"I filled out my home and appliance info and now I'm seeing actual insights on where I'm using energy. Can't wait to see how this evolves."</p>
+                    <p class="name">– Brian C.</p>
+                    <p class="location">Plano, TX</p>
+                </div>
 
-            <h2>4. Account Responsibility</h2>
-            <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Notify us immediately if you suspect unauthorized use.</p>
-
-            <h2>5. Intellectual Property</h2>
-            <p>All content on this site, including text, graphics, logos, and software, is the property of Intellipath Solutions LLC and protected by applicable intellectual property laws. You may not use or reproduce this content without permission.</p>
-
-            <h2>6. Termination</h2>
-            <p>We reserve the right to suspend or terminate access to your account or participation in the drawing system at our discretion, including for violations of these terms or fraudulent activity.</p>
-
-            <h2>7. Disclaimers</h2>
-            <p>This site and its services are provided "as is" and without warranties of any kind. We do not guarantee uninterrupted access, error-free operation, or that any outcome (including prize winnings) is guaranteed.</p>
-
-            <h2>8. Limitation of Liability</h2>
-            <p>In no event shall Intellipath Solutions LLC be liable for any indirect, incidental, special, or consequential damages arising from your use of the site or participation in any drawings.</p>
-
-            <h2>9. Changes to Terms</h2>
-            <p>We may update these Terms of Service at any time. Continued use of the site after updates means you accept the revised terms.</p>
-
-            <h2>10. Contact Us</h2>
-            <p>If you have any questions or concerns, please contact us at <a href="mailto:support@intelliwatt.com">support@intelliwatt.com</a>.</p>
+                <div class="testimonial">
+                    <p>"Even if I don't win the jackpot, just saving $50/month on electricity is a win for me."</p>
+                    <p class="name">– Naomi W.</p>
+                    <p class="location">Houston, TX</p>
+                </div>
+            </div>
+            
+            <div class="cta-message">
+                <p><strong>Want to be our next success story?</strong> Sign up now and get your free entries — the sooner you join, the more you could save and win.</p>
+                <a href="index.html#signup" class="cta-button">Sign Up Now</a>
+            </div>
         </div>
 
         <div class="footer">
