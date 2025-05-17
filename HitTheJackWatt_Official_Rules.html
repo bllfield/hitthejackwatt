@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HitTheJackWatt Monthly Jackpot – Official Rules</title>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdQTFRFAAAA//8A/9MA/+EA//8A//8A//8A//8A//8A/+YA/98A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A////+FomYgAAAAd0Uk5TAB+fz+/v3zOPXCYAAAABYktHRB8FDRC9AAAAsElEQVQoz22S2xLDIAhEM4Ci9lI1yf//ak2NaaeZ9oXlsAiLSETeE8GlkCoIaxuBtTUCQq6aZ2uICG4Tm7B2hkBEKc2DTQTfZswVEFoHnwJUDG4ZuCywA+pqM2rMIzCCPe9+AtQ3D+j3vAE74PluvwK82WYoKJ1QxRwG+FXxBS1QaV/XoUhSp4rNfgS8inRoHqCVy0UuZhO42WrOqcLJ4p2u9Ek/EUdR/Yh+JHcMfxHv08oPYbMQwAwh/fIAAAAASUVORK5CYII=">
+    <link rel="icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-blue: #00ffff;
+            --neon-green: #39ff14;
+            --neon-yellow: #ffff00;
+            --dark-blue: #001f3f;
+            --deep-purple: #120038;
+            --section-spacing: 5rem;
+            --text-spacing: 1.5rem;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--deep-purple);
+            background-image: linear-gradient(135deg, rgba(18, 0, 56, 1) 0%, rgba(36, 0, 70, 1) 100%);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header, navigation and logo */
+        .nav-container {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(18, 0, 56, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-logo span {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--neon-green);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-green);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Rules content */
+        .rules-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            margin: 4rem 0;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+        }
+        
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--neon-green);
+            border-bottom: 1px solid rgba(57, 255, 20, 0.3);
+            padding-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        ul {
+            margin: 1rem 0 2rem 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Highlight elements */
+        .highlight {
+            color: var(--neon-yellow);
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .footer-logo span {
+            color: var(--neon-green);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--neon-blue);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background: var(--neon-green);
+            color: var(--deep-purple);
+            transform: translateY(-3px);
+        }
+        
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 2rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .footer-links, .footer-social {
+                margin-top: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .rules-container {
+                padding: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            p, li {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .rules-container {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">Hit The <span>JackWatt</span></a>
+        <div class="nav-links">
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="index.html#benefits">Benefits</a>
+            <a href="index.html#signup">Sign Up</a>
+            <a href="HitTheJackWatt_Official_Rules.html">Official Rules</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="rules-container">
+            <h1 class="page-title">HitTheJackWatt Monthly Jackpot – Official Rules</h1>
+            
+            <h2>1. No Purchase Necessary</h2>
+            <p>No purchase, payment, or energy plan switch is required to enter or win. Void where prohibited. By participating, you agree to abide by these rules and all decisions made by Intelliwatt.</p>
+            
+            <h2>2. Eligibility</h2>
+            <p>Open to legal U.S. residents age 18 or older. Must have a valid email address and mobile number. Employees of Intelliwatt or its affiliates are not eligible to win. Entry is subject to verification and may be void if fraudulent or incomplete.</p>
+            
+            <h2>3. How to Earn Entries</h2>
+            <p>Each participant may earn entries through the following actions:</p>
+            <ul>
+                <li>Sign up at HitTheJackWatt.com: <span class="highlight">1 entry</span></li>
+                <li>Authorize Smart Meter Texas data pull: <span class="highlight">10 entries</span></li>
+                <li>Complete home details form: <span class="highlight">10 entries</span></li>
+                <li>Complete appliance details form: <span class="highlight">10 entries</span></li>
+                <li>Refer a friend who signs up: <span class="highlight">5 entries per signup</span></li>
+            </ul>
+            <p><strong>Max standard entries per user:</strong> 31<br>
+            <strong>Unlimited bonus entries</strong> from valid referrals.<br>
+            Once earned, entries remain valid for all future monthly drawings unless withdrawn by request.</p>
+            
+            <h2>4. Jackpot Amount</h2>
+            <p>The monthly jackpot is $5 per successful energy plan switch completed through Intelliwatt during that month.</p>
+            <p><strong>Example:</strong></p>
+            <ul>
+                <li>200 switches = $1,000 jackpot</li>
+                <li>1,200 switches = $6,000 jackpot</li>
+            </ul>
+            <p><strong>Note:</strong> You do not need to switch plans to enter or win - but the jackpot gets bigger every time someone does.</p>
+            
+            <h2>5. Drawing Periods</h2>
+            <p>Drawings occur monthly, on or around the 5th of each month. Entry period runs from 12:00 AM CT on the 1st day through 11:59 PM CT on the last day of the month.</p>
+            
+            <h2>6. Winner Selection</h2>
+            <p>One winner is chosen at random from all valid, cumulative entries.<br>
+            Each entry is a separate chance to win.<br>
+            Users stay entered month after month - 'One entry today is a chance every month, forever.'</p>
+            <p><em>"Even though more people are joining, your entry is permanent. It's like a free lottery ticket every month - forever."</em></p>
+            
+            <h2>7. Odds of Winning</h2>
+            <p>Odds depend on the total number of eligible entries. They change monthly as more users and referrals join, but every valid entry remains active.<br>
+            <strong>Example:</strong> 100,000 total entries = 1 in 100,000 odds per entry.</p>
+            
+            <h2>8. Winner Notification</h2>
+            <p>Winner will be notified via email and/or SMS within 3 business days. Must respond within 7 days to claim the prize. Alternate winners may be selected if unclaimed.</p>
+            
+            <h2>9. Prize Delivery</h2>
+            <p>Prizes are issued via digital payment (PayPal, Venmo, etc.) or mailed check, based on the winner's preference.</p>
+            
+            <h2>10. Additional Terms</h2>
+            <p>By entering, you agree to receive occasional notifications from Intelliwatt - not sales pitches, just helpful updates.<br>
+            We'll only reach out to share ways you may be able to save money, get more entries, or learn about new energy opportunities in your area.<br>
+            No spam. No pressure. No strings attached.</p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Hit The <span>JackWatt</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="HitTheJackWatt_Official_Rules.html">Official Rules</a>
+                    <a href="mailto:admin@hitthejackwatt.com">Contact Us</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                Powered by IntelliPath Solutions | © 2024 HitTheJackWatt
+            </div>
+        </div>
+    </div>
+</body>
+</html>
