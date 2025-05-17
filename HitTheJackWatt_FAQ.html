@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Frequently Asked Questions - HitTheJackWatt</title>
+    <meta name="description" content="Frequently asked questions about HitTheJackWatt, how the jackpot works, how to earn entries, and more.">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdQTFRFAAAA//8A/9MA/+EA//8A//8A//8A//8A//8A/+YA/98A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A////+FomYgAAAAd0Uk5TAB+fz+/v3zOPXCYAAAABYktHRB8FDRC9AAAAsElEQVQoz22S2xLDIAhEM4Ci9lI1yf//ak2NaaeZ9oXlsAiLSETeE8GlkCoIaxuBtTUCQq6aZ2uICG4Tm7B2hkBEKc2DTQTfZswVEFoHnwJUDG4ZuCywA+pqM2rMIzCCPe9+AtQ3D+j3vAE74PluvwK82WYoKJ1QxRwG+FXxBS1QaV/XoUhSp4rNfgS8inRoHqCVy0UuZhO42WrOqcLJ4p2u9Ek/EUdR/Yh+JHcMfxHv08oPYbMQwAwh/fIAAAAASUVORK5CYII=">
+    <link rel="icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-blue: #00ffff;
+            --neon-green: #39ff14;
+            --neon-yellow: #ffff00;
+            --dark-blue: #001f3f;
+            --deep-purple: #120038;
+            --section-spacing: 5rem;
+            --text-spacing: 1.5rem;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--deep-purple);
+            background-image: linear-gradient(135deg, rgba(18, 0, 56, 1) 0%, rgba(36, 0, 70, 1) 100%);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header, navigation and logo */
+        .nav-container {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(18, 0, 56, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-logo span {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--neon-green);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-green);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* FAQ content */
+        .faq-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            margin: 4rem 0;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--neon-blue);
+        }
+        
+        .question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--neon-yellow);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .question::before {
+            content: '?';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+            color: var(--neon-green);
+            background: rgba(57, 255, 20, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .answer {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            padding-left: 2rem;
+        }
+        
+        .answer ul {
+            margin-top: 0.5rem;
+            margin-left: 1.5rem;
+        }
+        
+        .answer ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .answer strong {
+            color: var(--neon-blue);
+        }
+        
+        .cta-box {
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 3rem auto;
+            text-align: center;
+            max-width: 700px;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.5rem;
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--neon-green);
+            color: var(--deep-purple);
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border: none;
+        }
+        
+        .cta-button:hover {
+            background: var(--neon-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .footer-logo span {
+            color: var(--neon-green);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--neon-blue);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background: var(--neon-green);
+            color: var(--deep-purple);
+            transform: translateY(-3px);
+        }
+        
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 2rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .footer-links, .footer-social {
+                margin-top: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .faq-container {
+                padding: 2rem;
+            }
+            
+            .question {
+                font-size: 1.2rem;
+            }
+            
+            .answer {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .faq-container {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">Hit The <span>JackWatt</span></a>
+        <div class="nav-links">
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="HitTheJackWatt_Benefits.html">Benefits</a>
+            <a href="HitTheJackWatt_Testimonials.html">Testimonials</a>
+            <a href="HitTheJackWatt_FAQ.html">FAQs</a>
+            <a href="index.html#signup">Sign Up</a>
+            <a href="HitTheJackWatt_Official_Rules.html">Official Rules</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="faq-container">
+            <h1 class="page-title">Frequently Asked Questions</h1>
+            <p class="intro-text">Get answers to the most common questions about HitTheJackWatt, our monthly jackpot, and how to maximize your chances of winning.</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="question">What is HitTheJackWatt?</div>
+                    <div class="answer">It's a free monthly drawing where users can win cash by sharing their energy data and referring friends. The jackpot grows based on how many people switch to a better energy plan.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="question">How much does it cost to join?</div>
+                    <div class="answer">Nothing! It's completely <strong>free</strong> to enter, earn entries, and win the jackpot. No purchase necessary, ever.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="question">How do I earn entries?</div>
+                    <div class="answer">
+                        You earn entries by:
+                        <ul>
+                            <li>1 for signing up</li>
+                            <li>10 for linking Smart Meter Texas</li>
+                            <li>10 for completing home details</li>
+                            <li>10 for completing appliance info</li>
+                            <li>5 for every friend you refer</li>
+                        </ul>
+                        Your entries stay active every month going forward.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="question">When is the drawing held?</div>
+                    <div class="answer">A winner is drawn once the jackpot reaches at least $500. If it doesn't reach that amount in a given month, entries roll over to the next drawing.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="question">How big is the jackpot?</div>
+                    <div class="answer">The jackpot grows by $5 for every person who switches their energy plan through Intelliwatt. It resets after each drawing and starts growing again!</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="question">Do I have to switch energy plans to win?</div>
+                    <div class="answer">No. Switching helps grow the jackpot, but anyone can enter and win without switching. Your odds are based on how many entries you have, not whether you've switched plans.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="question">How will I know if I win?</div>
+                    <div class="answer">We'll notify you by email and/or text if you're the winner. Make sure your contact info is accurate!</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="question">Will you sell my data or spam me?</div>
+                    <div class="answer">Never. We only use your data to calculate energy savings and entries. No pressure, no spam, no selling your info — ever.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="question">What's the catch?</div>
+                    <div class="answer">There isn't one! We're paid by energy companies when you switch through us (similar to a broker). That's how we fund the jackpot and keep our service free for users.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="question">How many times can I win?</div>
+                    <div class="answer">There's no limit! Your entries remain valid for all future drawings, so you could potentially win multiple times.</div>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Ready to start earning entries?</h3>
+                <p>Sign up now to get your first entry and start maximizing your chances to win!</p>
+                <a href="index.html#signup" class="cta-button">Sign Up Now</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Hit The <span>JackWatt</span>
+                </div>
+                <div class="footer-links">
+                    <a href="HitTheJackWatt_Privacy_Policy.html">Privacy Policy</a>
+                    <a href="HitTheJackWatt_Terms_of_Service.html">Terms of Service</a>
+                    <a href="HitTheJackWatt_Official_Rules.html">Official Rules</a>
+                    <a href="mailto:admin@hitthejackwatt.com">Contact Us</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                Powered by IntelliPath Solutions | © 2024 HitTheJackWatt
+            </div>
+        </div>
+    </div>
+</body>
+</html>
