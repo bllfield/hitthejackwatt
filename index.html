@@ -400,6 +400,12 @@
       .jackpot-label {
         font-size: 1.5rem;
       }
+      
+      /* Reduce the scale of the slot machine image on mobile */
+      .openart-svg {
+        transform: scale(2.0);
+        transform-origin: center 60%;
+      }
     }
     
     @media (max-width: 480px) {
@@ -415,6 +421,12 @@
         font-size: 3.5rem;
         min-width: 200px;
         padding: 0.3rem 1rem;
+      }
+      
+      /* Further reduce scale for smaller devices */
+      .openart-svg {
+        transform: scale(1.5);
+        transform-origin: center 60%;
       }
     }
     
