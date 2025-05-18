@@ -126,7 +126,8 @@
     
     .nav-tagline {
       font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--neon-blue);
+      text-shadow: 0 0 5px var(--neon-blue);
       text-align: center;
     }
     
@@ -182,10 +183,24 @@
       letter-spacing: 2px;
     }
     
-    .powered-by-text { font-size: 0.4em; font-weight: normal; display: block; margin-top: 0.3rem; color: white; }\n\n    .intelliwatt { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); animation: none; }\n\n    h1.logo > span:first-child {
-      color: var(--neon-green);
-      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
-      animation: flicker 3s infinite alternate;
+    .powered-by-text { font-size: 0.4em; font-weight: normal; display: block; margin-top: 0.3rem; color: white; }
+    
+    .intelliwatt { 
+      color: var(--neon-blue); 
+      text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); 
+      font-weight: bold;
+      animation: pulse-intelliwatt 3s infinite alternate; 
+    }
+    
+    @keyframes pulse-intelliwatt {
+      0% {
+        color: var(--neon-blue);
+        text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+      }
+      100% {
+        color: #50f0ff;
+        text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px rgba(0, 255, 255, 0.6);
+      }
     }
     
     .logo-tagline {
@@ -211,24 +226,47 @@
       background: linear-gradient(90deg, transparent, var(--neon-pink), transparent);
     }
     
-    
-    
     .tagline {
       font-size: 2.2rem;
       margin-bottom: 1rem;
       text-align: center;
       font-weight: 700;
+      color: var(--neon-pink);
+      text-shadow: 0 0 10px var(--neon-pink), 0 0 20px rgba(255, 0, 255, 0.5);
     }
     
     .subheadline {
       font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.9);
+      color: white;
       text-align: center;
       margin-bottom: 0;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.7;
+    }
+    
+    .subheadline strong, 
+    .subheadline span.highlight {
+      color: var(--neon-yellow);
+      text-shadow: 0 0 10px var(--neon-yellow);
+      font-weight: bold;
+    }
+    
+    .subheadline span.highlight {
+      color: var(--neon-yellow);
+      text-shadow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow);
+      font-weight: bold;
+      animation: pulse-yellow 2s infinite alternate;
+    }
+    
+    @keyframes pulse-yellow {
+      0% {
+        text-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow);
+      }
+      100% {
+        text-shadow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow), 0 0 30px rgba(255, 255, 0, 0.5);
+      }
     }
     
     /* Jackpot section */
@@ -454,7 +492,17 @@
     .highlight {
       color: var(--neon-blue);
       font-weight: bold;
-      text-shadow: 0 0 5px var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue), 0 0 15px var(--neon-blue);
+      animation: pulse-highlight 2s infinite alternate;
+    }
+    
+    @keyframes pulse-highlight {
+      0% {
+        text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+      }
+      100% {
+        text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px rgba(0, 255, 255, 0.5);
+      }
     }
     
     /* Steps section */
@@ -1546,7 +1594,7 @@
           <h1 class="logo">Hit The <span class="main-jackwatt-animation">JackWatt</span>
 <br><span class="powered-by-text">Powered by <span class="intelliwatt">Intelliwatt</span></span></h1>
           <p class="tagline">Slash Your Energy Bill — and Hit the JackWatt</p>
-          <p class="subheadline">Intelliwatt shows you the best electricity plan for your home — based on your real usage — FOR FREE.</p>
+          <p class="subheadline">Intelliwatt shows you the best electricity plan for your home — based on your real usage — <span class="highlight">FOR FREE</span>.</p>
         </div>
       </header>
       
