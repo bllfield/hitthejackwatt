@@ -15,12 +15,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --neon-pink: #ff00ff;
-      --neon-blue: #00ffff;
-      --neon-green: #39ff14;
-      --neon-yellow: #ffff00;
-      --dark-blue: #001f3f;
       --deep-purple: #120038;
+      --neon-green: #39ff14;
+      --neon-blue: #00ffff;
+      --neon-pink: #ff00ff;
+      --neon-yellow: #ffff00;
       --section-spacing: 5rem;
       --text-spacing: 1.5rem;
     }
@@ -117,6 +116,12 @@
     .nav-logo span {
       color: var(--neon-green);
       text-shadow: 0 0 5px var(--neon-green);
+    }
+    
+    .nav-logo span:first-of-type {
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+      animation: flicker 3s infinite alternate;
     }
     
     .nav-tagline {
@@ -907,10 +912,12 @@
     
     /* Animations */
     @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: 0.99;
         text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
       }
-      20%, 24%, 55% {
+      20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
         text-shadow: none;
       }
     }
@@ -1528,7 +1535,7 @@
     <div class="container">
       <header>
         <div class="header-content">
-          <h1 class="logo">Hit The <span>JackWatt</span><div class="logo-tagline">Powered by <span>Intelliwatt</span></div></h1>
+          <h1 class="logo">Hit The <span>JackWatt</span><br><span class="powered-by-text">Powered by <span class="intelliwatt">Intelliwatt</span></span></h1>
           <p class="tagline">Slash Your Energy Bill — and Hit the JackWatt</p>
           <p class="subheadline">Intelliwatt shows you the best electricity plan for your home — based on your real usage — FOR FREE.</p>
         </div>
