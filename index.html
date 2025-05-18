@@ -1838,41 +1838,66 @@
     
     /* Mobile styles for jackpot testimonials */
     @media (max-width: 768px) {
-      .jackpot-content > div {
-        flex-direction: column !important;
-      }
-      
-      .jackpot-content > div > div:first-child,
-      .jackpot-content > div > div:last-child {
-        width: 85% !important;
-        margin: 0 auto 1rem auto !important;
-        transform: rotate(0deg) !important;
-      }
-      
-      .jackpot-content > div > div:last-of-type {
-        margin-bottom: 0 !important;
-        margin-top: 1rem !important;
-      }
-      
-      /* Reorder the elements to put testimonials below the jackpot */
-      .jackpot-content > div {
+      /* Setup container ordering */
+      .jackpot-container {
         display: flex;
         flex-direction: column;
       }
       
-      /* Put the jackpot in the middle first */
-      .jackpot-content > div > div:nth-child(2) {
-        order: 1;
+      /* Add bottom margin to svg container */
+      .jackpot-svg-container {
+        margin-bottom: 1.5rem;
       }
       
-      /* Then the first testimonial */
-      .jackpot-content > div > div:nth-child(1) {
-        order: 2;
+      /* Hide original testimonials in content section */
+      .jackpot-content > div > div:first-child,
+      .jackpot-content > div > div:last-child {
+        display: none !important;
       }
       
-      /* Then the second testimonial */
-      .jackpot-content > div > div:nth-child(3) {
-        order: 3;
+      /* Add mobile testimonials at the bottom */
+      .mobile-testimonials {
+        display: none !important; /* Hidden by default on ALL devices */
+      }
+      
+      /* Show on mobile only */
+      @media (max-width: 768px) {
+        .mobile-testimonials {
+          display: flex !important; /* Override to show ONLY on mobile */
+        }
+        
+        .mobile-testimonial {
+          width: 85%;
+          margin: 0 auto;
+          padding: 1rem;
+          background-color: rgba(18, 0, 56, 0.95);
+          border-radius: 10px;
+          border: 1.5px solid rgba(57, 255, 20, 0.5);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3);
+          text-align: left;
+        }
+        
+        .mobile-testimonial p:first-child {
+          font-size: 0.9rem;
+          line-height: 1.5;
+          margin-bottom: 0.8rem;
+          font-style: italic;
+          color: rgba(255, 255, 255, 0.95);
+          text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+        }
+        
+        .mobile-testimonial p:nth-child(2) {
+          font-weight: 600;
+          font-size: 0.8rem;
+          color: #00ffff;
+          margin-bottom: 0;
+        }
+        
+        .mobile-testimonial p:last-child {
+          font-style: italic;
+          font-size: 0.7rem;
+          color: rgba(255, 255, 255, 0.7);
+        }
       }
     }
     
@@ -1882,6 +1907,22 @@
       .floating-testimonial.testimonial-3,
       .floating-testimonial.testimonial-4 {
         display: none !important;
+      }
+    }
+    
+    /* Mobile testimonials - hide completely on desktop */
+    .mobile-testimonials {
+      display: none !important; /* Hidden by default on ALL devices */
+    }
+    
+    /* Show mobile testimonials ONLY on mobile */
+    @media (max-width: 768px) {
+      .mobile-testimonials {
+        display: flex !important; /* Override to show ONLY on mobile */
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 0;
       }
     }
     </style>
@@ -1970,6 +2011,20 @@
         
         <div class="jackpot-svg-container">
           <object data="assets/images/openart-image_3RWs6nGG_1747517410954_raw.svg" type="image/svg+xml" class="openart-svg"></object>
+        </div>
+        
+        <!-- Mobile testimonials - only visible on small screens -->
+        <div class="mobile-testimonials">
+          <div class="mobile-testimonial">
+            <p>"I saved $75 last month with Intelliwatt's recommended plan!"</p>
+            <p>- Jennifer S.</p>
+            <p>Dallas, TX</p>
+          </div>
+          <div class="mobile-testimonial">
+            <p>"I was overpaying by $90 a month! Now I'm saving big time."</p>
+            <p>- Michael R.</p>
+            <p>Dallas, TX</p>
+          </div>
         </div>
       </div>
       
