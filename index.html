@@ -46,7 +46,7 @@
       padding: 2rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       position: relative;
     }
@@ -93,7 +93,7 @@
       align-items: center;
       padding: 1rem 2rem;
       background: rgba(18, 0, 56, 0.8);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     }
@@ -307,7 +307,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 1rem 1.5rem;
       background-color: rgba(18, 0, 56, 0.9);
       border-radius: 0;
@@ -319,7 +319,7 @@
     .jackpot-label-container {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 10px;
       margin-bottom: 0.3rem;
     }
@@ -508,7 +508,7 @@
     /* Steps section */
     .steps-section {
       margin: var(--section-spacing) 0;
-      padding: 4rem 2rem;
+      padding: 5rem 1rem 2rem;
       background: rgba(0, 0, 0, 0.2);
       border-radius: 20px;
       position: relative;
@@ -592,7 +592,7 @@
       border-radius: 50%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       font-weight: bold;
       font-size: 1.8rem;
       flex-shrink: 0;
@@ -629,7 +629,7 @@
       max-width: 900px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
     }
     
     .stat-item {
@@ -658,7 +658,7 @@
     .solar-callout {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 1rem;
       color: var(--neon-green); 
       font-weight: 500; 
       margin: 3rem auto; 
@@ -722,7 +722,7 @@
       border-radius: 15px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
     }
     
     .form-heading {
@@ -927,7 +927,7 @@
     .footer-social a {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -1049,7 +1049,7 @@
       
       .stats-banner {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
       }
       
       .solar-callout {
@@ -1129,7 +1129,7 @@
     .mascot-section {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 3rem;
       margin: var(--section-spacing) 0;
       padding: 3rem;
@@ -1138,7 +1138,7 @@
       border: 1px solid rgba(0, 255, 255, 0.15);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       position: relative;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
       overflow: hidden;
     }
     
@@ -1160,7 +1160,7 @@
       flex-shrink: 0;
       width: 200px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
     }
     
@@ -1240,7 +1240,7 @@
       color: var(--neon-green);
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       font-size: 1.2rem;
       width: 30px;
       height: 30px;
@@ -1257,7 +1257,7 @@
       .mascot-section {
         flex-direction: column;
         padding: 2.5rem 2rem;
-        gap: 2rem;
+        gap: 1rem;
       }
       
       .intelliwatt-bot {
@@ -1287,7 +1287,7 @@
     /* Testimonials section styles */
     .testimonials-section {
       margin: var(--section-spacing) 0;
-      padding: 4rem 2rem;
+      padding: 5rem 1rem 2rem;
       background: rgba(0, 0, 0, 0.2);
       border-radius: 20px;
       position: relative;
@@ -1329,7 +1329,7 @@
     
     .testimonials-slider {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
       overflow-x: auto;
       padding: 1rem 0.5rem;
       margin: 0 -0.5rem;
@@ -1646,25 +1646,25 @@
       .mobile-menu-toggle {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
       }
       
       .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 250px;
+        width: 200px; max-width: 80%;
         height: 100vh;
-        background: rgba(18, 0, 56, 0.95);
-        backdrop-filter: blur(10px);
+        background: rgba(18, 0, 56, 0.98);
+        backdrop-filter: blur(15px);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 2rem;
+        justify-content: flex-start;
+        gap: 1rem;
         transition: right 0.3s ease;
-        z-index: 999;
-        padding: 4rem 2rem;
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        padding: 5rem 1rem 2rem;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.7);
       }
       
       .nav-links.active {
@@ -1683,7 +1683,7 @@
         border-bottom: none;
       }
     }
-  </style>
+  body.menu-open { overflow: hidden; }\n  </style>
 </head>
 <body>
   <div class="hero">
