@@ -1652,7 +1652,7 @@
       .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -120%;
         width: 200px; max-width: 80%;
         height: 100vh;
         background: rgba(18, 0, 56, 0.98);
@@ -1665,10 +1665,14 @@
         z-index: 9999;
         padding: 5rem 1rem 2rem;
         box-shadow: -5px 0 30px rgba(0, 0, 0, 0.7);
+        visibility: hidden;
+        opacity: 0;
       }
       
       .nav-links.active {
         right: 0;
+        visibility: visible;
+        opacity: 1;
       }
       
       .nav-links a {
@@ -2072,10 +2076,25 @@
       const body = document.body;
       
       // Toggle menu when hamburger is clicked
-      mobileMenuToggle.addEventListener('click', function() {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // If the menu is currently closed, show it first
+        if (!navLinks.classList.contains('active')) {
+          navLinks.style.display = 'flex';
+        }
+        
         hamburger.classList.toggle('open');
         navLinks.classList.toggle('active');
         body.classList.toggle('menu-open');
+        
+        // If we're closing the menu, hide it after animation
+        if (!navLinks.classList.contains('active')) {
+          setTimeout(function() {
+            navLinks.style.display = 'none';
+          }, 300);
+        }
       });
       
       // Close menu when a link is clicked
@@ -2095,6 +2114,13 @@
           hamburger.classList.remove('open');
           navLinks.classList.remove('active');
           body.classList.remove('menu-open');
+          
+          // Force menu to be invisible after animation completes
+          setTimeout(function() {
+            if (!navLinks.classList.contains('active')) {
+              navLinks.style.display = 'none';
+            }
+          }, 300);
         });
       }
     });
