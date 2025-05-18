@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Hit The JackWatt - Save on your electricity bills and win cash prizes"/>
-  <title>Hit The JackWatt | Slash Your Energy Bill â€” and Hit the JackWatt</title>
+  <title>Hit The JackWatt | Slash Your Energy Bill GÇö and Hit the JackWatt</title>
   <!-- Favicons -->
   <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdQTFRFAAAA//8A/9MA/+EA//8A//8A//8A//8A//8A/+YA/98A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A////+FomYgAAAAd0Uk5TAB+fz+/v3zOPXCYAAAABYktHRB8FDRC9AAAAsElEQVQoz22S2xLDIAhEM4Ci9lI1yf//ak2NaaeZ9oXlsAiLSETeE8GlkCoIaxuBtTUCQq6aZ2uICG4Tm7B2hkBEKc2DTQTfZswVEFoHnwJUDG4ZuCywA+pqM2rMIzCCPe9+AtQ3D+j3vAE74PluvwK82WYoKJ1QxRwG+FXxBS1QaV/XoUhSp4rNfgS8inRoHqCVy0UuZhO42WrOqcLJ4p2u9Ek/EUdR/Yh+JHcMfxHv08oPYbMQwAwh/fIAAAAASUVORK5CYII=">
   <link rel="icon" href="https://www.hitthejackwatt.com/favicon.ico" type="image/x-icon">
@@ -15,11 +15,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --deep-purple: #120038;
-      --neon-green: #39ff14;
-      --neon-blue: #00ffff;
       --neon-pink: #ff00ff;
+      --neon-blue: #00ffff;
+      --neon-green: #39ff14;
       --neon-yellow: #ffff00;
+      --dark-blue: #001f3f;
+      --deep-purple: #120038;
       --section-spacing: 5rem;
       --text-spacing: 1.5rem;
     }
@@ -46,7 +47,7 @@
       padding: 2rem;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       position: relative;
     }
@@ -93,15 +94,9 @@
       align-items: center;
       padding: 1rem 2rem;
       background: rgba(18, 0, 56, 0.8);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    }
-    
-    .nav-logo-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
     
     .nav-logo {
@@ -113,22 +108,9 @@
       align-items: center;
     }
     
-    .navh1.logo > span:first-child {
+    .nav-logo span {
       color: var(--neon-green);
       text-shadow: 0 0 5px var(--neon-green);
-    }
-    
-    .nav-logo span:first-of-type {
-      color: var(--neon-green);
-      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
-      animation: flicker 3s infinite alternate;
-    }
-    
-    .nav-tagline {
-      font-size: 0.8rem;
-      color: var(--neon-blue);
-      text-shadow: 0 0 5px var(--neon-blue);
-      text-align: center;
     }
     
     .nav-links {
@@ -183,37 +165,10 @@
       letter-spacing: 2px;
     }
     
-    .powered-by-text { font-size: 0.4em; font-weight: normal; display: block; margin-top: 0.3rem; color: white; }
-    
-    .intelliwatt { 
-      color: var(--neon-blue); 
-      text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); 
-      font-weight: bold;
-      animation: pulse-intelliwatt 3s infinite alternate; 
-    }
-    
-    @keyframes pulse-intelliwatt {
-      0% {
-        color: var(--neon-blue);
-        text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
-      }
-      100% {
-        color: #50f0ff;
-        text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px rgba(0, 255, 255, 0.6);
-      }
-    }
-    
-    .logo-tagline {
-      font-size: 1.2rem;
-      font-weight: normal;
-      margin-top: 0.2rem;
-      color: white;
-    }
-    
-    .logo-tagline span {
-      color: var(--neon-blue);
-      text-shadow: 0 0 10px var(--neon-blue);
-      animation: none;
+    .logo span {
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+      animation: flicker 3s infinite alternate;
     }
     
     .logo::after {
@@ -231,13 +186,11 @@
       margin-bottom: 1rem;
       text-align: center;
       font-weight: 700;
-      color: var(--neon-pink);
-      text-shadow: 0 0 10px var(--neon-pink), 0 0 20px rgba(255, 0, 255, 0.5);
     }
     
     .subheadline {
       font-size: 1.3rem;
-      color: white;
+      color: rgba(255, 255, 255, 0.9);
       text-align: center;
       margin-bottom: 0;
       max-width: 800px;
@@ -246,182 +199,84 @@
       line-height: 1.7;
     }
     
-    .subheadline strong, 
-    .subheadline span.highlight {
-      color: var(--neon-yellow);
-      text-shadow: 0 0 10px var(--neon-yellow);
-      font-weight: bold;
-    }
-    
-    .subheadline span.highlight {
-      color: var(--neon-yellow);
-      text-shadow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow);
-      font-weight: bold;
-      animation: pulse-yellow 2s infinite alternate;
-    }
-    
-    @keyframes pulse-yellow {
-      0% {
-        text-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow);
-      }
-      100% {
-        text-shadow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow), 0 0 30px rgba(255, 255, 0, 0.5);
-      }
-    }
-    
     /* Jackpot section */
     .jackpot-container {
-      position: relative;
-      background: transparent;
-      text-align: center;
-      padding: 0;
-      margin: 3rem 0;
+      background: rgba(0, 0, 0, 0.3);
       border-radius: 20px;
-      border: 2px solid rgba(255, 0, 255, 0.3);
-      box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
-      overflow: hidden;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      min-height: 350px;
-    }
-    
-    .jackpot-svg-container {
+      border: 2px solid rgba(57, 255, 20, 0.15);
+      padding: 3rem 2rem;
+      margin: 4rem 0 var(--section-spacing);
       position: relative;
-      width: 100%;
-      height: 260px;
       overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .openart-svg {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(6.0);
-      transform-origin: center 57%;
+    .jackpot-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(0, 255, 255, 0.3);
     }
     
-    .jackpot-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 1rem 1.5rem;
-      background-color: rgba(18, 0, 56, 0.9);
-      border-radius: 0;
-      margin: 0;
-      width: 100%;
-      border-bottom: 1px solid rgba(255, 0, 255, 0.3);
-    }
-    
-    .jackpot-label-container {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
-      margin-bottom: 0.3rem;
+    .jackpot-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(transparent, var(--neon-blue), transparent 30%);
+      animation: rotate 10s linear infinite;
+      opacity: 0.1;
     }
     
     .jackpot-label {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
       color: var(--neon-yellow);
-      text-shadow: 0 0 8px var(--neon-yellow), 0 0 16px var(--neon-yellow), 0 0 24px var(--neon-yellow);
-      letter-spacing: 2px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 0;
-    }
-    
-    .sample-tag {
-      display: inline-block;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: var(--neon-yellow);
-      font-size: 0.9rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      border: 1px solid var(--neon-yellow);
+      text-shadow: 0 0 5px var(--neon-yellow);
       letter-spacing: 1px;
-      position: relative;
-      z-index: 1;
-      margin: 0;
-    }
-    
-    .jackpot-container p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      margin: 0 0 0.5rem 0;
-      color: white;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      font-weight: 600;
     }
     
     #jackpot {
       font-family: 'VT323', monospace;
-      font-size: 5.5rem;
+      font-size: 6rem;
       color: var(--neon-green);
-      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
-      margin: 0;
-      padding: 0.3rem 2rem;
-      background: transparent;
-      border-radius: 5px;
+      text-shadow: 0 0 10px var(--neon-green);
+      margin: 1.5rem 0;
+      display: inline-block;
+      padding: 0.5rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
       min-width: 300px;
       position: relative;
-      z-index: 2;
-      display: inline-block;
-      line-height: 1;
+      z-index: 1;
     }
     
     .jackpot-active {
       animation: slot-win 0.5s ease infinite alternate;
     }
     
-    @keyframes slot-win {
-      0% {
-        text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
-        transform: scale(1);
-      }
-      100% {
-        text-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green), 0 0 60px var(--neon-green);
-        transform: scale(1.05);
-      }
+    .jackpot-container p {
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
     
-    @media (max-width: 768px) {
-      .jackpot-container {
-        flex-direction: column;
-        min-height: 300px;
-      }
-      
-      .jackpot-svg-container {
-        width: 100%;
-      }
-      
-      #jackpot {
-        font-size: 4rem;
-        min-width: 240px;
-        padding: 0.5rem 1rem;
-      }
-      
-      .jackpot-label {
-        font-size: 1.5rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .jackpot-container {
-        min-height: 280px;
-      }
-      
-      .jackpot-label {
-        font-size: 1.3rem;
-      }
-      
-      #jackpot {
-        font-size: 3.5rem;
-        min-width: 200px;
-        padding: 0.3rem 1rem;
-      }
+    .sample-tag {
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: var(--neon-yellow);
+      font-size: 0.9rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--neon-yellow);
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
     }
     
     /* Value proposition */
@@ -492,23 +347,13 @@
     .highlight {
       color: var(--neon-blue);
       font-weight: bold;
-      text-shadow: 0 0 10px var(--neon-blue), 0 0 15px var(--neon-blue);
-      animation: pulse-highlight 2s infinite alternate;
-    }
-    
-    @keyframes pulse-highlight {
-      0% {
-        text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
-      }
-      100% {
-        text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px rgba(0, 255, 255, 0.5);
-      }
+      text-shadow: 0 0 5px var(--neon-blue);
     }
     
     /* Steps section */
     .steps-section {
       margin: var(--section-spacing) 0;
-      padding: 5rem 1rem 2rem;
+      padding: 4rem 2rem;
       background: rgba(0, 0, 0, 0.2);
       border-radius: 20px;
       position: relative;
@@ -529,21 +374,11 @@
     }
     
     .steps-heading {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+      font-size: 2.4rem;
+      margin-bottom: 3rem;
       text-align: center;
       position: relative;
       color: white;
-    }
-    
-    .steps-intro {
-      text-align: center;
-      font-size: 1.4rem;
-      color: var(--neon-blue);
-      margin-bottom: 3rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
     }
     
     .steps-heading::after {
@@ -557,60 +392,66 @@
       background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
     }
     
-    .steps-new {
+    .steps {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 2.5rem;
-      max-width: 900px;
-      margin: 0 auto;
     }
     
-    .step-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      background: rgba(18, 0, 56, 0.7);
+    .step {
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+      padding: 3rem 2rem;
+      background: rgba(18, 0, 56, 0.8);
+      border: 2px solid rgba(0, 255, 255, 0.1);
       border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
       position: relative;
-      overflow: hidden;
+      transition: all 0.3s ease;
+      text-align: center;
+      backdrop-filter: blur(5px);
     }
     
-    .step-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    .step:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
       border-color: var(--neon-green);
     }
     
-    .step-number-new {
-      background: var(--neon-yellow);
-      color: var(--deep-purple);
+    .step-number {
+      position: absolute;
+      top: -20px;
+      left: -20px;
       width: 50px;
       height: 50px;
+      background: var(--neon-yellow);
+      color: var(--deep-purple);
       border-radius: 50%;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       font-weight: bold;
-      font-size: 1.8rem;
-      flex-shrink: 0;
-      box-shadow: 0 0 15px var(--neon-yellow);
-    }
-    
-    .step-content {
-      flex: 1;
-    }
-    
-    .step-title-new {
       font-size: 1.5rem;
-      margin-bottom: 0.8rem;
+      box-shadow: 0 0 15px var(--neon-yellow);
+      z-index: 2;
+    }
+    
+    .step-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue);
+    }
+    
+    .step-title {
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
       color: var(--neon-green);
       font-weight: 700;
     }
     
-    .step-description {
+    .step p {
       font-size: 1.1rem;
       line-height: 1.6;
       color: rgba(255, 255, 255, 0.9);
@@ -629,7 +470,7 @@
       max-width: 900px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(10px);
     }
     
     .stat-item {
@@ -658,7 +499,7 @@
     .solar-callout {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 2rem;
       color: var(--neon-green); 
       font-weight: 500; 
       margin: 3rem auto; 
@@ -722,7 +563,7 @@
       border-radius: 15px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(10px);
     }
     
     .form-heading {
@@ -899,7 +740,7 @@
       font-weight: 700;
     }
     
-    .footerh1.logo > span:first-child {
+    .footer-logo span {
       color: var(--neon-green);
     }
     
@@ -927,7 +768,7 @@
     .footer-social a {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -960,12 +801,10 @@
     
     /* Animations */
     @keyframes flicker {
-      0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-        opacity: 0.99;
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
         text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
       }
-      20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-        opacity: 0.4;
+      20%, 24%, 55% {
         text-shadow: none;
       }
     }
@@ -975,6 +814,18 @@
       to { transform: rotate(360deg); }
     }
     
+    @keyframes slot-win {
+      0% {
+        text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+        transform: scale(1);
+      }
+      100% {
+        text-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green), 0 0 60px var(--neon-green);
+        transform: scale(1.05);
+      }
+    }
+    
+    /* Responsive design */
     @media (max-width: 992px) {
       .footer-content {
         flex-direction: column;
@@ -1029,27 +880,19 @@
         min-width: 240px;
       }
       
-      .steps-heading {
-        font-size: 2.2rem;
-      }
-      
-      .steps-intro {
-        font-size: 1.2rem;
-      }
-      
-      .step-item {
+      .steps {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 1.5rem;
+        align-items: center;
       }
       
-      .step-number-new {
-        margin-bottom: 1rem;
+      .step {
+        width: 100%;
+        max-width: 100%;
       }
       
       .stats-banner {
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
       }
       
       .solar-callout {
@@ -1109,7 +952,7 @@
         font-size: 1.8rem;
       }
       
-      .step-number-new {
+      .step-number {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
@@ -1129,7 +972,7 @@
     .mascot-section {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 3rem;
       margin: var(--section-spacing) 0;
       padding: 3rem;
@@ -1138,7 +981,7 @@
       border: 1px solid rgba(0, 255, 255, 0.15);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       position: relative;
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(10px);
       overflow: hidden;
     }
     
@@ -1160,7 +1003,7 @@
       flex-shrink: 0;
       width: 200px;
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
     }
     
@@ -1214,13 +1057,6 @@
       box-shadow: 0 0 8px var(--neon-blue);
     }
     
-    .mascot-subheading {
-      font-size: 1.3rem;
-      color: var(--neon-green);
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-    
     .mascot-text {
       font-size: 1.15rem;
       line-height: 1.6;
@@ -1240,7 +1076,7 @@
       color: var(--neon-green);
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       font-size: 1.2rem;
       width: 30px;
       height: 30px;
@@ -1257,12 +1093,12 @@
       .mascot-section {
         flex-direction: column;
         padding: 2.5rem 2rem;
-        gap: 1rem;
+        gap: 2rem;
       }
       
       .intelliwatt-bot {
         width: 180px;
-        height: 260px;
+        height: 180px;
       }
       
       .mascot-heading {
@@ -1283,293 +1119,7 @@
         align-items: center;
       }
     }
-    
-    /* Testimonials section styles */
-    .testimonials-section {
-      margin: var(--section-spacing) 0;
-      padding: 5rem 1rem 2rem;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(0, 255, 255, 0.1);
-    }
-    
-    .testimonials-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at bottom left, rgba(255, 0, 255, 0.05), transparent 60%),
-                  radial-gradient(circle at top right, rgba(0, 255, 255, 0.05), transparent 60%);
-      pointer-events: none;
-    }
-    
-    .testimonials-heading {
-      font-size: 2.4rem;
-      margin-bottom: 3rem;
-      text-align: center;
-      position: relative;
-      color: white;
-    }
-    
-    .testimonials-heading::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--neon-pink), transparent);
-    }
-    
-    .testimonials-slider {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      padding: 1rem 0.5rem;
-      margin: 0 -0.5rem;
-      -ms-overflow-style: none;  /* Hide scrollbar IE and Edge */
-      scrollbar-width: none;  /* Hide scrollbar Firefox */
-    }
-    
-    .testimonials-slider::-webkit-scrollbar {
-      display: none; /* Hide scrollbar Chrome, Safari, Opera */
-    }
-    
-    .testimonial-card {
-      flex: 0 0 auto;
-      width: 100%;
-      max-width: 400px;
-      min-width: 280px;
-      background: rgba(18, 0, 56, 0.7);
-      border-radius: 15px;
-      padding: 2rem;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: -30px;
-      left: 10px;
-      font-size: 8rem;
-      color: rgba(255, 0, 255, 0.1);
-      font-family: sans-serif;
-      line-height: 1;
-    }
-    
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--neon-pink);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
-    
-    .testimonial-quote p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .testimonial-author {
-      margin-top: 1rem;
-    }
-    
-    .author-name {
-      font-weight: 600;
-      color: var(--neon-blue);
-      margin-bottom: 0.2rem;
-    }
-    
-    .author-location {
-      font-style: italic;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
-    }
-    
-    .testimonials-link {
-      text-align: center;
-      margin-top: 2.5rem;
-    }
-    
-    .more-testimonials-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      padding: 0.8rem 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: 500;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .more-testimonials-btn i {
-      transition: transform 0.3s ease;
-    }
-    
-    .more-testimonials-btn:hover {
-      background: var(--neon-pink);
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .more-testimonials-btn:hover i {
-      transform: translateX(5px);
-    }
-    
-    @media (max-width: 768px) {
-      .testimonial-card {
-        min-width: 100%;
-      }
-      
-      .testimonials-section {
-        padding: 3rem 1.5rem;
-      }
-      
-      .testimonials-heading {
-        font-size: 2rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .testimonials-heading {
-        font-size: 1.8rem;
-      }
-      
-      .testimonial-quote p {
-        font-size: 1rem;
-      }
-    }
-    
-    /* Intelliwatt Branding Section */
-    .intelliwatt-branding {
-      margin: var(--section-spacing) 0;
-      padding: 3rem 2rem;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
-    
-    .intelliwatt-branding::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at bottom right, rgba(0, 255, 255, 0.15), transparent 60%);
-      pointer-events: none;
-    }
-    
-    .intelliwatt-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .intelliwatt-heading {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      color: white;
-    }
-    
-    .intelliwatt-heading span {
-      color: var(--neon-blue);
-      text-shadow: 0 0 10px var(--neon-blue);
-    }
-    
-    .intelliwatt-text {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
-    
-    .intelliwatt-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      padding: 1rem 2rem;
-      background: var(--neon-blue);
-      color: var(--deep-purple);
-      font-weight: 600;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-    }
-    
-    .intelliwatt-cta i {
-      transition: transform 0.3s ease;
-    }
-    
-    .intelliwatt-cta:hover {
-      background: white;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-      transform: translateY(-3px);
-    }
-    
-    .intelliwatt-cta:hover i {
-      transform: translateX(5px);
-    }
-    
-    @media (max-width: 768px) {
-      .intelliwatt-branding {
-        padding: 2.5rem 1.5rem;
-      }
-      
-      .intelliwatt-heading {
-        font-size: 2rem;
-      }
-      
-      .intelliwatt-text {
-        font-size: 1.1rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .intelliwatt-heading {
-        font-size: 1.8rem;
-      }
-      
-      .intelliwatt-text {
-        font-size: 1rem;
-      }
-      
-      .intelliwatt-cta {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-      }
-    }
-    
-    /* Main JackWatt animation */
-    .main-jackwatt-animation {
-      color: var(--neon-green);
-      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
-      animation: flicker 3s infinite alternate;
-    }
-    
-    /* Mobile menu styles */
+      /* Mobile menu styles */
     .mobile-menu-toggle {
       display: none;
       cursor: pointer;
@@ -1626,20 +1176,29 @@
       transform: rotate(-135deg);
     }
     
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
+    body.menu-open { overflow: hidden; }
+    
+    .mobile-close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 30px;
+      color: var(--neon-green);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: none; /* Hide by default */
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px var(--neon-green);
     }
     
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      padding: 0.5rem 0;
-      position: relative;
+    .mobile-close-btn:hover {
+      transform: scale(1.1);
+      background: rgba(0, 0, 0, 0.5);
     }
     
     @media (max-width: 768px) {
@@ -1686,184 +1245,53 @@
       .nav-links a:last-child {
         border-bottom: none;
       }
+      
+      .mobile-close-btn {
+        display: flex; /* Only show on mobile */
+      }
     }
-  body.menu-open { overflow: hidden; }
-
-  .mobile-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 30px;
-    color: var(--neon-green);
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: none; /* Hide by default */
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px var(--neon-green);
-  }
-  
-  .mobile-close-btn:hover {
-    transform: scale(1.1);
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  @media (max-width: 768px) {
-    .mobile-close-btn {
-      display: flex; /* Only show on mobile */
-    }
-  }
-  </style>
+    </style>
 </head>
 <body>
   <div class="hero">
     <div class="nav-container">
-      <div class="nav-logo-container">
-        <a href="/" class="nav-logo">Hit The&nbsp;<span class="main-jackwatt-animation"> JackWatt</span>
-</a>
-        <div class="nav-tagline">Powered by Intelliwatt</div>
-      </div>
-      
-      <!-- Hamburger menu icon for mobile -->
-      <div class="mobile-menu-toggle">
+      <a href="/" class="nav-logo">Hit The <span>JackWatt</span></a>
+          <!-- Hamburger menu icon for mobile -->
+    <div class="mobile-menu-toggle">
         <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-      </div>
-      
-      <div class="nav-links">
-        <div class="mobile-close-btn">&times;</div>
+    </div>
+    <div class="nav-links">        <div class="mobile-close-btn">&times;</div>
         <a href="#how-it-works">How It Works</a>
-        <a href="./HitTheJackWatt_Benefits.html">Benefits</a>
-        <a href="./HitTheJackWatt_Testimonials.html">Testimonials</a>
-        <a href="./HitTheJackWatt_FAQ.html">FAQs</a>
+        <a href="#benefits">Benefits</a>
         <a href="#signup">Sign Up</a>
-        <a href="./HitTheJackWatt_Official_Rules.html">Official Rules</a>
       </div>
     </div>
     
     <div class="container">
       <header>
         <div class="header-content">
-          <h1 class="logo">Hit The <span class="main-jackwatt-animation"> JackWatt</span>
-<br><span class="powered-by-text">Powered by <span class="intelliwatt">Intelliwatt</span></span></h1>
-          <p class="tagline">Slash Your Energy Bill â€” and Hit the JackWatt</p>
-          <p class="subheadline">Intelliwatt shows you the best electricity plan for your home â€” based on your real usage â€” <span class="highlight">FOR FREE</span>.</p>
+          <h1 class="logo">Hit The <span>JackWatt</span></h1>
+          <p class="tagline">Slash Your Energy Bill GÇö and Hit the JackWatt</p>
+          <p class="subheadline">We show you the best electricity plan for your home GÇö based on your real usage GÇö FOR FREE.</p>
         </div>
       </header>
       
       <div class="jackpot-container">
-        <div class="jackpot-content">
-          <div class="jackpot-label-container">
-            <div class="jackpot-label">CURRENT JACKPOT</div>
-            <div class="sample-tag">Sample</div>
-          </div>
-          <p>A new winner every month</p>
-          <div id="jackpot"></div>
-        </div>
-        <div class="jackpot-svg-container">
-          <object data="assets/images/openart-image_3RWs6nGG_1747517410954_raw.svg" type="image/svg+xml" class="openart-svg"></object>
-        </div>
+        <div class="jackpot-label">CURRENT JACKPOT</div>
+        <div id="jackpot">$0</div>
+        <div class="sample-tag">Sample</div>
+        <p>A new winner every month</p>
       </div>
       
       <div class="value-prop">
         <h2 class="catchphrase">Double the Benefits: <span>Save & Win</span></h2>
         <div class="explanation">
           <p><span class="highlight">HitTheJackWatt.com</span> offers two incredible ways to benefit: Our advanced rate shopper finds you the best electricity plan based on your actual usage data, potentially saving you hundreds per year. Plus, by sharing your energy data, you're automatically entered into our monthly jackpot drawing for a chance to win cash prizes!</p>
-          <p style="margin-top: 10px;">It's a win-win: guaranteed savings on your bills and a shot at hitting the jackpotâ€”all completely <span class="highlight">FREE</span>.</p>
-        </div>
-      </div>
-      
-      <div class="steps-section" id="how-it-works">
-        <h2 class="steps-heading">How It Works</h2>
-        <p class="steps-intro">It's simple, free, and designed to help you save â€” and maybe even win serious cash.</p>
-        
-        <div class="steps-new">
-          <div class="step-item">
-            <div class="step-number-new">1</div>
-            <div class="step-content">
-              <h3 class="step-title-new">Sign up and enter to win</h3>
-              <p class="step-description">Create your free account and instantly get your first entry into the monthly HitTheJackWatt jackpot. No purchase necessary, ever.</p>
-            </div>
-          </div>
-          
-          <div class="step-item">
-            <div class="step-number-new">2</div>
-            <div class="step-content">
-              <h3 class="step-title-new">Share your energy info</h3>
-              <p class="step-description">Authorize Smart Meter Texas connection or upload your bill, then tell us about your home and appliances. Each piece of info earns you more entries while helping us find your perfect plan.</p>
-            </div>
-          </div>
-          
-          <div class="step-item">
-            <div class="step-number-new">3</div>
-            <div class="step-content">
-              <h3 class="step-title-new">Get energy-saving recommendations</h3>
-              <p class="step-description">Intelliwatt will analyze your usage patterns and show you the best energy plans based on your real data â€” no guesswork, no pressure, just smart suggestions that could save you hundreds each year.</p>
-            </div>
-          </div>
-          
-          <div class="step-item">
-            <div class="step-number-new">4</div>
-            <div class="step-content">
-              <h3 class="step-title-new">You could win the Jackpot!</h3>
-              <p class="step-description">Every month when the jackpot reaches $500+, one lucky winner is chosen. Your entries stay valid forever, so the earlier you join, the more chances you'll have to win big!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="cta-section" id="signup">
-        <h2 class="cta-heading">Ready to start saving?</h2>
-        <div class="sign-up-form">
-          <h3 class="form-heading">Be the first to know when Intelliwatt launches</h3>
-          <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
-          
-          <!-- Form visible by default -->
-          <div id="emailFormContainer">
-            <form id="emailForm" onsubmit="return submitForm(event)">
-              <div class="form-group">
-                <input type="email" name="email" id="formEmail" required
-                       placeholder="Enter your email"
-                       class="email-input">
-                <button type="submit" id="submitButton" class="submit-btn">
-                  <span>Get Early Access</span>
-                  <i class="fas fa-arrow-right"></i>
-                </button>
-              </div>
-            </form>
-          </div>
-          
-          <!-- Thank you message hidden by default -->
-          <div id="thankYouMessage" style="display: none;" class="thank-you-message">
-            <h3>You're Electric!</h3>
-            <p>Thanks for signing up. Intelliwatt will let you know as soon as we launch so you can start saving on your energy bills and getting a shot at the jackpot!</p>
-          </div>
-          
-          <p class="form-help">
-            Having trouble? <a href="mailto:admin@hitthejackwatt.com?subject=Early Access Signup">Email us directly</a> to sign up.
-          </p>
-        </div>
-      </div>
-      
-      <div class="stats-banner">
-        <div class="stat-item">
-          <span class="stat-number">$312</span>
-          <span class="stat-label">Avg. Annual Savings</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">2</span>
-          <span class="stat-label">Minutes to Set Up</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Free Service</span>
+          <p style="margin-top: 10px;">It's a win-win: guaranteed savings on your bills and a shot at hitting the jackpotGÇöall completely <span class="highlight">FREE</span>.</p>
         </div>
       </div>
       
@@ -1875,55 +1303,12 @@
         </div>
       </div>
       
-      <!-- Testimonials Section -->
-      <div class="testimonials-section">
-        <h2 class="testimonials-heading">What Our Users Say</h2>
-        <div class="testimonials-slider">
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              <p>"I filled out my home and appliance info and now I'm seeing actual insights on where I'm using energy. Can't wait to see how this evolves."</p>
-              <div class="testimonial-author">
-                <p class="author-name">â€“ Brian C.</p>
-                <p class="author-location">Plano, TX</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              <p>"I didn't realize I was overpaying by $75/month. The site helped me switch in minutes. No calls, no hassle â€” just cheaper power. And now I'm entered every month for free money!"</p>
-              <div class="testimonial-author">
-                <p class="author-name">â€“ Jessica L.</p>
-                <p class="author-location">Fort Worth, TX</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              <p>"Even if I don't win the jackpot, just saving $50/month on electricity is a win for me."</p>
-              <div class="testimonial-author">
-                <p class="author-name">â€“ Naomi W.</p>
-                <p class="author-location">Houston, TX</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonials-link">
-          <a href="./HitTheJackWatt_Testimonials.html" class="more-testimonials-btn">
-            <span>More Success Stories</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-      
       <div class="mascot-section">
         <div class="intelliwatt-bot">
           <img src="assets/images/intelliwatt-bot.gif" alt="IntelliWatt Bot">
         </div>
         <div class="mascot-content">
           <h3 class="mascot-heading">Meet IntelliWatt Bot</h3>
-          <p class="mascot-subheading">Your free, energy assistant. Just plug in your info, and it watches the rates so you don't have to.</p>
           <p class="mascot-text">Your intelligent energy assistant that analyzes consumption patterns to find your perfect energy plan. IntelliWatt Bot uses advanced algorithms to compare hundreds of options and match you with the one that maximizes your savings.</p>
           
           <div class="mascot-feature">
@@ -1946,22 +1331,61 @@
       <div class="value-prop">
         <h2 class="catchphrase">Knowledge is power. <span>Literally.</span></h2>
         <div class="explanation">
-          <p>Our rate shopper is the first energy platform that rewards you just for sharing your real energy usage. When you sign up, we'll use your smart meter data or bill to calculate the best electricity plan for your home â€” no guesswork, no spreadsheets. And yes, it's <span class="highlight">100% FREE</span>, forever.</p>
+          <p>Our rate shopper is the first energy platform that rewards you just for sharing your real energy usage. When you sign up, we'll use your smart meter data or bill to calculate the best electricity plan for your home GÇö no guesswork, no spreadsheets. And yes, it's <span class="highlight">100% FREE</span>, forever.</p>
         </div>
       </div>
       
       <div class="value-prop">
         <h2 class="catchphrase">Fun vibes. <span>Serious savings.</span></h2>
         <div class="explanation">
-          <p>While the jackpot adds excitement, our rate shopper delivers <span class="highlight">guaranteed savings</span>. The average household saves <span class="highlight">$312 per year</span> using our recommendations. Intelliwatt analyzes your actual usage patterns and matches them against hundreds of available electricity plans using real-time market data â€” all so you don't have to.</p>
-          <p style="margin-top: 10px;">Intelliwatt uses Smart Meter Texas data and real-time plan information from licensed brokers to ensure you always get the most accurate recommendations.</p>
+          <p>While the jackpot adds excitement, our rate shopper delivers <span class="highlight">guaranteed savings</span>. The average household saves <span class="highlight">$312 per year</span> using our recommendations. We analyze your actual usage patterns and match them against hundreds of available electricity plans using real-time market data GÇö all so you don't have to.</p>
+          <p style="margin-top: 10px;">We use Smart Meter Texas data and real-time plan information from licensed brokers to ensure you always get the most accurate recommendations.</p>
+        </div>
+      </div>
+      
+      <div class="steps-section" id="how-it-works">
+        <h2 class="steps-heading">How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-icon"><i class="fas fa-plug"></i></div>
+            <h3 class="step-title">Connect Your Data</h3>
+            <p>Link your smart meter or upload your bill to get personalized energy insights.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-icon"><i class="fas fa-bolt"></i></div>
+            <h3 class="step-title">Get Smart Recommendations</h3>
+            <p>We'll analyze your usage and find the best electricity plan for your specific needs.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-icon"><i class="fas fa-trophy"></i></div>
+            <h3 class="step-title">Earn Jackpot Entries</h3>
+            <p>Every interaction earns you entries. Refer friends for even more chances to win.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stats-banner">
+        <div class="stat-item">
+          <span class="stat-number">$312</span>
+          <span class="stat-label">Avg. Annual Savings</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Minutes to Set Up</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Free Service</span>
         </div>
       </div>
       
       <div class="solar-callout">
         <i class="fas fa-solar-panel solar-icon"></i>
         <div>
-          <h3>Already have solar â€” or thinking about it?</h3>
+          <h3>Already have solar GÇö or thinking about it?</h3>
           <p>Use our free simulator to see what your bill could look like after solar, and which plan will save you the most.</p>
         </div>
       </div>
@@ -1970,9 +1394,42 @@
         <h2 class="catchphrase">Plug in. Power up. <span>Get paid.</span></h2>
         <div class="explanation">
           <p>Join thousands of smart energy users who are saving money and winning big. Our platform is designed to make energy management simple, rewarding, and maybe even a little exciting. The jackpot is our way of making energy fun, but our core mission is helping you keep more money in your wallet every month.</p>
-          <p style="margin-top: 10px;">Sign up now and forget about itâ€”Intelliwatt will alert you when your current plan expires with your perfect match. No commitment, no pressure. Intelliwatt notifies you with the best options, and you decide if they're right for you. Energy savings on autopilot.</p>
+          <p style="margin-top: 10px;">Sign up now and forget about itGÇöwe'll alert you when your current plan expires with your perfect match. No commitment, no pressure. We notify you with the best options, and you decide if they're right for you. Energy savings on autopilot.</p>
           <p class="energy-tagline">
             No pressure. No pitch. Just better options backed by your data.
+          </p>
+        </div>
+      </div>
+      
+      <div class="cta-section" id="signup">
+        <h2 class="cta-heading">Ready to start saving?</h2>
+        <div class="sign-up-form">
+          <h3 class="form-heading">Be the first to know when we launch</h3>
+          <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
+          
+          <!-- Form visible by default -->
+          <div id="emailFormContainer">
+            <form id="emailForm" onsubmit="return submitForm(event)">
+              <div class="form-group">
+                <input type="email" name="email" id="formEmail" required
+                       placeholder="Enter your email"
+                       class="email-input">
+                <button type="submit" id="submitButton" class="submit-btn">
+                  <span>Get Early Access</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Thank you message hidden by default -->
+          <div id="thankYouMessage" style="display: none;" class="thank-you-message">
+            <h3>You're Electric!</h3>
+            <p>Thanks for signing up. We'll let you know as soon as we launch so you can start saving on your energy bills and getting a shot at the jackpot!</p>
+          </div>
+          
+          <p class="form-help">
+            Having trouble? <a href="mailto:admin@hitthejackwatt.com?subject=Early Access Signup">Email us directly</a> to sign up.
           </p>
         </div>
       </div>
@@ -1998,28 +1455,14 @@
         <p class="states-more">and more coming soon</p>
       </div>
       
-      <!-- Intelliwatt Branding Section -->
-      <div class="intelliwatt-branding">
-        <div class="intelliwatt-content">
-          <h2 class="intelliwatt-heading">Powered by <span>Intelliwatt</span></h2>
-          <p class="intelliwatt-text">Your dashboard, entries, and energy insights all live inside Intelliwatt â€” a secure portal built to help you save.</p>
-          <a href="https://www.intelliwatt.com" class="intelliwatt-cta">
-            <span>Go to Intelliwatt Portal</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-      
       <div class="footer">
         <div class="footer-content">
           <div class="footer-logo">
-            Hit The <span class="main-jackwatt-animation"> JackWatt</span>
-
+            Hit The <span>JackWatt</span>
           </div>
           <div class="footer-links">
-            <a href="./HitTheJackWatt_Privacy_Policy.html">Privacy Policy</a>
-            <a href="./HitTheJackWatt_Terms_of_Service.html">Terms of Service</a>
-            <a href="./HitTheJackWatt_Official_Rules.html">Official Rules</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
             <a href="mailto:admin@hitthejackwatt.com">Contact Us</a>
           </div>
           <div class="footer-social">
@@ -2029,7 +1472,7 @@
           </div>
         </div>
         <div class="footer-copyright">
-          Powered by Intelliwatt | A service of Intellipath Solutions LLC | Â© 2024 HitTheJackWatt
+          Powered by IntelliPath Solutions | -¬ 2024 HitTheJackWatt
         </div>
       </div>
     </div>
@@ -2040,17 +1483,16 @@
     const jackpot = document.getElementById("jackpot");
     let amount = 0;
     const target = 25000;
-    const animationDuration = 10000; // 10 seconds in milliseconds
     const interval = setInterval(() => {
       if (amount < target) {
-        amount += 5; // Increment by $5 each time
+        amount += Math.floor((target - amount) / 20) + 1;
         jackpot.textContent = `$${amount.toLocaleString()}`;
       } else {
         jackpot.textContent = "$25,000";
         jackpot.classList.add("jackpot-active");
         clearInterval(interval);
       }
-    }, 2); // Adjust interval timing to complete in approximately 10 seconds (25000/5 = 5000 steps * 2ms = 10000ms)
+    }, 50);
     
     // Form submission script (uses XMLHttpRequest for maximum compatibility)
     function submitForm(event) {
@@ -2097,7 +1539,8 @@
       // Always return false to prevent default form submission
       return false;
     }
-    
+  </script>
+<script>
     // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', function() {
       const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -2154,16 +1597,7 @@
         });
       }
     });
-  </script>
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
