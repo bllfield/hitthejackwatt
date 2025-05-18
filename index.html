@@ -86,8 +86,17 @@
       align-items: center;
     }
     
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+            z-index: 1;
+    }
+        
+        /* Header, navigation and logo */
     .nav-container {
-      position: absolute;
+      position: sticky;
       top: 0;
       left: 0;
       right: 0;
@@ -97,17 +106,11 @@
       align-items: center;
       padding: 1rem 2rem;
       background: rgba(18, 0, 56, 0.8);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     }
-    
-    .nav-logo-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
+        
     .nav-logo {
       font-size: 1.5rem;
       font-weight: 700;
@@ -116,30 +119,17 @@
       display: flex;
       align-items: center;
     }
-    
-    .navh1.logo > span:first-child {
+        
+    .nav-logo span {
       color: var(--neon-green);
       text-shadow: 0 0 5px var(--neon-green);
     }
-    
-    .nav-logo span:first-of-type {
-      color: var(--neon-green);
-      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
-      animation: flicker 3s infinite alternate;
-    }
-    
-    .nav-tagline {
-      font-size: 0.8rem;
-      color: var(--neon-blue);
-      text-shadow: 0 0 5px var(--neon-blue);
-      text-align: center;
-    }
-    
+        
     .nav-links {
       display: flex;
       gap: 1.5rem;
     }
-    
+        
     .nav-links a {
       color: white;
       text-decoration: none;
@@ -150,11 +140,11 @@
       padding: 0.5rem 0;
       position: relative;
     }
-    
+        
     .nav-links a:hover {
       color: var(--neon-green);
     }
-    
+        
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -165,9 +155,9 @@
       background: var(--neon-green);
       transition: width 0.3s ease;
     }
-    
+        
     .nav-links a:hover::after {
-      width: 100%;
+       width: 100%;
     }
     
     .header-content {
@@ -1573,7 +1563,7 @@
       animation: flicker 3s infinite alternate;
     }
     
-    /* Mobile menu styles */
+        /* Mobile menu styles */
     .mobile-menu-toggle {
       display: none;
       cursor: pointer;
@@ -1630,20 +1620,29 @@
       transform: rotate(-135deg);
     }
     
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
+    body.menu-open { overflow: hidden; }
+    
+    .mobile-close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 30px;
+      color: var(--neon-green);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: none; /* Hide by default */
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px var(--neon-green);
     }
     
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      padding: 0.5rem 0;
-      position: relative;
+    .mobile-close-btn:hover {
+      transform: scale(1.1);
+      background: rgba(0, 0, 0, 0.5);
     }
     
     @media (max-width: 768px) {
@@ -1690,38 +1689,12 @@
       .nav-links a:last-child {
         border-bottom: none;
       }
+      
+      .mobile-close-btn {
+        display: flex; /* Only show on mobile */
+      }
     }
-  body.menu-open { overflow: hidden; }
-
-  .mobile-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 30px;
-    color: var(--neon-green);
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: none; /* Hide by default */
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px var(--neon-green);
-  }
-  
-  .mobile-close-btn:hover {
-    transform: scale(1.1);
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  @media (max-width: 768px) {
-    .mobile-close-btn {
-      display: flex; /* Only show on mobile */
-    }
-  }
-  </style>
+    </style>
 </head>
 <body>
   <div class="hero">
@@ -2157,7 +2130,7 @@
         });
       }
     });
-  </script>
+</script>
 </body>
 </html>
 
