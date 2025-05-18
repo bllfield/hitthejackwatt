@@ -1683,7 +1683,7 @@
         border-bottom: none;
       }
     }
-  body.menu-open { overflow: hidden; }\n  </style>
+  body.menu-open { overflow: hidden; }\n    .mobile-close-btn { position: absolute; top: 15px; right: 15px; font-size: 30px; color: var(--neon-green); cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(0, 0, 0, 0.3); transition: all 0.3s ease; box-shadow: 0 0 10px var(--neon-green); } .mobile-close-btn:hover { transform: scale(1.1); background: rgba(0, 0, 0, 0.5); } </style>
 </head>
 <body>
   <div class="hero">
@@ -1704,6 +1704,7 @@
       </div>
       
       <div class="nav-links">
+        <div class="mobile-close-btn">&times;</div>
         <a href="#how-it-works">How It Works</a>
         <a href="./HitTheJackWatt_Benefits.html">Benefits</a>
         <a href="./HitTheJackWatt_Testimonials.html">Testimonials</a>
@@ -2068,11 +2069,13 @@
       const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
       const hamburger = document.querySelector('.hamburger');
       const navLinks = document.querySelector('.nav-links');
+      const body = document.body;
       
       // Toggle menu when hamburger is clicked
       mobileMenuToggle.addEventListener('click', function() {
         hamburger.classList.toggle('open');
         navLinks.classList.toggle('active');
+        body.classList.toggle('menu-open');
       });
       
       // Close menu when a link is clicked
@@ -2081,12 +2084,25 @@
         item.addEventListener('click', function() {
           hamburger.classList.remove('open');
           navLinks.classList.remove('active');
+          body.classList.remove('menu-open');
         });
       });
+      
+      // Close button functionality
+      const closeBtn = document.querySelector('.mobile-close-btn');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+          hamburger.classList.remove('open');
+          navLinks.classList.remove('active');
+          body.classList.remove('menu-open');
+        });
+      }
     });
   </script>
 </body>
 </html>
+
+
 
 
 
