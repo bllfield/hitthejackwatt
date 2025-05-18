@@ -113,7 +113,7 @@
       align-items: center;
     }
     
-    .nav-logo span {
+    .navh1.logo > span:first-child {
       color: var(--neon-green);
       text-shadow: 0 0 5px var(--neon-green);
     }
@@ -182,7 +182,7 @@
       letter-spacing: 2px;
     }
     
-    .powered-by-text { font-size: 0.4em; font-weight: normal; display: block; margin-top: 0.3rem; color: white; }\n\n    .intelliwatt { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); animation: none; }\n\n    .logo span {
+    .powered-by-text { font-size: 0.4em; font-weight: normal; display: block; margin-top: 0.3rem; color: white; }\n\n    .intelliwatt { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); animation: none; }\n\n    h1.logo > span:first-child {
       color: var(--neon-green);
       text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
       animation: flicker 3s infinite alternate;
@@ -851,7 +851,7 @@
       font-weight: 700;
     }
     
-    .footer-logo span {
+    .footerh1.logo > span:first-child {
       color: var(--neon-green);
     }
     
@@ -1513,13 +1513,21 @@
         font-size: 1rem;
       }
     }
+    
+    /* Main JackWatt animation */
+    .main-jackwatt-animation {
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+      animation: flicker 3s infinite alternate;
+    }
   </style>
 </head>
 <body>
   <div class="hero">
     <div class="nav-container">
       <div class="nav-logo-container">
-        <a href="/" class="nav-logo">Hit The <span>JackWatt</span></a>
+        <a href="/" class="nav-logo">Hit The <span class="main-jackwatt-animation">JackWatt</span>
+</a>
         <div class="nav-tagline">Powered by Intelliwatt</div>
       </div>
       <div class="nav-links">
@@ -1535,7 +1543,8 @@
     <div class="container">
       <header>
         <div class="header-content">
-          <h1 class="logo">Hit The <span>JackWatt</span><br><span class="powered-by-text">Powered by <span class="intelliwatt">Intelliwatt</span></span></h1>
+          <h1 class="logo">Hit The <span class="main-jackwatt-animation">JackWatt</span>
+<br><span class="powered-by-text">Powered by <span class="intelliwatt">Intelliwatt</span></span></h1>
           <p class="tagline">Slash Your Energy Bill — and Hit the JackWatt</p>
           <p class="subheadline">Intelliwatt shows you the best electricity plan for your home — based on your real usage — FOR FREE.</p>
         </div>
@@ -1796,7 +1805,8 @@
       <div class="footer">
         <div class="footer-content">
           <div class="footer-logo">
-            Hit The <span>JackWatt</span>
+            Hit The <span class="main-jackwatt-animation">JackWatt</span>
+
           </div>
           <div class="footer-links">
             <a href="./HitTheJackWatt_Privacy_Policy.html">Privacy Policy</a>
