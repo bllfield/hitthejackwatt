@@ -1,0 +1,63 @@
+/* Mobile menu fixes for HitTheJackWatt */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+  
+  .nav-container {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+  
+  .nav-logo-container {
+    align-items: flex-start !important;
+  }
+  
+  .nav-logo {
+    font-size: 1.6rem !important;
+  }
+  
+  .hero {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .container {
+    padding: 0 1rem !important;
+    width: 100% !important;
+  }
+}
+
+/* Mobile close button */
+.mobile-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  color: var(--neon-green);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: none; /* Hide by default */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-green);
+}
+
+.mobile-close-btn:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .mobile-close-btn {
+    display: flex; /* Only show on mobile */
+  }
+} 
