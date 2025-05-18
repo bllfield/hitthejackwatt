@@ -99,6 +99,12 @@
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     }
     
+    .nav-logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
     .nav-logo {
       font-size: 1.5rem;
       font-weight: 700;
@@ -111,6 +117,12 @@
     .nav-logo span {
       color: var(--neon-green);
       text-shadow: 0 0 5px var(--neon-green);
+    }
+    
+    .nav-tagline {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
     }
     
     .nav-links {
@@ -165,10 +177,23 @@
       letter-spacing: 2px;
     }
     
-    .logo span {
+    .powered-by-text { font-size: 0.4em; font-weight: normal; display: block; margin-top: 0.3rem; color: white; }\n\n    .intelliwatt { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); animation: none; }\n\n    .logo span {
       color: var(--neon-green);
       text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
       animation: flicker 3s infinite alternate;
+    }
+    
+    .logo-tagline {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin-top: 0.2rem;
+      color: white;
+    }
+    
+    .logo-tagline span {
+      color: var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue);
+      animation: none;
     }
     
     .logo::after {
@@ -180,6 +205,8 @@
       height: 3px;
       background: linear-gradient(90deg, transparent, var(--neon-pink), transparent);
     }
+    
+    
     
     .tagline {
       font-size: 2.2rem;
@@ -217,23 +244,18 @@
     }
     
     .jackpot-svg-container {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
+      position: relative;
       width: 100%;
-      height: 100%;
+      height: 260px;
       overflow: hidden;
-      z-index: 0;
     }
     
     .openart-svg {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(3.0);
-      transform-origin: center center;
+      transform: scale(6.0);
+      transform-origin: center 57%;
     }
     
     .jackpot-content {
@@ -244,11 +266,11 @@
       align-items: center;
       justify-content: center;
       padding: 1rem 1.5rem;
-      background: transparent;
+      background-color: rgba(18, 0, 56, 0.9);
       border-radius: 0;
       margin: 0;
       width: 100%;
-      border-bottom: none;
+      border-bottom: 1px solid rgba(255, 0, 255, 0.3);
     }
     
     .jackpot-label-container {
@@ -325,12 +347,11 @@
     @media (max-width: 768px) {
       .jackpot-container {
         flex-direction: column;
-        padding: 2rem 1rem;
+        min-height: 300px;
       }
       
       .jackpot-svg-container {
         width: 100%;
-        margin-bottom: 1.5rem;
       }
       
       #jackpot {
@@ -345,6 +366,10 @@
     }
     
     @media (max-width: 480px) {
+      .jackpot-container {
+        min-height: 280px;
+      }
+      
       .jackpot-label {
         font-size: 1.3rem;
       }
@@ -1182,7 +1207,7 @@
       
       .intelliwatt-bot {
         width: 180px;
-        height: 180px;
+        height: 260px;
       }
       
       .mascot-heading {
@@ -1486,7 +1511,10 @@
 <body>
   <div class="hero">
     <div class="nav-container">
-      <a href="/" class="nav-logo">Hit The <span>JackWatt</span></a>
+      <div class="nav-logo-container">
+        <a href="/" class="nav-logo">Hit The <span>JackWatt</span></a>
+        <div class="nav-tagline">Powered by Intelliwatt</div>
+      </div>
       <div class="nav-links">
         <a href="#how-it-works">How It Works</a>
         <a href="./HitTheJackWatt_Benefits.html">Benefits</a>
@@ -1500,23 +1528,23 @@
     <div class="container">
       <header>
         <div class="header-content">
-          <h1 class="logo">Hit The <span>JackWatt</span></h1>
+          <h1 class="logo">Hit The <span>JackWatt</span><div class="logo-tagline">Powered by <span>Intelliwatt</span></div></h1>
           <p class="tagline">Slash Your Energy Bill — and Hit the JackWatt</p>
           <p class="subheadline">Intelliwatt shows you the best electricity plan for your home — based on your real usage — FOR FREE.</p>
         </div>
       </header>
       
       <div class="jackpot-container">
-        <div class="jackpot-svg-container">
-          <object data="assets/images/openart-image_3RWs6nGG_1747517410954_raw.svg" type="image/svg+xml" class="openart-svg"></object>
-        </div>
         <div class="jackpot-content">
           <div class="jackpot-label-container">
             <div class="jackpot-label">CURRENT JACKPOT</div>
             <div class="sample-tag">Sample</div>
           </div>
           <p>A new winner every month</p>
-          <div id="jackpot">$0</div>
+          <div id="jackpot"></div>
+        </div>
+        <div class="jackpot-svg-container">
+          <object data="assets/images/openart-image_3RWs6nGG_1747517410954_raw.svg" type="image/svg+xml" class="openart-svg"></object>
         </div>
       </div>
       
@@ -1847,3 +1875,11 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
