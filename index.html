@@ -162,6 +162,7 @@
     
     .header-content {
       margin-top: 2rem;
+      margin-bottom: 1rem; /* Added reduced bottom margin */
       text-align: center;
     }
     
@@ -269,11 +270,12 @@
       background: transparent;
       text-align: center;
       padding: 0;
-      margin: 3rem 0;
+      margin: 3rem auto !important; /* Reduced from 6rem to 3rem */
+      max-width: 1200px;
       border-radius: 20px;
       border: 2px solid rgba(255, 0, 255, 0.3);
       box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
-      overflow: hidden;
+      overflow: visible; /* Changed from hidden to allow testimonials to be visible */
       z-index: 1;
       display: flex;
       flex-direction: column;
@@ -384,11 +386,13 @@
     @media (max-width: 768px) {
       .jackpot-container {
         flex-direction: column;
-        min-height: 300px;
+        min-height: auto;
+        padding: 0 1rem;
       }
       
       .jackpot-svg-container {
         width: 100%;
+        height: 200px; /* Reduced height on mobile */
       }
       
       #jackpot {
@@ -1712,9 +1716,196 @@
         display: flex; /* Only show on mobile */
       }
     }
+    
+    /* Floating mini testimonials */
+    .floating-testimonial {
+      position: absolute;
+      width: 200px; /* Slightly narrower to fit better */
+      background: rgba(18, 0, 56, 0.9); /* More opaque background */
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 255, 255, 0.2);
+      border: 1px solid rgba(0, 255, 255, 0.4); /* More visible border */
+      backdrop-filter: blur(5px);
+      z-index: 2;
+      transform: rotate(-5deg);
+      transition: all 0.3s ease;
+      animation: float-testimonial 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes float-testimonial {
+      0%, 100% { transform: rotate(-5deg) translateY(0); }
+      50% { transform: rotate(-5deg) translateY(-10px); }
+    }
+    
+    @keyframes float-testimonial-right {
+      0%, 100% { transform: rotate(5deg) translateY(0); }
+      50% { transform: rotate(5deg) translateY(-12px); }
+    }
+    
+    .floating-testimonial:hover {
+      transform: rotate(0deg) translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px var(--neon-blue);
+      border-color: var(--neon-green);
+      animation-play-state: paused;
+    }
+    
+    .floating-testimonial.right {
+      transform: rotate(5deg);
+      animation: float-testimonial-right 7s ease-in-out infinite;
+    }
+    
+    .floating-testimonial.right:hover {
+      transform: rotate(0deg) translateY(-5px);
+      animation-play-state: paused;
+    }
+    
+    .floating-testimonial::before {
+      content: '"';
+      position: absolute;
+      top: -15px;
+      left: 10px;
+      font-size: 4rem;
+      color: rgba(255, 0, 255, 0.2);
+      font-family: sans-serif;
+      line-height: 1;
+    }
+    
+    .floating-testimonial:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+    
+    .floating-testimonial p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.95);
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    }
+    
+    .floating-testimonial .mini-author-name {
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--neon-blue);
+      margin-bottom: 0;
+    }
+    
+    .floating-testimonial .mini-author-location {
+      font-style: italic;
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .testimonial-2 {
+      position: fixed;
+      top: 45%; 
+      right: 15px; /* Absolute position from the right edge */
+      transform: rotate(5deg);
+    }
+    
+    .testimonial-3 {
+      position: fixed;
+      top: 60%; 
+      left: 15px;
+      transform: rotate(-5deg);
+    }
+    
+    .testimonial-4 {
+      position: fixed;
+      top: 75%; 
+      right: 15px;
+      transform: rotate(5deg);
+    }
+    
+    /* Hide testimonials at smaller screen sizes where they might overlap */
+    @media (max-width: 1400px) {
+      .floating-testimonial {
+        display: none;
+      }
+    }
+    
+    /* Mobile styles for jackpot testimonials */
+    @media (max-width: 768px) {
+      .jackpot-content > div {
+        flex-direction: column !important;
+      }
+      
+      .jackpot-content > div > div:first-child,
+      .jackpot-content > div > div:last-child {
+        width: 85% !important;
+        margin: 0 auto 1rem auto !important;
+        transform: rotate(0deg) !important;
+      }
+      
+      .jackpot-content > div > div:last-of-type {
+        margin-bottom: 0 !important;
+        margin-top: 1rem !important;
+      }
+      
+      /* Reorder the elements to put testimonials below the jackpot */
+      .jackpot-content > div {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Put the jackpot in the middle first */
+      .jackpot-content > div > div:nth-child(2) {
+        order: 1;
+      }
+      
+      /* Then the first testimonial */
+      .jackpot-content > div > div:nth-child(1) {
+        order: 2;
+      }
+      
+      /* Then the second testimonial */
+      .jackpot-content > div > div:nth-child(3) {
+        order: 3;
+      }
+    }
+    
+    /* Hide floating testimonials on mobile */
+    @media (max-width: 768px) {
+      .floating-testimonial.testimonial-2,
+      .floating-testimonial.testimonial-3,
+      .floating-testimonial.testimonial-4 {
+        display: none !important;
+      }
+    }
     </style>
 </head>
 <body>
+  <!-- Floating Testimonials -->
+  <div class="floating-testimonial testimonial-2 right">
+    <p>"The process was so easy - I just entered my info and got the perfect plan recommendation when my plan came due."</p>
+    <p class="mini-author-name">- Sarah T.</p>
+    <p class="mini-author-location">Austin, TX</p>
+  </div>
+  
+  <div class="floating-testimonial testimonial-3">
+    <p>"Not only do I save on my electricity bill, they gave me good info on where my energy is going."</p>
+    <p class="mini-author-name">- David K.</p>
+    <p class="mini-author-location">Houston, TX</p>
+  </div>
+  
+  <div class="floating-testimonial testimonial-4 right">
+    <p>"Intelliwatt showed me exactly how my AC was affecting my bill. Switched to a time-of-use plan and saving $45/month."</p>
+    <p class="mini-author-name">- Jennifer L.</p>
+    <p class="mini-author-location">San Antonio, TX</p>
+  </div>
+  
   <div class="nav-container">
       <a href="index.html" class="nav-logo">Hit The&nbsp;<span>JackWatt</span></a>
       
@@ -1750,13 +1941,33 @@
       
       <div class="jackpot-container">
         <div class="jackpot-content">
-          <div class="jackpot-label-container">
-            <div class="jackpot-label">CURRENT JACKPOT</div>
-            <div class="sample-tag">Sample</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <!-- Left testimonial -->
+            <div style="width: 160px; text-align: left; padding: 10px; background-color: rgba(18, 0, 56, 0.95); border-radius: 10px; border: 1.5px solid rgba(57, 255, 20, 0.5); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3); transform: rotate(-3deg); margin-right: 20px;">
+              <p style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.8rem; font-style: italic; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);">"I saved $75 last month with Intelliwatt's recommended plan!"</p>
+              <p style="font-weight: 600; font-size: 0.8rem; color: #00ffff; margin-bottom: 0;">- Jennifer S.</p>
+              <p style="font-style: italic; font-size: 0.7rem; color: rgba(255, 255, 255, 0.7);">Dallas, TX</p>
+            </div>
+          
+            <!-- Middle content with jackpot -->
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div class="jackpot-label-container">
+                <div class="jackpot-label">CURRENT JACKPOT</div>
+                <div class="sample-tag">Sample</div>
+              </div>
+              <p>A new winner every month</p>
+              <div id="jackpot"></div>
+            </div>
+            
+            <!-- Right testimonial -->
+            <div style="width: 160px; text-align: left; padding: 10px; background-color: rgba(18, 0, 56, 0.95); border-radius: 10px; border: 1.5px solid rgba(57, 255, 20, 0.5); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3); transform: rotate(3deg); margin-left: 20px;">
+              <p style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.8rem; font-style: italic; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);">"I was overpaying by $90 a month! Now I'm saving big time."</p>
+              <p style="font-weight: 600; font-size: 0.8rem; color: #00ffff; margin-bottom: 0;">- Michael R.</p>
+              <p style="font-style: italic; font-size: 0.7rem; color: rgba(255, 255, 255, 0.7);">Dallas, TX</p>
+            </div>
           </div>
-          <p>A new winner every month</p>
-          <div id="jackpot"></div>
         </div>
+        
         <div class="jackpot-svg-container">
           <object data="assets/images/openart-image_3RWs6nGG_1747517410954_raw.svg" type="image/svg+xml" class="openart-svg"></object>
         </div>
@@ -2143,20 +2354,66 @@
         });
       }
     });
+    
+    // Randomize floating testimonial positions for more natural look
+    document.addEventListener('DOMContentLoaded', function() {
+      const testimonials = document.querySelectorAll('.floating-testimonial');
+      
+      // Initially hide all floating testimonials
+      testimonials.forEach(testimonial => {
+        testimonial.style.display = 'none';
+      });
+      
+      // Show testimonials only when scrolling to appropriate locations
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        
+        // Show second testimonial around the middle sections
+        if (scrollPosition > windowHeight * 1.2 && scrollPosition < windowHeight * 2.0) {
+          document.querySelector('.testimonial-2').style.display = 'block';
+        } else {
+          document.querySelector('.testimonial-2').style.display = 'none';
+        }
+        
+        // Show third testimonial further down
+        if (scrollPosition > windowHeight * 2.0 && scrollPosition < windowHeight * 2.8) {
+          document.querySelector('.testimonial-3').style.display = 'block';
+        } else {
+          document.querySelector('.testimonial-3').style.display = 'none';
+        }
+        
+        // Show fourth testimonial toward the bottom of the page, but not too far down
+        if (scrollPosition > windowHeight * 2.8 && scrollPosition < windowHeight * 3.8) {
+          document.querySelector('.testimonial-4').style.display = 'block';
+        } else {
+          document.querySelector('.testimonial-4').style.display = 'none';
+        }
+      });
+      
+      // Trigger scroll event initially to set correct state
+      window.dispatchEvent(new Event('scroll'));
+      
+      testimonials.forEach(testimonial => {
+        // Add small rotation randomization
+        const rotationBase = testimonial.classList.contains('right') ? 5 : -5;
+        const rotationOffset = (Math.random() * 3) - 1.5; // -1.5 to +1.5 degrees
+        
+        // Apply random rotation
+        const newRotation = rotationBase + rotationOffset;
+        
+        // For right-side testimonials
+        if (testimonial.classList.contains('right')) {
+          testimonial.style.transform = `rotate(${newRotation}deg)`;
+          testimonial.style.animationDuration = (6 + Math.random() * 2) + 's'; // 6-8s
+        } else {
+          // For left-side testimonials
+          testimonial.style.transform = `rotate(${newRotation}deg)`;
+          testimonial.style.animationDuration = (5 + Math.random() * 2) + 's'; // 5-7s
+        }
+      });
+    });
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
