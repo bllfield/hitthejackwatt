@@ -1374,6 +1374,113 @@
         font-size: 1rem;
       }
     }
+    
+    /* Intelliwatt Branding Section */
+    .intelliwatt-branding {
+      margin: var(--section-spacing) 0;
+      padding: 3rem 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .intelliwatt-branding::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at bottom right, rgba(0, 255, 255, 0.15), transparent 60%);
+      pointer-events: none;
+    }
+    
+    .intelliwatt-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .intelliwatt-heading {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .intelliwatt-heading span {
+      color: var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue);
+    }
+    
+    .intelliwatt-text {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .intelliwatt-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2rem;
+      background: var(--neon-blue);
+      color: var(--deep-purple);
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    }
+    
+    .intelliwatt-cta i {
+      transition: transform 0.3s ease;
+    }
+    
+    .intelliwatt-cta:hover {
+      background: white;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+      transform: translateY(-3px);
+    }
+    
+    .intelliwatt-cta:hover i {
+      transform: translateX(5px);
+    }
+    
+    @media (max-width: 768px) {
+      .intelliwatt-branding {
+        padding: 2.5rem 1.5rem;
+      }
+      
+      .intelliwatt-heading {
+        font-size: 2rem;
+      }
+      
+      .intelliwatt-text {
+        font-size: 1.1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .intelliwatt-heading {
+        font-size: 1.8rem;
+      }
+      
+      .intelliwatt-text {
+        font-size: 1rem;
+      }
+      
+      .intelliwatt-cta {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1637,6 +1744,18 @@
           <span>Washington D.C.</span>
         </div>
         <p class="states-more">and more coming soon</p>
+      </div>
+      
+      <!-- Intelliwatt Branding Section -->
+      <div class="intelliwatt-branding">
+        <div class="intelliwatt-content">
+          <h2 class="intelliwatt-heading">Powered by <span>Intelliwatt</span></h2>
+          <p class="intelliwatt-text">Your dashboard, entries, and energy insights all live inside Intelliwatt — a secure portal built to help you save.</p>
+          <a href="https://www.intelliwatt.com" class="intelliwatt-cta">
+            <span>Go to Intelliwatt Portal</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
       
       <div class="footer">
