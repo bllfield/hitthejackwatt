@@ -4,20 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Hit The JackWatt - Save on your electricity bills and win cash prizes"/>
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Hit The JackWatt - Win Big by Saving on Energy!" />
-  <meta property="og:description" content="Join the free energy rewards platform that helps you lower your bills and gives you a shot at monthly jackpots." />
-  <meta property="og:image" content="https://hitthejackwatt.com/assets/cell-link-image.jpg" />
-  <meta property="og:url" content="https://hitthejackwatt.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hit The JackWatt - Win Big by Saving on Energy!" />
-  <meta name="twitter:description" content="Explore your energy usage, earn entries, and hit the jackpot – all for free." />
-  <meta name="twitter:image" content="https://hitthejackwatt.com/assets/cell-link-image.jpg" />
-
   <title>Hit The JackWatt | Slash Your Energy Bill — and Hit the JackWatt</title>
   <!-- Favicons -->
   <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAFdQTFRFAAAA//8A/9MA/+EA//8A//8A//8A//8A//8A/+YA/98A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A//8A////+FomYgAAAAd0Uk5TAB+fz+/v3zOPXCYAAAABYktHRB8FDRC9AAAAsElEQVQoz22S2xLDIAhEM4Ci9lI1yf//ak2NaaeZ9oXlsAiLSETeE8GlkCoIaxuBtTUCQq6aZ2uICG4Tm7B2hkBEKc2DTQTfZswVEFoHnwJUDG4ZuCywA+pqM2rMIzCCPe9+AtQ3D+j3vAE74PluvwK82WYoKJ1QxRwG+FXxBS1QaV/XoUhSp4rNfgS8inRoHqCVy0UuZhO42WrOqcLJ4p2u9Ek/EUdR/Yh+JHcMfxHv08oPYbMQwAwh/fIAAAAASUVORK5CYII=">
@@ -176,7 +162,6 @@
     
     .header-content {
       margin-top: 2rem;
-      margin-bottom: 1rem; /* Added reduced bottom margin */
       text-align: center;
     }
     
@@ -284,16 +269,16 @@
       background: transparent;
       text-align: center;
       padding: 0;
-      margin: 3rem auto !important; /* Reduced from 6rem to 3rem */
-      max-width: 1200px;
+      margin: 3rem 0;
       border-radius: 20px;
       border: 2px solid rgba(255, 0, 255, 0.3);
       box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
-      overflow: visible; /* Changed from hidden to allow testimonials to be visible */
+      overflow: hidden;
       z-index: 1;
       display: flex;
       flex-direction: column;
       min-height: 350px;
+      padding: 0 200px; /* Add horizontal padding to make room for testimonials */
     }
     
     .jackpot-svg-container {
@@ -400,13 +385,11 @@
     @media (max-width: 768px) {
       .jackpot-container {
         flex-direction: column;
-        min-height: auto;
-        padding: 0 1rem;
+        min-height: 300px;
       }
       
       .jackpot-svg-container {
         width: 100%;
-        height: 200px; /* Reduced height on mobile */
       }
       
       #jackpot {
@@ -1748,6 +1731,11 @@
       pointer-events: none;
     }
     
+    /* Allow hover effects only when explicitly enabled */
+    .floating-testimonial.interactive {
+      pointer-events: auto;
+    }
+    
     @keyframes float-testimonial {
       0%, 100% { transform: rotate(-5deg) translateY(0); }
       50% { transform: rotate(-5deg) translateY(-10px); }
@@ -1822,6 +1810,72 @@
       color: rgba(255, 255, 255, 0.7);
     }
     
+    .testimonial-1 {
+      top: 40vh;
+      left: 2vw;
+    }
+    
+    .testimonial-2 {
+      top: 65vh;
+      right: 2vw;
+    }
+    
+    .testimonial-3 {
+      top: 105vh;
+      left: 3vw;
+    }
+    
+    .testimonial-4 {
+      position: fixed;
+      top: 70%; /* Moved up from 80% to ensure it's fully visible */
+      right: calc(50% - 600px); /* Position outside the main content area */
+      transform: translateX(50%) rotate(5deg);
+    }
+    
+    /* Moving testimonials to open spaces */
+    @media (min-width: 1200px) {
+      .testimonial-1 {
+        top: 150vh; /* Below the hero section in open space */
+        left: 5vw;
+      }
+      
+      .testimonial-2 {
+        top: 200vh; /* Between sections in open space */
+        right: 5vw;
+      }
+      
+      .testimonial-3 {
+        top: 270vh; /* After steps section */
+        left: 5vw;
+      }
+      
+      .testimonial-4 {
+        top: 330vh; /* Near the bottom in open space */
+        right: 5vw;
+      }
+    }
+    
+    /* Fixed positioning for better placement */
+    .testimonial-1 {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      transform: rotate(-3deg); /* Less extreme rotation */
+      animation: none;
+      pointer-events: auto;
+      width: 220px; /* Slightly wider */
+      z-index: 10;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3); /* More pronounced shadow */
+      border: 1.5px solid rgba(57, 255, 20, 0.5); /* Green border to match jackpot theme */
+    }
+    
+    /* Special hover effect for testimonial-1 */
+    .testimonial-1:hover {
+      transform: rotate(0deg) translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--neon-green);
+      border-color: var(--neon-green);
+    }
+    
     .testimonial-2 {
       position: fixed;
       top: 45%; 
@@ -1850,99 +1904,63 @@
       }
     }
     
-    /* Mobile styles for jackpot testimonials */
-    @media (max-width: 768px) {
-      /* Setup container ordering */
-      .jackpot-container {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      /* Add bottom margin to svg container */
-      .jackpot-svg-container {
-        margin-bottom: 1.5rem;
-      }
-      
-      /* Hide original testimonials in content section */
-      .jackpot-content > div > div:first-child,
-      .jackpot-content > div > div:last-child {
+    /* Testimonial position for jackpot container */
+    .testimonial-jackpot-left {
+      position: absolute;
+      top: 40%;
+      left: -170px;
+      transform: translateY(-50%) rotate(-3deg);
+      width: 160px;
+      animation: none;
+      z-index: 10;
+      pointer-events: auto;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3);
+      border: 1.5px solid rgba(57, 255, 20, 0.5);
+      display: block !important; /* Always visible */
+      background-color: rgba(18, 0, 56, 0.95); /* More opaque background */
+    }
+    
+    .testimonial-jackpot-right {
+      position: absolute;
+      top: 40%;
+      right: -170px;
+      transform: translateY(-50%) rotate(3deg);
+      width: 160px;
+      animation: none;
+      z-index: 10;
+      pointer-events: auto;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3);
+      border: 1.5px solid rgba(57, 255, 20, 0.5);
+      display: block !important; /* Always visible */
+      background-color: rgba(18, 0, 56, 0.95); /* More opaque background */
+    }
+    
+    /* Special hover effects for jackpot testimonials */
+    .testimonial-jackpot-left:hover,
+    .testimonial-jackpot-right:hover {
+      transform: translateY(-50%) rotate(0deg);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--neon-green);
+      border-color: var(--neon-green);
+    }
+    
+    /* Make jackpot section relative to position testimonials */
+    .jackpot-container {
+      position: relative;
+      margin: 6rem auto !important;
+      overflow: visible;
+    }
+    
+    /* Hide the jackpot testimonials on smaller screens */
+    @media (max-width: 1200px) {
+      .testimonial-jackpot-left,
+      .testimonial-jackpot-right {
         display: none !important;
-      }
-      
-      /* Add mobile testimonials at the bottom */
-      .mobile-testimonials {
-        display: none !important; /* Hidden by default on ALL devices */
-      }
-      
-      /* Show on mobile only */
-      @media (max-width: 768px) {
-        .mobile-testimonials {
-          display: flex !important; /* Override to show ONLY on mobile */
-        }
-        
-        .mobile-testimonial {
-          width: 85%;
-          margin: 0 auto;
-          padding: 1rem;
-          background-color: rgba(18, 0, 56, 0.95);
-          border-radius: 10px;
-          border: 1.5px solid rgba(57, 255, 20, 0.5);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3);
-          text-align: left;
-        }
-        
-        .mobile-testimonial p:first-child {
-          font-size: 0.9rem;
-          line-height: 1.5;
-          margin-bottom: 0.8rem;
-          font-style: italic;
-          color: rgba(255, 255, 255, 0.95);
-          text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-        }
-        
-        .mobile-testimonial p:nth-child(2) {
-          font-weight: 600;
-          font-size: 0.8rem;
-          color: #00ffff;
-          margin-bottom: 0;
-        }
-        
-        .mobile-testimonial p:last-child {
-          font-style: italic;
-          font-size: 0.7rem;
-          color: rgba(255, 255, 255, 0.7);
-        }
-      }
-    }
-    
-    /* Hide floating testimonials on mobile */
-    @media (max-width: 768px) {
-      .floating-testimonial.testimonial-2,
-      .floating-testimonial.testimonial-3,
-      .floating-testimonial.testimonial-4 {
-        display: none !important;
-      }
-    }
-    
-    /* Mobile testimonials - hide completely on desktop */
-    .mobile-testimonials {
-      display: none !important; /* Hidden by default on ALL devices */
-    }
-    
-    /* Show mobile testimonials ONLY on mobile */
-    @media (max-width: 768px) {
-      .mobile-testimonials {
-        display: flex !important; /* Override to show ONLY on mobile */
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        margin-top: 0;
       }
     }
     </style>
 </head>
 <body>
-  <!-- Floating Testimonials -->
+  <!-- Floating Testimonials - First one moved to jackpot section -->
   <div class="floating-testimonial testimonial-2 right">
     <p>"The process was so easy - I just entered my info and got the perfect plan recommendation when my plan came due."</p>
     <p class="mini-author-name">- Sarah T.</p>
@@ -1956,7 +1974,7 @@
   </div>
   
   <div class="floating-testimonial testimonial-4 right">
-    <p>"<a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> showed me exactly how my AC was affecting my bill. Switched to a time-of-use plan and saving $45/month."</p>
+    <p>"Intelliwatt showed me exactly how my AC was affecting my bill. Switched to a time-of-use plan and saving $45/month."</p>
     <p class="mini-author-name">- Jennifer L.</p>
     <p class="mini-author-location">San Antonio, TX</p>
   </div>
@@ -1988,57 +2006,38 @@
       <header>
         <div class="header-content">
           <h1 class="logo">Hit The <span class="main-jackwatt-animation"> JackWatt</span>
-<br><span class="powered-by-text">Powered by <span class="intelliwatt"><a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a></span></span></h1>
+<br><span class="powered-by-text">Powered by <span class="intelliwatt">Intelliwatt</span></span></h1>
           <p class="tagline">Slash Your Energy Bill — and Hit the JackWatt</p>
-          <p class="subheadline"><a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> shows you the best electricity plan for your home — based on your real usage — <span class="highlight">FOR FREE</span>.</p>
+          <p class="subheadline">Intelliwatt shows you the best electricity plan for your home — based on your real usage — <span class="highlight">FOR FREE</span>.</p>
         </div>
       </header>
       
       <div class="jackpot-container">
+        <!-- Left testimonial -->
+        <div class="floating-testimonial testimonial-jackpot-left">
+          <p>"I saved $75 last month just by switching to the plan Intelliwatt recommended!"</p>
+          <p class="mini-author-name">- Jennifer S.</p>
+          <p class="mini-author-location">Dallas, TX</p>
+        </div>
+        
         <div class="jackpot-content">
-          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-            <!-- Left testimonial -->
-            <div style="width: 160px; text-align: left; padding: 10px; background-color: rgba(18, 0, 56, 0.95); border-radius: 10px; border: 1.5px solid rgba(57, 255, 20, 0.5); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3); transform: rotate(-3deg); margin-right: 20px;">
-              <p style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.8rem; font-style: italic; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);">"I saved $75 last month with <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a>'s recommended plan!"</p>
-              <p style="font-weight: 600; font-size: 0.8rem; color: #00ffff; margin-bottom: 0;">- Jennifer S.</p>
-              <p style="font-style: italic; font-size: 0.7rem; color: rgba(255, 255, 255, 0.7);">Dallas, TX</p>
-            </div>
-          
-            <!-- Middle content with jackpot -->
-            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-              <div class="jackpot-label-container">
-                <div class="jackpot-label">CURRENT JACKPOT</div>
-                <div class="sample-tag">Sample</div>
-              </div>
-              <p>A new winner every month</p>
-              <div id="jackpot"></div>
-            </div>
-            
-            <!-- Right testimonial -->
-            <div style="width: 160px; text-align: left; padding: 10px; background-color: rgba(18, 0, 56, 0.95); border-radius: 10px; border: 1.5px solid rgba(57, 255, 20, 0.5); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3); transform: rotate(3deg); margin-left: 20px;">
-              <p style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.8rem; font-style: italic; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);">"I was overpaying by $90 a month! Now I'm saving big time."</p>
-              <p style="font-weight: 600; font-size: 0.8rem; color: #00ffff; margin-bottom: 0;">- Michael R.</p>
-              <p style="font-style: italic; font-size: 0.7rem; color: rgba(255, 255, 255, 0.7);">Dallas, TX</p>
-            </div>
+          <div class="jackpot-label-container">
+            <div class="jackpot-label">CURRENT JACKPOT</div>
+            <div class="sample-tag">Sample</div>
           </div>
+          <p>A new winner every month</p>
+          <div id="jackpot"></div>
+        </div>
+        
+        <!-- Right testimonial -->
+        <div class="floating-testimonial testimonial-jackpot-right">
+          <p>"I didn't know I was overpaying by almost $90 a month! Thanks to HitTheJackWatt, I'm saving big time."</p>
+          <p class="mini-author-name">- Michael R.</p>
+          <p class="mini-author-location">Dallas, TX</p>
         </div>
         
         <div class="jackpot-svg-container">
           <object data="assets/images/openart-image_3RWs6nGG_1747517410954_raw.svg" type="image/svg+xml" class="openart-svg"></object>
-        </div>
-        
-        <!-- Mobile testimonials - only visible on small screens -->
-        <div class="mobile-testimonials">
-          <div class="mobile-testimonial">
-            <p>"I saved $75 last month with <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a>'s recommended plan!"</p>
-            <p>- Jennifer S.</p>
-            <p>Dallas, TX</p>
-          </div>
-          <div class="mobile-testimonial">
-            <p>"I was overpaying by $90 a month! Now I'm saving big time."</p>
-            <p>- Michael R.</p>
-            <p>Dallas, TX</p>
-          </div>
         </div>
       </div>
       
@@ -2075,7 +2074,7 @@
             <div class="step-number-new">3</div>
             <div class="step-content">
               <h3 class="step-title-new">Get energy-saving recommendations</h3>
-              <p class="step-description"><a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> will analyze your usage patterns and show you the best energy plans based on your real data — no guesswork, no pressure, just smart suggestions that could save you hundreds each year.</p>
+              <p class="step-description">Intelliwatt will analyze your usage patterns and show you the best energy plans based on your real data — no guesswork, no pressure, just smart suggestions that could save you hundreds each year.</p>
             </div>
           </div>
           
@@ -2092,7 +2091,7 @@
       <div class="cta-section" id="signup">
         <h2 class="cta-heading">Ready to start saving?</h2>
         <div class="sign-up-form">
-          <h3 class="form-heading">Be the first to know when <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> launches</h3>
+          <h3 class="form-heading">Be the first to know when Intelliwatt launches</h3>
           <p style="margin-bottom: 15px;">Join our early access list today. It's free, always will be, and could save you hundreds.</p>
           
           <!-- Form visible by default -->
@@ -2113,7 +2112,7 @@
           <!-- Thank you message hidden by default -->
           <div id="thankYouMessage" style="display: none;" class="thank-you-message">
             <h3>You're Electric!</h3>
-            <p>Thanks for signing up. <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> will let you know as soon as we launch so you can start saving on your energy bills and getting a shot at the jackpot!</p>
+            <p>Thanks for signing up. Intelliwatt will let you know as soon as we launch so you can start saving on your energy bills and getting a shot at the jackpot!</p>
           </div>
           
           <p class="form-help">
@@ -2192,9 +2191,9 @@
           <img src="assets/images/intelliwatt-bot.gif" alt="IntelliWatt Bot">
         </div>
         <div class="mascot-content">
-          <h3 class="mascot-heading">Meet <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">IntelliWatt</a> Bot</h3>
+          <h3 class="mascot-heading">Meet IntelliWatt Bot</h3>
           <p class="mascot-subheading">Your free, energy assistant. Just plug in your info, and it watches the rates so you don't have to.</p>
-          <p class="mascot-text">Your intelligent energy assistant that analyzes consumption patterns to find your perfect energy plan. <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> Bot uses advanced algorithms to compare hundreds of options and match you with the one that maximizes your savings.</p>
+          <p class="mascot-text">Your intelligent energy assistant that analyzes consumption patterns to find your perfect energy plan. IntelliWatt Bot uses advanced algorithms to compare hundreds of options and match you with the one that maximizes your savings.</p>
           
           <div class="mascot-feature">
             <div class="feature-icon"><i class="fas fa-bolt"></i></div>
@@ -2223,8 +2222,8 @@
       <div class="value-prop">
         <h2 class="catchphrase">Fun vibes. <span>Serious savings.</span></h2>
         <div class="explanation">
-          <p>While the jackpot adds excitement, our rate shopper delivers <span class="highlight">guaranteed savings</span>. The average household saves <span class="highlight">$312 per year</span> using our recommendations. <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> analyzes your actual usage patterns and matches them against hundreds of available electricity plans using real-time market data — all so you don't have to.</p>
-          <p style="margin-top: 10px;"><a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> uses Smart Meter Texas data and real-time plan information from licensed brokers to ensure you always get the most accurate recommendations.</p>
+          <p>While the jackpot adds excitement, our rate shopper delivers <span class="highlight">guaranteed savings</span>. The average household saves <span class="highlight">$312 per year</span> using our recommendations. Intelliwatt analyzes your actual usage patterns and matches them against hundreds of available electricity plans using real-time market data — all so you don't have to.</p>
+          <p style="margin-top: 10px;">Intelliwatt uses Smart Meter Texas data and real-time plan information from licensed brokers to ensure you always get the most accurate recommendations.</p>
         </div>
       </div>
       
@@ -2240,7 +2239,7 @@
         <h2 class="catchphrase">Plug in. Power up. <span>Get paid.</span></h2>
         <div class="explanation">
           <p>Join thousands of smart energy users who are saving money and winning big. Our platform is designed to make energy management simple, rewarding, and maybe even a little exciting. The jackpot is our way of making energy fun, but our core mission is helping you keep more money in your wallet every month.</p>
-          <p style="margin-top: 10px;">Sign up now and forget about it—<a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> will alert you when your current plan expires with your perfect match. No commitment, no pressure. <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> notifies you with the best options, and you decide if they're right for you. Energy savings on autopilot.</p>
+          <p style="margin-top: 10px;">Sign up now and forget about it—Intelliwatt will alert you when your current plan expires with your perfect match. No commitment, no pressure. Intelliwatt notifies you with the best options, and you decide if they're right for you. Energy savings on autopilot.</p>
           <p class="energy-tagline">
             No pressure. No pitch. Just better options backed by your data.
           </p>
@@ -2271,8 +2270,8 @@
       <!-- Intelliwatt Branding Section -->
       <div class="intelliwatt-branding">
         <div class="intelliwatt-content">
-          <h2 class="intelliwatt-heading">Powered by <span><a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a></span></h2>
-          <p class="intelliwatt-text">Your dashboard, entries, and energy insights all live inside <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> — a secure portal built to help you save.</p>
+          <h2 class="intelliwatt-heading">Powered by <span>Intelliwatt</span></h2>
+          <p class="intelliwatt-text">Your dashboard, entries, and energy insights all live inside Intelliwatt — a secure portal built to help you save.</p>
           <a href="https://www.intelliwatt.com" class="intelliwatt-cta">
             <span>Go to Intelliwatt Portal</span>
             <i class="fas fa-arrow-right"></i>
@@ -2299,7 +2298,7 @@
           </div>
         </div>
         <div class="footer-copyright">
-          Powered by <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">Intelliwatt</a> | A service of <a href="https://www.intellipath-solutions.com" style="color:inherit; text-decoration:inherit;">Intellipath Solutions LLC</a> | © 2024 HitTheJackWatt
+          Powered by Intelliwatt | A service of Intellipath Solutions LLC | © 2024 HitTheJackWatt
         </div>
       </div>
 </div>
@@ -2426,9 +2425,9 @@
     
     // Randomize floating testimonial positions for more natural look
     document.addEventListener('DOMContentLoaded', function() {
-      const testimonials = document.querySelectorAll('.floating-testimonial');
+      const testimonials = document.querySelectorAll('.floating-testimonial:not(.testimonial-jackpot-left):not(.testimonial-jackpot-right)');
       
-      // Initially hide all floating testimonials
+      // Initially hide all testimonials except the jackpot testimonials
       testimonials.forEach(testimonial => {
         testimonial.style.display = 'none';
       });
