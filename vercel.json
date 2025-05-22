@@ -1,13 +1,7 @@
 {
   "version": 2,
   "builds": [
-    { "src": "my_favicon/**", "use": "@vercel/static" },
-    { "src": "*.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "source": "/favicon.ico", "destination": "/my_favicon/favicon.ico" },
-    { "source": "/site.webmanifest", "destination": "/my_favicon/site.webmanifest" },
-    { "source": "/(.*)", "destination": "/$1" }
+    { "src": "**/*", "use": "@vercel/static" }
   ],
   "headers": [
     {
@@ -19,4 +13,4 @@
       ]
     }
   ]
-} 
+}
