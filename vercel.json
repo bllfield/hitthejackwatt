@@ -3,15 +3,14 @@
   "builds": [
     { "src": "**/*", "use": "@vercel/static" }
   ],
-  "routes": [
-    { "src": "/favicon.ico", "dest": "/my_favicon/favicon.ico" },
-    { "src": "/favicon-96x96.png", "dest": "/my_favicon/favicon-96x96.png" },
-    { "src": "/apple-touch-icon.png", "dest": "/my_favicon/apple-touch-icon.png" },
-    { "src": "/favicon.svg", "dest": "/my_favicon/favicon.svg" },
-    { "src": "/web-app-manifest-512x512.png", "dest": "/my_favicon/web-app-manifest-512x512.png" },
-    { "src": "/web-app-manifest-192x192.png", "dest": "/my_favicon/web-app-manifest-192x192.png" },
-    { "src": "/site.webmanifest", "dest": "/my_favicon/site.webmanifest" },
-    { "src": "/(.*)", "dest": "/$1" }
+  "rewrites": [
+    { "source": "/favicon.ico", "destination": "/my_favicon/favicon.ico" },
+    { "source": "/favicon-96x96.png", "destination": "/my_favicon/favicon-96x96.png" },
+    { "source": "/apple-touch-icon.png", "destination": "/my_favicon/apple-touch-icon.png" },
+    { "source": "/favicon.svg", "destination": "/my_favicon/favicon.svg" },
+    { "source": "/web-app-manifest-512x512.png", "destination": "/my_favicon/web-app-manifest-512x512.png" },
+    { "source": "/web-app-manifest-192x192.png", "destination": "/my_favicon/web-app-manifest-192x192.png" },
+    { "source": "/site.webmanifest", "destination": "/my_favicon/site.webmanifest" }
   ],
   "headers": [
     {
