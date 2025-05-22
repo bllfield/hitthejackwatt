@@ -5,6 +5,11 @@
   ],
   "routes": [
     { "src": "/favicon.ico", "dest": "/my_favicon/favicon.ico" },
+    { "src": "/favicon-96x96.png", "dest": "/my_favicon/favicon-96x96.png" },
+    { "src": "/apple-touch-icon.png", "dest": "/my_favicon/apple-touch-icon.png" },
+    { "src": "/favicon.svg", "dest": "/my_favicon/favicon.svg" },
+    { "src": "/web-app-manifest-512x512.png", "dest": "/my_favicon/web-app-manifest-512x512.png" },
+    { "src": "/web-app-manifest-192x192.png", "dest": "/my_favicon/web-app-manifest-192x192.png" },
     { "src": "/site.webmanifest", "dest": "/my_favicon/site.webmanifest" },
     { "src": "/(.*)", "dest": "/$1" }
   ],
