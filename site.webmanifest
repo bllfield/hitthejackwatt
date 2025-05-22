@@ -1,0 +1,14 @@
+{
+  "name": "JackWatt",
+  "short_name": "JackWatt",
+  "icons": [
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#17163d",
+  "background_color": "#151540",
+  "display": "standalone"
+} 
