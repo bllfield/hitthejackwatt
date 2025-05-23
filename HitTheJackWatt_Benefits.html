@@ -77,11 +77,29 @@
             text-decoration: none;
             display: flex;
             align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-logo img {
+            height: 2.2rem;
+            width: auto;
         }
         
         .nav-logo span {
             color: var(--neon-green);
-            text-shadow: 0 0 5px var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+            animation: flicker 3s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+                opacity: 0.99;
+                text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+            }
+            20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+                opacity: 0.4;
+                text-shadow: none;
+            }
         }
         
         .nav-links {
@@ -583,8 +601,11 @@
 </head>
 <body>
     <div class="nav-container">
-        <a href="index.html" class="nav-logo">Hit The&nbsp;<span>JackWatt</span></a>
-            <!-- Hamburger menu icon for mobile -->
+        <a href="index.html" class="nav-logo">
+            <img src="Hitthejackwatt_Icon.png" alt="Hit The JackWatt Icon">
+            Hit The <span>JackWatt</span>
+        </a>
+        <!-- Hamburger menu icon for mobile -->
     <div class="mobile-menu-toggle">
         <div class="hamburger">
             <span></span>

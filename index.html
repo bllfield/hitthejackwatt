@@ -135,11 +135,18 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      gap: 0.5rem;
     }
-        
+    
     .nav-logo span {
       color: var(--neon-green);
-      text-shadow: 0 0 5px var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+      animation: flicker 3s infinite alternate;
+    }
+    
+    .nav-logo img {
+      height: 2.2rem;
+      width: auto;
     }
         
     .nav-links {
@@ -1950,7 +1957,10 @@
   </div>
   
   <div class="nav-container">
-      <a href="index.html" class="nav-logo">Hit The&nbsp;<span>JackWatt</span></a>
+      <a href="index.html" class="nav-logo">
+        <img src="Hitthejackwatt_Icon.png" alt="Hit The JackWatt Icon">
+        Hit The <span>JackWatt</span>
+      </a>
       
       <!-- Hamburger menu icon for mobile -->
       <div class="mobile-menu-toggle">
