@@ -1,6 +1,6 @@
 {
-  "name": "HitTheJackWatt",
-  "short_name": "JackWatt",
+  "name": "Hit The JackWatt",
+  "short_name": "JackWatt!",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#120038",
-  "background_color": "#120038",
+  "theme_color": "#181a3d",
+  "background_color": "#171840",
   "display": "standalone"
 }
