@@ -91,6 +91,12 @@
             animation: flicker 3s infinite alternate;
         }
         
+        .main-jackwatt-animation {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+            animation: flicker 3s infinite alternate;
+        }
+        
         @keyframes flicker {
             0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
                 opacity: 0.99;
@@ -544,7 +550,8 @@
         <div class="footer">
             <div class="footer-content">
                 <div class="footer-logo">
-                    Hit The <span>JackWatt</span>
+                    <img src="Hitthejackwatt_Icon.png" alt="Hit The JackWatt" style="height: 2.2rem; width: auto; margin-right: 0.5rem;">
+                    Hit The <span class="main-jackwatt-animation">JackWatt</span>
                 </div>
                 <div class="footer-links">
                     <a href="HitTheJackWatt_Privacy_Policy.html">Privacy Policy</a>
