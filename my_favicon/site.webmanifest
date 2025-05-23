@@ -1,24 +1,21 @@
 {
-  "name": "JackWatt",
+  "name": "HitTheJackWatt",
   "short_name": "JackWatt",
   "icons": [
     {
-      "src": "/my_favicon/favicon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/my_favicon/web-app-manifest-192x192.png",
+      "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
-      "src": "/my_favicon/web-app-manifest-512x512.png",
+      "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "theme_color": "#17163d",
-  "background_color": "#151540",
+  "theme_color": "#120038",
+  "background_color": "#120038",
   "display": "standalone"
 }
