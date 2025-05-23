@@ -452,6 +452,15 @@
         display: flex; /* Only show on mobile */
       }
     }
+    /* Add this to the existing styles */
+    .neon-blue-text {
+        color: var(--neon-blue) !important;
+        text-shadow: 0 0 10px var(--neon-blue) !important;
+        transition: all 0.3s ease;
+    }
+    .neon-blue-text:hover {
+        text-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue) !important;
+    }
     </style>
 </head>
 <body>
@@ -507,7 +516,7 @@
             <h2>9. Changes to Terms</h2>
             <p>We may update these Terms of Service at any time. Continued use of the site after updates means you accept the revised terms.</p>
 
-                        <h2>10. Contact Us</h2>            <p>If you have any questions or concerns, please contact us at <a href="mailto:support@intelli-watt.com">support@intelli-watt.com</a>.</p>            <p style="color: white; font-weight: normal;"><a href="https://www.intelli-watt.com" style="color:white;">IntelliWatt</a> is a registered DBA of <a href="https://www.intellipath-solutions.com" style="color:white;">Intellipath Solutions LLC</a>.</p>
+                        <h2>10. Contact Us</h2>            <p>If you have any questions or concerns, please contact us at <a href="mailto:support@intelli-watt.com">support@intelli-watt.com</a>.</p>            <p style="color: white; font-weight: normal;"><a href="https://www.intelli-watt.com" class="neon-blue-text">IntelliWatt</a> is a registered DBA of <a href="https://www.intellipath-solutions.com">Intellipath Solutions LLC</a>.</p>
         </div>
 
         <div class="footer">
@@ -528,7 +537,7 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                Powered by <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">IntelliWatt</a> | A service of <a href="https://www.intellipath-solutions.com" style="color:inherit; text-decoration:inherit;">Intellipath Solutions LLC</a> | © 2024 HitTheJackWatt
+                Powered by <a href="https://www.intelli-watt.com" class="neon-blue-text">IntelliWatt</a> | A service of <a href="https://www.intellipath-solutions.com">Intellipath Solutions LLC</a> | © 2024 HitTheJackWatt
             </div>
         </div>
     </div>

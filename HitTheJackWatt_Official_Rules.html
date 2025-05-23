@@ -538,6 +538,16 @@
             justify-content: center;
         }
     }
+
+    /* Add this to the existing styles */
+    .neon-blue-text {
+        color: var(--neon-blue) !important;
+        text-shadow: 0 0 10px var(--neon-blue) !important;
+        transition: all 0.3s ease;
+    }
+    .neon-blue-text:hover {
+        text-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue) !important;
+    }
     </style>
 </head>
 <body>
@@ -616,7 +626,7 @@
             <p>Prizes are issued via digital payment (PayPal, Venmo, etc.) or mailed check, based on the winner's preference.</p>
             
             <h2>10. Additional Terms</h2>
-            <p>By entering, you agree to receive occasional notifications from <a href="https://www.intelli-watt.com" style="color:inherit;">IntelliWatt</a> - not sales pitches, just helpful updates.<br>
+            <p>By entering, you agree to receive occasional notifications from <a href="https://www.intelli-watt.com" class="neon-blue-text">IntelliWatt</a> - not sales pitches, just helpful updates.<br>
             We'll only reach out to share ways you may be able to save money, get more entries, or learn about new energy opportunities in your area.<br>
             No spam. No pressure. No strings attached.</p>
         </div>
@@ -646,7 +656,7 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                Powered by <a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">IntelliWatt</a> | A service of <a href="https://www.intellipath-solutions.com" style="color:inherit; text-decoration:inherit;">Intellipath Solutions LLC</a> | © 2024 HitTheJackWatt
+                Powered by <a href="https://www.intelli-watt.com" class="neon-blue-text">IntelliWatt</a> | A service of <a href="https://www.intellipath-solutions.com">Intellipath Solutions LLC</a> | © 2024 HitTheJackWatt
             </div>
         </div>
     </div>
