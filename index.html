@@ -1934,6 +1934,84 @@
     .neon-blue-text:hover {
         text-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue) !important;
     }
+
+    /* Mobile Testimonial Styles */
+    .mobile-testimonial {
+      width: 90%;
+      margin: 1rem auto 0;
+      padding: 1.2rem 1rem;
+      background-color: rgba(18, 0, 56, 0.95);
+      border-radius: 10px;
+      border: 1.5px solid rgba(57, 255, 20, 0.5);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.3);
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Mobile Form Optimizations */
+    @media (max-width: 768px) {
+      .email-input {
+        font-size: 1.1rem;
+        padding: 1.2rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+
+      .submit-btn {
+        padding: 1.2rem;
+        font-size: 1.1rem;
+        width: 100%;
+        margin-top: 0.5rem;
+        border-radius: 8px;
+      }
+
+      .form-group {
+        flex-direction: column;
+      }
+    }
+
+    /* Sticky CTA Bar */
+    .sticky-cta-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: var(--neon-green);
+      color: var(--deep-purple);
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      z-index: 999;
+      box-shadow: 0 -2px 20px rgba(0,0,0,0.4);
+    }
+
+    .sticky-cta-bar a {
+      color: var(--deep-purple);
+      text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+      .sticky-cta-bar { 
+        display: none; 
+      }
+    }
+
+    /* Mobile Legal Links */
+    .mobile-legal-links {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 0.8rem 1rem;
+      background: rgba(0,0,0,0.3);
+      margin-bottom: 3.5rem; /* Space for sticky CTA bar */
+    }
+
+    @media (min-width: 768px) {
+      .mobile-legal-links {
+        display: none;
+      }
+    }
     </style>
 </head>
 <body>
@@ -1993,7 +2071,17 @@
             <br><span class="powered-by-text">Powered by <span class="intelliwatt"><a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">IntelliWatt</a></span></span>
           </h1>
           <p class="tagline">Slash Your Energy Bill — and Hit the JackWatt</p>
-          <p class="subheadline"><a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">IntelliWatt</a> shows you the best electricity plan for your home — based on your real usage — <span class="highlight">FOR FREE</span>.</p>
+          <p class="subheadline"><a href="https://www.intelli-watt.com" style="color:inherit; text-decoration:inherit;">IntelliWatt</a> shows you the best electricity plan for your home — based on your real usage</p>
+
+          <!-- Trust Badges -->
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <span style="background: rgba(0,0,0,0.3); padding: 0.5rem 1rem; border-radius: 8px; font-weight: bold; color: var(--neon-yellow); display: inline-block;">
+              ✅ 100% Free Service – No Catch
+            </span>
+            <span style="background: rgba(0,0,0,0.3); padding: 0.5rem 1rem; border-radius: 8px; font-weight: bold; color: var(--neon-blue); display: inline-block; margin-left: 1rem;">
+              ⚡ Powered by IntelliWatt
+            </span>
+          </div>
         </div>
       </header>
       
@@ -2488,6 +2576,18 @@
       });
     });
 </script>
+
+<!-- Mobile Legal Links -->
+<div class="mobile-legal-links">
+  <a href="HitTheJackWatt_Terms_of_Service.html" style="color: white;">Terms</a> |
+  <a href="HitTheJackWatt_Privacy_Policy.html" style="color: white;">Privacy</a>
+</div>
+
+<!-- Sticky CTA Bar -->
+<div class="sticky-cta-bar">
+  <a href="#signup">🎁 Enter to Win Free – Save on Power</a>
+</div>
+
 </body>
 </html>
 
